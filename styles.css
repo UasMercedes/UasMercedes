@@ -158,42 +158,24 @@ section p {
 }
 
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .navbar nav {
-        margin-top: 10px;
-    }
-
-    .navbar nav a {
-        margin-left: 0;
-        margin-right: 15px;
-    }
-
-    .hero h1 {
-        font-size: 2em;
-    }
-
-    .hero p {
-        font-size: 1em;
-    }
+/* Enlaces visibles en PC */
+.nav-links {
+    display: flex;  /* SIEMPRE visibles en PC */
+    gap: 20px;
+    list-style: none;
 }
 
-    color: white;
-    padding: 20px;
-    margin-top: 40px;
+/* Botón menú hamburguesa, oculto en PC */
+.menu-toggle {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
 }
-/* MENU HAMBURGUESA */
-.menu-toggle { font-size: 30px; cursor: pointer; display: none; }
 
-/* RESPONSIVE */
+/* Responsive: en celular */
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        display: none;          /* oculto hasta tocar */
         flex-direction: column;
         gap: 10px;
         background-color: #003366;
@@ -203,10 +185,14 @@ section p {
         width: 200px;
         padding: 20px;
     }
-    .nav-links.active { display: flex; }
-    .menu-toggle { display: block; }
-    .navbar { flex-direction: column; align-items: flex-start; }
-    .hero h1 { font-size: 2rem; }
-    .hero p { font-size: 1.2rem; }
-    .footer-container { flex-direction: column; text-align: center; gap: 20px; }
+    .nav-links.active {
+        display: flex;          /* aparece al tocar ☰ */
+    }
+    .menu-toggle {
+        display: block;         /* aparece solo en celular */
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
