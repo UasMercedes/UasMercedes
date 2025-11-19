@@ -116,7 +116,7 @@ section {
     box-shadow: 0 4px 6px rgba(0,0,0,0.15); /* sombra sutil */
     transition: all 0.3s ease;
     border: 2px solid #003366;
-    margin-top: 10px; /* mantiene separación */
+    margin-top: 10px;
 }
 
 .btn:hover {
