@@ -3,30 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News – UAS Mercedes</title>
+    <title>News – Uruguayan American School Mercedes</title>
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<header class="navbar">
-    <div class="logo-container">
-        <img src="logo.jpg" alt="School Logo" class="logo">
-        <span class="school-name">Uruguayan American School – Mercedes</span>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="logo.jpg" alt="Logo UAS Mercedes" class="logo" width="120">
+            <span class="school-name">Uruguayan American School Mercedes</span>
+        </div>
 
-    
+        <nav>
+            <a href="index.html" class="btn">Home</a>
+            <a href="news.html" class="btn">News</a>
+            <a href="gallery.html" class="btn">Gallery</a>
+            <a href="info.html" class="btn">Information</a>
+            <a href="contact.html" class="btn">Contact</a>
+        </nav>
+    </header>
 
-<main>
-    <section>
-        <h1>News</h1>
-        <p>Aquí aparecerán las últimas noticias y actividades del colegio. Por ejemplo: talleres, concursos o anuncios importantes.</p>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Latest News</h1>
+            <p>Stay updated with our school events, projects, and announcements.</p>
+        </div>
     </section>
-</main>
 
-<!-- FOOTER -->
+    <!-- NEWS CONTENT -->
+    <section class="news-content">
+        <h2>School News</h2>
+        <p>Check out the latest happenings in our school community:</p>
+
+        <article class="news-item">
+            <h3>Science Fair 2025</h3>
+            <p>Our students participated in the annual Science Fair with amazing projects about renewable energy.</p>
+            <a href="#" class="btn">Read More</a>
+        </article>
+
+        <article class="news-item">
+            <h3>Sports Day</h3>
+            <p>The Sports Day was full of fun, teamwork, and healthy competition. Congratulations to all participants!</p>
+            <a href="#" class="btn">Read More</a>
+        </article>
+
+        <article class="news-item">
+            <h3>Art Exhibition</h3>
+            <p>Students showcased their creativity in the annual Art Exhibition. Families and friends were amazed!</p>
+            <a href="#" class="btn">Read More</a>
+        </article>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
-            
             <div class="footer-left">
                 <img src="logo.jpg" class="footer-logo" alt="School Logo">
                 <p class="footer-school-name">Uruguayan American School – Mercedes</p>
@@ -41,21 +79,13 @@
             <div class="footer-right">
                 <p><strong>Follow us:</strong></p>
                 <div class="social-icons">
-                     <a href="https://www.facebook.com/uasmercedes/" target="_blank" class="social-icon">🔵</a>
-    <a href="https://www.instagram.com/uas_mercedes/" target="_blank" class="social-icon">📸</a>
-    <a href="https://www.youtube.com/@UASMercedesOficial" target="_blank" class="social-icon">▶️</a>
-</div>
+                    <a href="https://www.facebook.com/uasmercedes/" target="_blank">🔵</a>
+                    <a href="https://www.instagram.com/uas_mercedes/" target="_blank">📸</a>
+                    <a href="https://www.youtube.com/@UASMercedesOficial" target="_blank">▶️</a>
+                </div>
+            </div>
         </div>
-    </div>
-    <p class="footer-bottom">© 2025 Uruguayan American School – Mercedes. All rights reserved.</p>
-</footer>
-
-<script>
-    function toggleMenu() {
-        const navLinks = document.querySelector('.nav-links');
-        navLinks.classList.toggle('active');
-    }
-</script>
+    </footer>
 
 </body>
 </html>
