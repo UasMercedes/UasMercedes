@@ -3,68 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uruguayan American School Mercedes</title>
+    <title>Uruguayan American School – Mercedes</title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: #f4f4f4;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #003366;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+            border-radius: 5px;
+        }
+
+        .school-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links li a:hover {
+            text-decoration: underline;
+        }
+
+        /* BODY SECTIONS */
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #003366;
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="logo">
-            <img src="logo" alt="Logo UAS Mercedes" class="logo" width="120">
-            <span>Uruguayan American School Mercedes</span>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/logo" alt="School Logo" class="logo">
+            <span class="school-name">Uruguayan American School – Mercedes</span>
         </div>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="news.html">News</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="info.html">Information</a>
-            <a href="contact.html" class="contact-btn">Contact</a>
-        </nav>
-    </header>
+        <ul class="nav-links">
+            <li><a href="#news">News</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Welcome to UAS Mercedes</h1>
-            <p>Building a future through values, creativity, and bilingual education.</p>
-        </div>
+    <!-- MAIN SECTIONS -->
+    <section id="news">
+        <h2>News</h2>
+        <p>Upcoming school updates will appear here.</p>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section class="about">
-        <h2>About Our School</h2>
-        <p>
-            Uruguayan American School Mercedes is committed to providing a bilingual, multicultural,
-            and values-based education that nurtures the academic and personal growth of every child.
-        </p>
+    <section id="events">
+        <h2>Events</h2>
+        <p>Here you can publish school events, celebrations, and important dates.</p>
     </section>
 
-    <!-- NEWS PREVIEW -->
-    <section class="news-preview">
-        <h2>Latest News</h2>
-        <p>Visit our News section to see recent activities, events, and projects.</p>
-        <a href="news.html" class="btn">See News</a>
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>Information about classroom projects and educational activities.</p>
     </section>
 
-    <!-- GALLERY PREVIEW -->
-    <section class="gallery-preview">
+    <section id="gallery">
         <h2>Gallery</h2>
-        <p>A look at our everyday moments and learning experiences.</p>
-        <a href="gallery.html" class="btn">View Gallery</a>
+        <p>Photo gallery will go here.</p>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2025 Uruguayan American School Mercedes — All rights reserved.</p>
-    </footer>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email, phone number, and school location can be added here.</p>
+    </section>
 
 </body>
 </html>
