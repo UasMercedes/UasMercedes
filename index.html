@@ -1,212 +1,88 @@
-/* ===============================
-   FUENTES Y RESET
-=============================== */
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: #f4f4f4;
-    color: #333;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uruguayan American School Mercedes</title>
 
-h1, h2 {
-    color: #003366; /* Azul institucional */
-}
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
-p {
-    line-height: 1.6;
-}
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-/* ===============================
-   NAVBAR
-=============================== */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #003366; /* Azul institucional */
-    padding: 10px 20px;
-    color: white;
-    position: relative;
-}
+<body>
 
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo UAS Mercedes" class="logo" width="120">
+            <span>Uruguayan American School Mercedes</span>
+        </div>
 
-.logo {
-    height: 60px;
-    width: auto;
-    border-radius: 5px;
-}
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="news.html">News</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="info.html">Information</a>
+            <a href="contact.html" class="contact-btn">Contact</a>
+        </nav>
+    </header>
 
-.school-name {
-    font-size: 1.2rem;
-    font-weight: 600;
-}
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Welcome to UAS Mercedes</h1>
+            <p>Building a future through values, creativity, and bilingual education.</p>
+        </div>
+    </section>
 
-.nav-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-}
+    <!-- ABOUT SECTION -->
+    <section class="about">
+        <h2>About Our School</h2>
+        <p>
+            Uruguayan American School Mercedes is committed to providing a bilingual, multicultural,
+            and values-based education that nurtures the academic and personal growth of every child.
+        </p>
+    </section>
 
-.nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-}
+    <!-- NEWS PREVIEW -->
+    <section class="news-preview">
+        <h2>Latest News</h2>
+        <p>Visit our News section to see recent activities, events, and projects.</p>
+        <a href="news.html" class="btn">See News</a>
+    </section>
 
-.nav-links li a:hover {
-    text-decoration: underline;
-}
+    <!-- GALLERY PREVIEW -->
+    <section class="gallery-preview">
+        <h2>Gallery</h2>
+        <p>A look at our everyday moments and learning experiences.</p>
+        <a href="gallery.html" class="btn">View Gallery</a>
+    </section>
 
-.menu-toggle {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-}
+   <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <div class="footer-left">
+                <img src="logo.jpg" class="footer-logo" alt="School Logo">
+                <p class="footer-school-name">Uruguayan American School – Mercedes</p>
+            </div>
 
-/* ===============================
-   HERO SECTION
-=============================== */
-.hero {
-    background: url('hero.jpg') no-repeat center center/cover;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-}
+            <div class="footer-center">
+                <p><strong>Address:</strong> 18 De Julio 538, 75000 Mercedes, Departamento de Soriano</p>
+                <p><strong>Email:</strong> uasmercedes@gmail.com</p>
+                <p><strong>Phone:</strong>  4532 3962</p>
+            </div>
 
-.hero-text h1 {
-    font-size: 2.5rem;
-    margin: 0;
-}
+            <div class="footer-right">
+                <p><strong>Follow us:</strong></p>
+                <div class="social-icons">
+                     <a href="https://www.facebook.com/uasmercedes/" target="_blank" class="social-icon">🔵</a>
+    <a href="https://www.instagram.com/uas_mercedes/" target="_blank" class="social-icon">📸</a>
+    <a href="https://www.youtube.com/@UASMercedesOficial" target="_blank" class="social-icon">▶️</a>
+</div>
 
-.hero-text p {
-    font-size: 1.2rem;
-}
-
-/* ===============================
-   SECCIONES
-=============================== */
-section {
-    padding: 40px 20px;
-    max-width: 900px;
-    margin: auto;
-}
-
-/* ===============================
-   BOTONES PREMIUM
-=============================== */
-.btn {
-    display: inline-block;
-    padding: 12px 28px;
-    background: #003366; /* azul institucional */
-    color: white;
-    text-decoration: none;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 1rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-    transition: all 0.3s ease;
-    border: 2px solid #003366;
-    margin-top: 10px;
-}
-
-.btn:hover {
-    background: #b30000; /* rojo institucional */
-    border-color: #b30000;
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 12px rgba(0,0,0,0.25);
-}
-
-.btn:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-}
-
-/* ===============================
-   FOOTER
-=============================== */
-footer {
-    background: #003366;
-    color: white;
-    padding: 20px;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.footer-left, .footer-center, .footer-right {
-    flex: 1;
-    margin: 10px;
-}
-
-.footer-logo {
-    height: 50px;
-    width: auto;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 0.9rem;
-}
-
-.social-icons a {
-    margin-right: 10px;
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-}
-
-/* ===============================
-   RESPONSIVE - CELULAR
-=============================== */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        background-color: #003366;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        padding: 20px;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .hero {
-        height: 300px;
-    }
-
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-
-    .hero-text p {
-        font-size: 1rem;
-    }
-}
-
+</body>
+</html>
