@@ -104,33 +104,35 @@ section {
 /* ===============================
    BOTONES PREMIUM
 =============================== */
+/* BOTONES PREMIUM */
 .btn {
     display: inline-block;
-    padding: 12px 28px;
+    padding: 10px 20px;
     background: #003366; /* azul institucional */
     color: white;
     text-decoration: none;
-    border-radius: 12px; /* bordes redondeados */
+    border-radius: 12px;
     font-weight: 600;
     font-size: 1rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.15); /* sombra sutil */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
     transition: all 0.3s ease;
     border: 2px solid #003366;
-    margin-top: 10px;
+    margin: 0 5px; /* un poquito de espacio entre botones */
 }
 
 .btn:hover {
     background: #b30000; /* rojo institucional */
     border-color: #b30000;
     color: white;
-    transform: translateY(-3px); /* levanta el botón */
-    box-shadow: 0 8px 12px rgba(0,0,0,0.25); /* sombra más marcada */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.25);
 }
 
 .btn:active {
-    transform: translateY(0); /* vuelve al estado normal al hacer clic */
+    transform: translateY(0);
     box-shadow: 0 4px 6px rgba(0,0,0,0.15);
 }
+
 
 /* ===============================
    FOOTER
