@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News – UAS Mercedes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo-container">
+        <img src="logo" alt="School Logo" class="logo">
+        <span class="school-name">Uruguayan American School – Mercedes</span>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="info.html">Information</a></li>
+    </ul>
+</header>
+
+<main>
+    <section>
+        <h1>News</h1>
+        <p>Aquí aparecerán las últimas noticias y actividades del colegio. Por ejemplo: talleres, concursos o anuncios importantes.</p>
+    </section>
+</main>
+
+<!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <div class="footer-left">
+                <img src="logo.jpg" class="footer-logo" alt="School Logo">
+                <p class="footer-school-name">Uruguayan American School – Mercedes</p>
+            </div>
+
+            <div class="footer-center">
+                <p><strong>Address:</strong> 18 De Julio 538, 75000 Mercedes, Departamento de Soriano</p>
+                <p><strong>Email:</strong> uasmercedes@gmail.com</p>
+                <p><strong>Phone:</strong>  4532 3962</p>
+            </div>
+
+            <div class="footer-right">
+                <p><strong>Follow us:</strong></p>
+                <div class="social-icons">
+                     <a href="https://www.facebook.com/uasmercedes/" target="_blank" class="social-icon">🔵</a>
+    <a href="https://www.instagram.com/uas_mercedes/" target="_blank" class="social-icon">📸</a>
+    <a href="https://www.youtube.com/@UASMercedesOficial" target="_blank" class="social-icon">▶️</a>
+</div>
+        </div>
+    </div>
+    <p class="footer-bottom">© 2025 Uruguayan American School – Mercedes. All rights reserved.</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>
