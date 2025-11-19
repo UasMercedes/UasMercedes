@@ -1,18 +1,24 @@
-/* Fonts */
+/* ===== GENERAL ===== */
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    background-color: #F4F4F4;
+    line-height: 1.6;
+    background-color: #f5f5f5;
     color: #333;
 }
 
-/* Navbar */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== NAVBAR ===== */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
-    background-color: #2C2A84;
+    background-color: #004080; /* azul escuela */
+    padding: 10px 20px;
     color: white;
 }
 
@@ -22,72 +28,115 @@ body {
 }
 
 .navbar .logo img {
-    height: 60px;
-    margin-right: 15px;
+    width: 100px; /* tamaño del logo */
+    margin-right: 10px;
 }
 
 .navbar nav a {
     margin-left: 20px;
-    text-decoration: none;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
+    transition: color 0.3s;
 }
 
 .navbar nav a:hover {
-    color: #A5B0F5;
+    color: #ffcc00; /* amarillo para hover */
 }
 
-/* Red contact button */
 .contact-btn {
-    background-color: #E32227;
-    padding: 8px 15px;
-    border-radius: 6px;
+    background-color: #ffcc00;
+    color: #004080;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .contact-btn:hover {
-    background-color: #F46A6E;
+    background-color: #004080;
+    color: #ffcc00;
 }
 
-/* Hero section */
+/* ===== HERO SECTION ===== */
 .hero {
-    background: url('banner.jpg') center/cover no-repeat;
-    height: 380px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #e6f0ff;
     text-align: center;
-    color: white;
-    background-color: #394BBA;
+    padding: 60px 20px;
 }
 
-.hero-text h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-}
-
-.hero-text p {
-    font-size: 18px;
-}
-
-/* Sections */
-section {
-    padding: 60px 40px;
-    text-align: center;
-}
-
-h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
-    color: #2C2A84;
+.hero h1 {
+    font-size: 2.5em;
     margin-bottom: 20px;
 }
 
-/* Footer */
+.hero p {
+    font-size: 1.2em;
+}
+
+/* ===== SECTIONS ===== */
+section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #004080;
+}
+
+section p {
+    font-size: 1.1em;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-block;
+    background-color: #004080;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #003366;
+}
+
+/* ===== FOOTER ===== */
 footer {
     text-align: center;
-    background-color: #2C2A84;
+    padding: 20px;
+    background-color: #004080;
+    color: white;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar nav {
+        margin-top: 10px;
+    }
+
+    .navbar nav a {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+}
+
     color: white;
     padding: 20px;
     margin-top: 40px;
