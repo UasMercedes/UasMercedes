@@ -16,6 +16,7 @@
 
     <!-- FullCalendar JS -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales-all.min.js'></script>
 
     <style>
         /* HERO / TITULO PRINCIPAL */
@@ -50,9 +51,6 @@
             padding: 40px 20px;
             max-width: 900px;
             margin: auto;
-            background-color: #fff;
-            border-radius: 8px;
-            margin-bottom: 20px;
         }
 
         section h2 {
@@ -61,6 +59,35 @@
 
         section p {
             color: #333;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-left, .footer-center, .footer-right {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .footer-logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .social-icons a {
+            margin-right: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
         }
     </style>
 </head>
@@ -91,20 +118,9 @@
         <p>Check out all upcoming events, celebrations, and special activities at our school.</p>
     </div>
 
-    <!-- SECCIONES DE EVENTOS -->
+    <!-- CALENDARIO INTERACTIVO -->
     <section id="upcoming-events">
         <h2>Upcoming Events</h2>
-        <p>Here you will find all important events scheduled for the next months.</p>
-    </section>
-
-    <section id="past-events">
-        <h2>Past Events</h2>
-        <p>Highlights and memories from previous school events.</p>
-    </section>
-
-    <!-- CALENDARIO INTERACTIVO -->
-    <section id="calendar-section">
-        <h2>Event Calendar</h2>
         <div id="calendar"></div>
     </section>
 
@@ -136,7 +152,6 @@
     <!-- SCRIPT -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar FullCalendar
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
@@ -148,13 +163,13 @@
                 },
                 events: [
                     { title: 'Campamento Primer Ciclo', start: '2025-11-25' },
-                  { title: 'Campamento Primer Ciclo', start: '2025-11-26' },
+                    { title: 'Campamento Primer Ciclo', start: '2025-11-26' },
                     { title: 'Exámenes Cambridge', start: '2025-11-29' },
                     { title: 'Acto Cultural Maternal 1 y 2 años Hora 8:30 en la escuela', start: '2025-12-05' },
                     { title: 'Acto Cultural 3 años a 6to año - Teatro 28 de Febrero Hora 20', start: '2025-12-10' },
-                  { title: 'Entrega de carpetas - Maternal 1 y 2 años, Inicial 3 y 4 años - 5 años Acto de Egresados y entrega de carpetas, Hora 19', start: '2025-12-17' },
-                  { title: 'Entrega de carpetas - 1er año a 6to año, Acto de Egresados 6to y entrega de carpetas de primaria Hora 19', start: '2025-12-18' },
-                  { title: 'Acto protocolar en el Club A. Independiente Hora 8:30', start: '2025-03-22' },
+                    { title: 'Entrega de carpetas - Maternal 1 y 2 años, Inicial 3 y 4 años - 5 años Acto de Egresados y entrega de carpetas, Hora 19', start: '2025-12-17' },
+                    { title: 'Entrega de carpetas - 1er año a 6to año, Acto de Egresados 6to y entrega de carpetas de primaria Hora 19', start: '2025-12-18' },
+                    { title: 'Acto protocolar en el Club A. Independiente Hora 8:30', start: '2025-03-22' }
                 ]
             });
             calendar.render();
