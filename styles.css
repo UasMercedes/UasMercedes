@@ -173,9 +173,10 @@ section a {
    FOOTER
 =============================== */
 footer {
-    background: #003366;
-    color: white;
+    background-color: rgba(255, 204, 204, 0.9); /* rojo clarito como las secciones */
+    color: white !important; /* forzamos blanco */
     padding: 20px;
+    border-radius: 8px 8px 0 0;
 }
 
 .footer-container {
@@ -198,6 +199,7 @@ footer {
     text-align: center;
     margin-top: 10px;
     font-size: 0.9rem;
+    color: white !important; /* forzamos blanco */
 }
 
 .social-icons a {
