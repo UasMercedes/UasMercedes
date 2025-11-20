@@ -16,7 +16,6 @@
 
     <!-- FullCalendar JS -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales-all.min.js'></script>
 
     <style>
         /* HERO / TITULO PRINCIPAL */
@@ -33,7 +32,7 @@
         }
 
         .page-hero p {
-            color: #336699; /* azul más claro */
+            color: #336699; /* azul más claro que el título */
             font-size: 1.2rem;
         }
 
@@ -51,6 +50,9 @@
             padding: 40px 20px;
             max-width: 900px;
             margin: auto;
+            background-color: #fff;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
 
         section h2 {
@@ -61,33 +63,54 @@
             color: #333;
         }
 
+        /* Footer texto blanco */
         footer {
-            background-color: #003366;
+            background: #003366;
             color: white;
             padding: 20px;
         }
 
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+        /* Popup de evento */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
         }
 
-        .footer-left, .footer-center, .footer-right {
-            flex: 1;
-            margin: 10px;
+        .popup-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
         }
 
-        .footer-logo {
-            height: 50px;
-            width: auto;
+        .popup-content h3 {
+            margin-top: 0;
+            color: #003366;
         }
 
-        .social-icons a {
-            margin-right: 10px;
-            color: white;
-            text-decoration: none;
+        .popup-content p {
+            color: #333;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
             font-size: 1.5rem;
+            cursor: pointer;
+            color: #003366;
         }
     </style>
 </head>
@@ -118,11 +141,31 @@
         <p>Check out all upcoming events, celebrations, and special activities at our school.</p>
     </div>
 
-    <!-- CALENDARIO INTERACTIVO -->
+    <!-- SECCIONES DE EVENTOS -->
     <section id="upcoming-events">
         <h2>Upcoming Events</h2>
+        <p>Here you will find all important events scheduled for the next months.</p>
+    </section>
+
+    <section id="past-events">
+        <h2>Past Events</h2>
+        <p>Highlights and memories from previous school events.</p>
+    </section>
+
+    <!-- CALENDARIO INTERACTIVO -->
+    <section id="calendar-section">
+        <h2>Event Calendar</h2>
         <div id="calendar"></div>
     </section>
+
+    <!-- POPUP -->
+    <div class="popup-overlay" id="event-popup">
+        <div class="popup-content">
+            <span class="popup-close" id="popup-close">&times;</span>
+            <h3 id="popup-title"></h3>
+            <p id="popup-description"></p>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -151,36 +194,48 @@
 
     <!-- SCRIPT -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                height: 600,
-                headerToolbar: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,listWeek'
-                },
-                events: [
-                    { title: 'Campamento Primer Ciclo', start: '2025-11-25' },
-                    { title: 'Campamento Primer Ciclo', start: '2025-11-26' },
-                    { title: 'Exámenes Cambridge', start: '2025-11-29' },
-                    { title: 'Acto Cultural Maternal 1 y 2 años Hora 8:30 en la escuela', start: '2025-12-05' },
-                    { title: 'Acto Cultural 3 años a 6to año - Teatro 28 de Febrero Hora 20', start: '2025-12-10' },
-                    { title: 'Entrega de carpetas - Maternal 1 y 2 años, Inicial 3 y 4 años - 5 años Acto de Egresados y entrega de carpetas, Hora 19', start: '2025-12-17' },
-                    { title: 'Entrega de carpetas - 1er año a 6to año, Acto de Egresados 6to y entrega de carpetas de primaria Hora 19', start: '2025-12-18' },
-                    { title: 'Acto protocolar en el Club A. Independiente Hora 8:30', start: '2025-03-22' }
-                ]
-            });
-            calendar.render();
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
 
-            // Menú hamburguesa
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            height: 600,
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,listWeek'
+            },
+            events: [
+                { title: 'Campamento Primer Ciclo', start: '2025-11-25', description: 'Campamento para los estudiantes del Primer Ciclo con actividades al aire libre.' },
+                { title: 'Campamento Primer Ciclo', start: '2025-11-26', description: 'Segunda jornada del Campamento del Primer Ciclo.' },
+                { title: 'Exámenes Cambridge', start: '2025-11-29', description: 'Exámenes de certificación Cambridge para los estudiantes de 6to año.' },
+                { title: 'Acto Cultural Maternal 1 y 2 años', start: '2025-12-05', description: 'Hora 8:30 en la escuela. Acto cultural para los más pequeños.' },
+                { title: 'Acto Cultural 3 años a 6to año', start: '2025-12-10', description: 'Lugar: Teatro 28 de Febrero, Hora 20:00. Todos los cursos participan.' },
+                { title: 'Entrega de carpetas Maternal y Inicial', start: '2025-12-17', description: 'Acto de egresados y entrega de carpetas. Hora 19:00.' },
+                { title: 'Entrega de carpetas 1er a 6to año', start: '2025-12-18', description: 'Acto de egresados 6to y entrega de carpetas de primaria. Hora 19:00.' },
+                { title: 'Acto protocolar en Club A. Independiente', start: '2025-03-22', description: 'Ceremonia protocolar, Hora 8:30.' }
+            ],
+            eventClick: function(info) {
+                document.getElementById('popup-title').textContent = info.event.title;
+                document.getElementById('popup-description').textContent = info.event.extendedProps.description;
+                document.getElementById('event-popup').style.display = 'flex';
+            }
         });
+
+        calendar.render();
+
+        // Cerrar popup
+        document.getElementById('popup-close').addEventListener('click', function() {
+            document.getElementById('event-popup').style.display = 'none';
+        });
+
+        // Menú hamburguesa
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    });
     </script>
 
 </body>
