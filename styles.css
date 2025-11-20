@@ -189,7 +189,7 @@ footer {
     left: 0;             /* Ahora se posiciona a la izquierda */
     right: auto;         /* Quitamos el lado derecho */
     width: 200px;        /* Ajusta si querés */
-    background-color: #ffcccc; 
+    background-color: #003366; 
     padding: 20px;
     flex-direction: column;
     gap: 20px;
