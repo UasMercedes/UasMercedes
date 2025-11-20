@@ -8,17 +8,14 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS principal -->
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 
     <!-- FullCalendar CSS -->
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
 
-    <!-- FullCalendar JS -->
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
-
     <style>
-        /* Hero / Título principal */
+        /* HERO / TITULO PRINCIPAL */
         .page-hero {
             background-color: #ffcccc; /* rojo clarito */
             padding: 60px 20px;
@@ -45,6 +42,28 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            color: #003366;
+        }
+
+        section p {
+            color: #333;
+        }
+
+        /* Footer texto blanco */
+        footer {
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -68,14 +87,17 @@
         <span class="menu-toggle">☰</span>
     </header>
 
-    <!-- HERO / Título principal -->
+    <!-- HERO -->
     <div class="page-hero">
         <h1>School Events</h1>
-        <p>Check out all upcoming events at our school.</p>
+        <p>Check out all upcoming events, celebrations, and special activities at our school.</p>
     </div>
 
     <!-- CALENDARIO -->
-    <div id="calendar"></div>
+    <section id="calendar-section">
+        <h2>Upcoming Events</h2>
+        <div id="calendar"></div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -84,13 +106,11 @@
                 <img src="logo.jpg" class="footer-logo" alt="School Logo">
                 <p class="footer-school-name">Uruguayan American School – Mercedes</p>
             </div>
-
             <div class="footer-center">
                 <p><strong>Address:</strong> 18 De Julio 538, 75000 Mercedes, Departamento de Soriano</p>
                 <p><strong>Email:</strong> uasmercedes@gmail.com</p>
                 <p><strong>Phone:</strong> 4532 3962</p>
             </div>
-
             <div class="footer-right">
                 <p><strong>Follow us:</strong></p>
                 <div class="social-icons">
@@ -102,21 +122,16 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script>
-        // Menú hamburguesa
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+    <!-- FullCalendar JS -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
 
-        // Inicializar FullCalendar
+    <!-- SCRIPT -->
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar FullCalendar
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
-                height: 600,
                 headerToolbar: {
                     left: 'prev,next today',
                     center: 'title',
@@ -126,20 +141,28 @@
                     { title: 'Campamento Primer Ciclo', start: '2025-11-25' },
                     { title: 'Campamento Primer Ciclo', start: '2025-11-26' },
                     { title: 'Exámenes Cambridge', start: '2025-11-29' },
-                    { title: 'Acto Cultural Maternal 1 y 2 años', start: '2025-12-05' },
-                    { title: 'Acto Cultural 3 años a 6to año', start: '2025-12-10' },
-                    { title: 'Entrega de carpetas Maternal y Inicial', start: '2025-12-17' },
-                    { title: 'Entrega de carpetas 1er a 6to año', start: '2025-12-18' },
-                    { title: 'Acto protocolar Club A. Independiente', start: '2025-03-22' }
+                    { title: 'Acto Cultural Maternal 1 y 2 años Hora 8:30 en la escuela', start: '2025-12-05' },
+                    { title: 'Acto Cultural 3 años a 6to año - Teatro 28 de Febrero Hora 20', start: '2025-12-10' },
+                    { title: 'Entrega de carpetas - Maternal 1 y 2 años, Inicial 3 y 4 años - 5 años Acto de Egresados y entrega de carpetas, Hora 19', start: '2025-12-17' },
+                    { title: 'Entrega de carpetas - 1er año a 6to año, Acto de Egresados 6to y entrega de carpetas de primaria Hora 19', start: '2025-12-18' },
+                    { title: 'Acto protocolar en el Club A. Independiente Hora 8:30', start: '2025-03-22' }
                 ],
                 eventClick: function(info) {
                     alert(info.event.title);
                 }
             });
             calendar.render();
+
+            // Menú hamburguesa
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
         });
     </script>
 
 </body>
 </html>
+
 
