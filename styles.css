@@ -82,7 +82,7 @@ p {
     justify-content: center;
     color: white;
     text-align: center;
-    position: relative; /* para overlay */
+    position: relative;
 }
 
 .hero::before {
@@ -92,32 +92,37 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.2); /* overlay suave */
+    background: rgba(255, 255, 255, 0.2); /* overlay suave sobre la imagen */
     pointer-events: none;
+}
+
+.hero-text {
+    background-color: rgba(255, 204, 204, 0.7); /* rojo clarito detrás del texto */
+    padding: 20px;
+    border-radius: 8px;
+    position: relative; /* para estar encima del overlay */
 }
 
 .hero-text h1 {
     font-size: 2.5rem;
     color: #003366; /* título hero azul oscuro */
-    position: relative;
 }
 
 .hero-text p {
     font-size: 1.2rem;
     color: #004080; /* subtítulo azul medio */
-    position: relative;
 }
 
 /* ===============================
    SECCIONES
 =============================== */
 section {
-    background-color: rgba(255, 255, 255, 0.95); /* fondo casi blanco */
+    background-color: rgba(255, 204, 204, 0.9); /* fondo rojo clarito */
     padding: 40px 20px;
     max-width: 900px;
     margin: 20px auto;
-    border-radius: 8px; /* bordes suaves */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* leve sombra */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 section h2 {
