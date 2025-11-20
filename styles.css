@@ -250,5 +250,24 @@ footer {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
+/* ===============================
+   HERO / TITULO PRINCIPAL
+=============================== */
+.page-hero {
+    background-color: #ffcccc; /* rojo clarito */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.page-hero h1 {
+    color: #003366; /* azul oscuro */
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.page-hero p {
+    color: #336699; /* azul más claro */
+    font-size: 1.2rem;
+}
 
 
