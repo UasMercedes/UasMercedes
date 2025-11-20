@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events – Uruguayan American School Mercedes</title>
+    <title>Events – UAS Mercedes</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -16,120 +16,23 @@
 
     <!-- FullCalendar JS -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
-
-    <style>
-        /* HERO / TITULO PRINCIPAL */
-        .page-hero {
-            background-color: #ffcccc; /* rojo clarito */
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .page-hero h1 {
-            color: #003366; /* azul institucional */
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .page-hero p {
-            color: #336699; /* azul más claro que el título */
-            font-size: 1.2rem;
-        }
-
-        /* Calendario */
-        #calendar {
-            max-width: 900px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-            background-color: #fff;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        section h2 {
-            color: #003366;
-        }
-
-        section p {
-            color: #333;
-        }
-
-        /* Footer texto blanco */
-        footer {
-            background: #003366;
-            color: white;
-            padding: 20px;
-        }
-
-        /* Popup de evento */
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .popup-content {
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-        }
-
-        .popup-content h3 {
-            margin-top: 0;
-            color: #003366;
-        }
-
-        .popup-content p {
-            color: #333;
-        }
-
-        .popup-close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #003366;
-        }
-    </style>
 </head>
 <body>
 
     <!-- NAVBAR -->
     <header class="navbar">
         <div class="logo-container">
-            <img src="logo.jpg" alt="Logo UAS Mercedes" class="logo">
+            <img src="logo.jpg" alt="School Logo" class="logo">
             <span class="school-name">Uruguayan American School – Mercedes</span>
         </div>
 
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="info.html">Information</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" class="btn">Home</a></li>
+            <li><a href="news.html" class="btn">News</a></li>
+            <li><a href="events.html" class="btn">Events</a></li>
+            <li><a href="gallery.html" class="btn">Gallery</a></li>
+            <li><a href="info.html" class="btn">Information</a></li>
+            <li><a href="contact.html" class="btn">Contact</a></li>
         </ul>
 
         <span class="menu-toggle">☰</span>
@@ -137,35 +40,14 @@
 
     <!-- HERO / TITULO PRINCIPAL -->
     <div class="page-hero">
-        <h1>School Events</h1>
-        <p>Check out all upcoming events, celebrations, and special activities at our school.</p>
+        <h1>Upcoming Events</h1>
+        <p>Check all important upcoming events at our school.</p>
     </div>
 
-    <!-- SECCIONES DE EVENTOS -->
-    <section id="upcoming-events">
-        <h2>Upcoming Events</h2>
-        <p>Here you will find all important events scheduled for the next months.</p>
-    </section>
-
-    <section id="past-events">
-        <h2>Past Events</h2>
-        <p>Highlights and memories from previous school events.</p>
-    </section>
-
-    <!-- CALENDARIO INTERACTIVO -->
+    <!-- CALENDARIO -->
     <section id="calendar-section">
-        <h2>Event Calendar</h2>
         <div id="calendar"></div>
     </section>
-
-    <!-- POPUP -->
-    <div class="popup-overlay" id="event-popup">
-        <div class="popup-content">
-            <span class="popup-close" id="popup-close">&times;</span>
-            <h3 id="popup-title"></h3>
-            <p id="popup-description"></p>
-        </div>
-    </div>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -174,13 +56,11 @@
                 <img src="logo.jpg" class="footer-logo" alt="School Logo">
                 <p class="footer-school-name">Uruguayan American School – Mercedes</p>
             </div>
-
             <div class="footer-center">
                 <p><strong>Address:</strong> 18 De Julio 538, 75000 Mercedes, Departamento de Soriano</p>
                 <p><strong>Email:</strong> uasmercedes@gmail.com</p>
                 <p><strong>Phone:</strong> 4532 3962</p>
             </div>
-
             <div class="footer-right">
                 <p><strong>Follow us:</strong></p>
                 <div class="social-icons">
@@ -192,50 +72,41 @@
         </div>
     </footer>
 
-    <!-- SCRIPT -->
+    <!-- SCRIPT CALENDARIO Y MENÚ -->
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                height: 600,
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,listWeek'
+                },
+                events: [
+                    { title: 'Campamento Primer Ciclo', start: '2025-11-25', description: 'Detalles del campamento para los más chicos.' },
+                    { title: 'Campamento Primer Ciclo', start: '2025-11-26', description: 'Campamento Primer Ciclo, segunda jornada.' },
+                    { title: 'Exámenes Cambridge', start: '2025-11-29', description: 'Exámenes oficiales de inglés Cambridge.' },
+                    { title: 'Acto Cultural Maternal 1 y 2 años', start: '2025-12-05', description: 'Hora 8:30 en la escuela.' },
+                    { title: 'Acto Cultural 3 años a 6to año', start: '2025-12-10', description: 'Lugar: Teatro 28 de Febrero, Hora 20.' },
+                    { title: 'Entrega de carpetas - Maternal 1 y 2 años', start: '2025-12-17', description: 'Entrega de carpetas y acto de egresados.' },
+                    { title: 'Entrega de carpetas - 1er año a 6to año', start: '2025-12-18', description: 'Acto de egresados 6to y entrega de carpetas de primaria.' },
+                    { title: 'Acto protocolar en el Club A. Independiente', start: '2025-03-22', description: 'Hora 8:30.' }
+                ],
+                eventClick: function(info) {
+                    alert(info.event.title + "\n" + info.event.extendedProps.description);
+                }
+            });
+            calendar.render();
 
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
-            height: 600,
-            headerToolbar: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'dayGridMonth,timeGridWeek,listWeek'
-            },
-            events: [
-                { title: 'Campamento Primer Ciclo', start: '2025-11-25', description: 'Campamento para los estudiantes del Primer Ciclo con actividades al aire libre.' },
-                { title: 'Campamento Primer Ciclo', start: '2025-11-26', description: 'Segunda jornada del Campamento del Primer Ciclo.' },
-                { title: 'Exámenes Cambridge', start: '2025-11-29', description: 'Exámenes de certificación Cambridge para los estudiantes de 6to año.' },
-                { title: 'Acto Cultural Maternal 1 y 2 años', start: '2025-12-05', description: 'Hora 8:30 en la escuela. Acto cultural para los más pequeños.' },
-                { title: 'Acto Cultural 3 años a 6to año', start: '2025-12-10', description: 'Lugar: Teatro 28 de Febrero, Hora 20:00. Todos los cursos participan.' },
-                { title: 'Entrega de carpetas Maternal y Inicial', start: '2025-12-17', description: 'Acto de egresados y entrega de carpetas. Hora 19:00.' },
-                { title: 'Entrega de carpetas 1er a 6to año', start: '2025-12-18', description: 'Acto de egresados 6to y entrega de carpetas de primaria. Hora 19:00.' },
-                { title: 'Acto protocolar en Club A. Independiente', start: '2025-03-22', description: 'Ceremonia protocolar, Hora 8:30.' }
-            ],
-            eventClick: function(info) {
-                document.getElementById('popup-title').textContent = info.event.title;
-                document.getElementById('popup-description').textContent = info.event.extendedProps.description;
-                document.getElementById('event-popup').style.display = 'flex';
-            }
+            // Menú hamburguesa
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
         });
-
-        calendar.render();
-
-        // Cerrar popup
-        document.getElementById('popup-close').addEventListener('click', function() {
-            document.getElementById('event-popup').style.display = 'none';
-        });
-
-        // Menú hamburguesa
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    });
     </script>
 
 </body>
