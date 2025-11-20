@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events – Uruguayan American School – Mercedes</title>
+    <title>Events – Uruguayan American School Mercedes</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
     <!-- CSS propio -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- FullCalendar CSS y JS -->
+    <!-- FullCalendar CSS y JS global (funciona en todos los navegadores) -->
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 
@@ -44,9 +44,9 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        /* Hover sobre eventos */
+        /* Cambiar color al pasar cursor sobre evento */
         .fc-event:hover {
-            background-color: #b30000 !important;
+            background-color: #b30000 !important; /* rojo institucional */
             cursor: pointer;
         }
     </style>
@@ -63,7 +63,7 @@
         <ul class="nav-links">
             <li><a href="index.html" class="btn">Home</a></li>
             <li><a href="news.html" class="btn">News</a></li>
-            <li><a href="events.html" class="btn active">Events</a></li>
+            <li><a href="events.html" class="btn">Events</a></li>
             <li><a href="gallery.html" class="btn">Gallery</a></li>
             <li><a href="info.html" class="btn">Information</a></li>
             <li><a href="contact.html" class="btn">Contact</a></li>
@@ -90,13 +90,11 @@
                 <img src="logo.jpg" class="footer-logo" alt="School Logo">
                 <p class="footer-school-name">Uruguayan American School – Mercedes</p>
             </div>
-
             <div class="footer-center">
                 <p><strong>Address:</strong> 18 De Julio 538, 75000 Mercedes, Departamento de Soriano</p>
                 <p><strong>Email:</strong> uasmercedes@gmail.com</p>
                 <p><strong>Phone:</strong> 4532 3962</p>
             </div>
-
             <div class="footer-right">
                 <p><strong>Follow us:</strong></p>
                 <div class="social-icons">
@@ -119,7 +117,7 @@
                 headerToolbar: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,listWeek'
+                    right: 'dayGridMonth,listWeek'
                 },
                 events: [
                     { title: 'Campamento Primer Ciclo', start: '2025-11-25', description: 'Evento para Primer Ciclo' },
@@ -129,14 +127,8 @@
                     { title: 'Acto Cultural 3 años a 6to año', start: '2025-12-10', description: 'Teatro 28 de Febrero Hora 20' },
                     { title: 'Entrega de carpetas – Maternal 1 y 2 años, Inicial 3 y 4 años – 5 años', start: '2025-12-17', description: 'Acto de Egresados y entrega de carpetas, Hora 19' },
                     { title: 'Entrega de carpetas – 1er año a 6to año', start: '2025-12-18', description: 'Acto de Egresados 6to y entrega de carpetas de primaria Hora 19' },
-                    { title: 'Acto protocolar en el Club A. Independiente', start: '2025-03-22', description: 'Hora 8:30' },
+                    { title: 'Acto protocolar en el Club A. Independiente', start: '2025-12-19', description: 'Hora 8:30' },
                 ],
-                eventMouseEnter: function(info) {
-                    info.el.style.backgroundColor = '#b30000';
-                },
-                eventMouseLeave: function(info) {
-                    info.el.style.backgroundColor = '';
-                },
                 eventClick: function(info) {
                     alert(info.event.title + "\n" + info.event.extendedProps.description);
                 }
@@ -154,7 +146,5 @@
 
 </body>
 </html>
-
-
 
 
