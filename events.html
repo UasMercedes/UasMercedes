@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events – Uruguayan American School Mercedes</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- FullCalendar CSS -->
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
+
+    <!-- FullCalendar JS -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
+
+    <style>
+        /* HERO / TITULO PRINCIPAL */
+        .page-hero {
+            background-color: #ffcccc; /* rojo clarito */
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            color: #003366; /* azul institucional */
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .page-hero p {
+            color: #336699; /* azul más claro */
+            font-size: 1.2rem;
+        }
+
+        /* Calendario */
+        #calendar {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            color: #003366;
+        }
+
+        section p {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="logo.jpg" alt="Logo UAS Mercedes" class="logo">
+            <span class="school-name">Uruguayan American School – Mercedes</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="info.html">Information</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <span class="menu-toggle">☰</span>
+    </header>
+
+    <!-- HERO / TITULO PRINCIPAL -->
+    <div class="page-hero">
+        <h1>School Events</h1>
+        <p>Check out all upcoming events, celebrations, and special activities at our school.</p>
+    </div>
+
+    <!-- SECCIONES DE EVENTOS -->
+    <section id="upcoming-events">
+        <h2>Upcoming Events</h2>
+        <p>Here you will find all important events scheduled for the next months.</p>
+    </section>
+
+    <section id="past-events">
+        <h2>Past Events</h2>
+        <p>Highlights and memories from previous school events.</p>
+    </section>
+
+    <!-- CALENDARIO INTERACTIVO -->
+    <section id="calendar-section">
+        <h2>Event Calendar</h2>
+        <div id="calendar"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="logo.jpg" class="footer-logo" alt="School Logo">
+                <p class="footer-school-name">Uruguayan American School – Mercedes</p>
+            </div>
+
+            <div class="footer-center">
+                <p><strong>Address:</strong> 18 De Julio 538, 75000 Mercedes, Departamento de Soriano</p>
+                <p><strong>Email:</strong> uasmercedes@gmail.com</p>
+                <p><strong>Phone:</strong> 4532 3962</p>
+            </div>
+
+            <div class="footer-right">
+                <p><strong>Follow us:</strong></p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/uasmercedes/" target="_blank">🔵</a>
+                    <a href="https://www.instagram.com/uas_mercedes/" target="_blank">📸</a>
+                    <a href="https://www.youtube.com/@UASMercedesOficial" target="_blank">▶️</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar FullCalendar
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                height: 600,
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,listWeek'
+                },
+                events: [
+                    { title: 'Campamento Primer Ciclo', start: '2025-11-25' },
+                  { title: 'Campamento Primer Ciclo', start: '2025-11-26' },
+                    { title: 'Exámenes Cambridge', start: '2025-11-29' },
+                    { title: 'Acto Cultural Maternal 1 y 2 años Hora 8:30 en la escuela', start: '2025-12-05' },
+                    { title: 'Acto Cultural 3 años a 6to año - Teatro 28 de Febrero Hora 20', start: '2025-12-10' },
+                  { title: 'Entrega de carpetas - Maternal 1 y 2 años, Inicial 3 y 4 años - 5 años Acto de Egresados y entrega de carpetas, Hora 19', start: '2025-12-17' },
+                  { title: 'Entrega de carpetas - 1er año a 6to año, Acto de Egresados 6to y entrega de carpetas de primaria Hora 19', start: '2025-12-18' },
+                  { title: 'Acto protocolar en el Club A. Independiente Hora 8:30', start: '2025-03-22' },
+                ]
+            });
+            calendar.render();
+
+            // Menú hamburguesa
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
