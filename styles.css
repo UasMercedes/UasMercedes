@@ -9,11 +9,12 @@ body {
 }
 
 h1, h2 {
-    color: #003366; /* Azul institucional */
+    color: #003366; /* Azul oscuro institucional */
 }
 
 p {
     line-height: 1.6;
+    color: #004080; /* azul medio para descripciones */
 }
 
 /* ===============================
@@ -81,30 +82,60 @@ p {
     justify-content: center;
     color: white;
     text-align: center;
+    position: relative; /* para overlay */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* overlay suave */
+    pointer-events: none;
 }
 
 .hero-text h1 {
     font-size: 2.5rem;
-    margin: 0;
+    color: #003366; /* título hero azul oscuro */
+    position: relative;
 }
 
 .hero-text p {
     font-size: 1.2rem;
+    color: #004080; /* subtítulo azul medio */
+    position: relative;
 }
 
 /* ===============================
    SECCIONES
 =============================== */
 section {
+    background-color: rgba(255, 255, 255, 0.95); /* fondo casi blanco */
     padding: 40px 20px;
     max-width: 900px;
-    margin: auto;
+    margin: 20px auto;
+    border-radius: 8px; /* bordes suaves */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* leve sombra */
+}
+
+section h2 {
+    color: #003366; /* títulos azul oscuro */
+}
+
+section p,
+section ul li {
+    color: #004080; /* textos descripciones azul medio */
+}
+
+section a {
+    color: #003366;
 }
 
 /* ===============================
    BOTONES PREMIUM
 =============================== */
-/* BOTONES PREMIUM */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -117,7 +148,7 @@ section {
     box-shadow: 0 4px 6px rgba(0,0,0,0.15);
     transition: all 0.3s ease;
     border: 2px solid #003366;
-    margin: 0 5px; /* un poquito de espacio entre botones */
+    margin: 0 5px;
 }
 
 .btn:hover {
@@ -132,7 +163,6 @@ section {
     transform: translateY(0);
     box-shadow: 0 4px 6px rgba(0,0,0,0.15);
 }
-
 
 /* ===============================
    FOOTER
@@ -213,50 +243,4 @@ footer {
         font-size: 1rem;
     }
 }
-/* ===============================
-   MEJORAR LEGIBILIDAD DEL TEXTO
-=============================== */
 
-/* Hero: sombra y overlay para que se lea sobre la imagen */
-.hero {
-    position: relative;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* overlay negro semitransparente */
-    pointer-events: none;
-}
-
-.hero-text h1,
-.hero-text p {
-    color: #ffffff; /* texto blanco */
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.7); /* sombra para mejorar lectura */
-    position: relative; /* para que quede sobre el overlay */
-}
-
-/* Secciones normales: fondo claro y texto azul oscuro */
-section {
-    background-color: rgba(255, 255, 255, 0.95); /* casi blanco para contraste */
-    padding: 40px 20px;
-    max-width: 900px;
-    margin: 20px auto;
-    border-radius: 8px; /* opcional: bordes suaves */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* opcional: leve sombra */
-}
-
-section h2,
-section p,
-section ul li {
-    color: #003366; /* azul institucional oscuro */
-}
-
-/* Links dentro de secciones */
-section a {
-    color: #003366;
-}
