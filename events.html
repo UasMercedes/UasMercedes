@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +9,12 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
+    <!-- CSS propio -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- FullCalendar CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet" />
+    <!-- FullCalendar CSS y JS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 
     <style>
         /* HERO / TITULO PRINCIPAL */
@@ -33,7 +35,7 @@
             font-size: 1.2rem;
         }
 
-        /* Calendario */
+        /* Contenedor calendario */
         #calendar {
             max-width: 900px;
             margin: 20px auto;
@@ -41,41 +43,6 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        #calendar .fc-event {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        #calendar .fc-event:hover {
-            background-color: #b30000 !important; /* rojo institucional */
-            color: white !important;
-            transform: translateY(-2px);
-        }
-
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-            background-color: #fff;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        section h2 {
-            color: #003366;
-        }
-
-        section p {
-            color: #333;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #003366;
-            color: white;
-            padding: 20px;
         }
     </style>
 </head>
@@ -100,26 +67,14 @@
         <span class="menu-toggle">☰</span>
     </header>
 
-    <!-- HERO / TITULO PRINCIPAL -->
+    <!-- HERO PRINCIPAL -->
     <div class="page-hero">
         <h1>School Events</h1>
         <p>Check out all upcoming events, celebrations, and special activities at our school.</p>
     </div>
 
-    <!-- SECCIONES DE EVENTOS -->
-    <section id="upcoming-events">
-        <h2>Upcoming Events</h2>
-        <p>Here you will find all important events scheduled for the next months.</p>
-    </section>
-
-    <section id="past-events">
-        <h2>Past Events</h2>
-        <p>Highlights and memories from previous school events.</p>
-    </section>
-
-    <!-- CALENDARIO INTERACTIVO -->
-    <section id="calendar-section">
-        <h2>Event Calendar</h2>
+    <!-- CALENDARIO -->
+    <section>
         <div id="calendar"></div>
     </section>
 
@@ -148,33 +103,32 @@
         </div>
     </footer>
 
-    <!-- SCRIPT -->
-    <script type="module">
-        import { Calendar } from 'https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.esm.min.js';
-
+    <!-- SCRIPT CALENDARIO Y MENÚ HAMBURGUESA -->
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar FullCalendar
             var calendarEl = document.getElementById('calendar');
-            var calendar = new Calendar(calendarEl, {
+            var calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
+                height: 600,
                 headerToolbar: {
                     left: 'prev,next today',
                     center: 'title',
                     right: 'dayGridMonth,listWeek'
                 },
                 events: [
-                    { title: 'Campamento Primer Ciclo', start: '2025-11-25', description: 'Primer ciclo sale de campamento.' },
-                    { title: 'Campamento Primer Ciclo', start: '2025-11-26', description: 'Segundo día del campamento.' },
-                    { title: 'Exámenes Cambridge', start: '2025-11-29', description: 'Exámenes de inglés Cambridge.' },
-                    { title: 'Acto Cultural Maternal', start: '2025-12-05', description: 'Hora 8:30 en la escuela' },
+                    { title: 'Campamento Primer Ciclo', start: '2025-11-25', description: 'Evento para Primer Ciclo' },
+                    { title: 'Campamento Primer Ciclo', start: '2025-11-26', description: 'Segundo día de campamento' },
+                    { title: 'Exámenes Cambridge', start: '2025-11-29', description: 'Exámenes oficiales Cambridge' },
+                    { title: 'Acto Cultural Maternal 1 y 2 años', start: '2025-12-05', description: 'Hora 8:30 en la escuela' },
                     { title: 'Acto Cultural 3 años a 6to año', start: '2025-12-10', description: 'Teatro 28 de Febrero Hora 20' },
-                    { title: 'Entrega de carpetas', start: '2025-12-17', description: 'Maternal 1 y 2 años, Inicial 3 y 4 años - 5 años Acto de Egresados' },
-                    { title: 'Entrega de carpetas', start: '2025-12-18', description: '1er año a 6to año, Acto de Egresados 6to y entrega de carpetas de primaria' }
+                    { title: 'Entrega de carpetas – Maternal 1 y 2 años, Inicial 3 y 4 años – 5 años', start: '2025-12-17', description: 'Acto de Egresados y entrega de carpetas, Hora 19' },
+                    { title: 'Entrega de carpetas – 1er año a 6to año', start: '2025-12-18', description: 'Acto de Egresados 6to y entrega de carpetas de primaria Hora 19' },
+                    { title: 'Acto protocolar en el Club A. Independiente', start: '2025-03-22', description: 'Hora 8:30' },
                 ],
-                eventDidMount: function(info) {
-                    info.el.setAttribute('title', info.event.extendedProps.description);
-                },
-                height: 'auto',
-                contentHeight: 600,
+                eventClick: function(info) {
+                    alert(info.event.title + "\n" + info.event.extendedProps.description);
+                }
             });
             calendar.render();
 
@@ -189,3 +143,5 @@
 
 </body>
 </html>
+
+
