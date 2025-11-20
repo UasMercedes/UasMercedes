@@ -8,35 +8,30 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
-
     <!-- FullCalendar CSS -->
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="styles.css">
 
     <!-- FullCalendar JS -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
 
     <style>
-        /* HERO / TITULO PRINCIPAL */
         .page-hero {
-            background-color: #ffcccc; /* rojo clarito */
+            background-color: #ffcccc; 
             padding: 60px 20px;
             text-align: center;
         }
-
         .page-hero h1 {
-            color: #003366; /* azul oscuro */
+            color: #003366;
             font-size: 2.5rem;
             margin-bottom: 10px;
         }
-
         .page-hero p {
-            color: #336699; /* azul más claro */
+            color: #336699;
             font-size: 1.2rem;
         }
-
-        /* Contenedor del calendario */
         #calendar {
             max-width: 100%;
             margin: 20px auto;
@@ -44,10 +39,7 @@
             padding: 10px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            overflow-x: auto;
         }
-
-        /* Secciones */
         section {
             padding: 40px 20px;
             max-width: 900px;
@@ -56,20 +48,15 @@
             border-radius: 8px;
             margin-bottom: 20px;
         }
-
         section h2 {
             color: #003366;
         }
-
         section p {
             color: #333;
         }
-
-        /* Tooltip de descripción */
         .fc-event:hover {
             cursor: pointer;
         }
-
         .tooltip {
             position: absolute;
             background-color: #003366;
@@ -104,19 +91,18 @@
         <span class="menu-toggle">☰</span>
     </header>
 
-    <!-- HERO / TITULO PRINCIPAL -->
+    <!-- HERO -->
     <div class="page-hero">
         <h1>School Events</h1>
-        <p>Check out all upcoming events, celebrations, and special activities at our school.</p>
+        <p>Check out all upcoming events at our school.</p>
     </div>
 
-    <!-- CALENDARIO INTERACTIVO -->
-    <section id="calendar-section">
+    <!-- CALENDARIO -->
+    <section>
         <h2>Upcoming Events</h2>
         <div id="calendar"></div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-left">
@@ -139,14 +125,11 @@
         </div>
     </footer>
 
-    <!-- Tooltip -->
     <div class="tooltip" id="tooltip"></div>
 
-    <!-- SCRIPT -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
-            // Inicializar FullCalendar
             var calendarEl = document.getElementById('calendar');
             var tooltip = document.getElementById('tooltip');
 
@@ -155,17 +138,12 @@
                 headerToolbar: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,listWeek'
+                    right: 'dayGridMonth,listWeek'
                 },
                 events: [
                     { title: 'Campamento Primer Ciclo', start: '2025-11-25', description: 'Primer ciclo sale de campamento.' },
-                    { title: 'Campamento Primer Ciclo', start: '2025-11-26', description: 'Segundo día del campamento.' },
                     { title: 'Exámenes Cambridge', start: '2025-11-29', description: 'Exámenes de inglés Cambridge.' },
-                    { title: 'Acto Cultural Maternal 1 y 2 años', start: '2025-12-05', description: 'Hora 8:30 en la escuela' },
-                    { title: 'Acto Cultural 3 años a 6to año', start: '2025-12-10', description: 'Teatro 28 de Febrero Hora 20' },
-                    { title: 'Entrega de carpetas - Maternal 1 y 2 años, Inicial 3 y 4 años', start: '2025-12-17', description: '5 años Acto de Egresados y entrega de carpetas, Hora 19' },
-                    { title: 'Entrega de carpetas - 1er año a 6to año', start: '2025-12-18', description: 'Acto de Egresados 6to y entrega de carpetas de primaria Hora 19' },
-                    { title: 'Acto protocolar en el Club A. Independiente', start: '2025-03-22', description: 'Hora 8:30' }
+                    { title: 'Acto Cultural Maternal', start: '2025-12-05', description: 'Hora 8:30 en la escuela' }
                 ],
                 eventDidMount: function(info) {
                     info.el.addEventListener('mouseenter', function(e) {
@@ -185,9 +163,10 @@
                     });
                 }
             });
+
             calendar.render();
 
-            // Cambio de vista en móvil
+            // Ajuste móvil
             function checkResize() {
                 if(window.innerWidth < 768){
                     calendar.changeView('listWeek');
@@ -204,8 +183,10 @@
             menuToggle.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
             });
+
         });
     </script>
 
 </body>
 </html>
+
