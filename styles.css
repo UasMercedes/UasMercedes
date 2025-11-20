@@ -200,6 +200,9 @@ footer {
 
     .nav-links.active {
         display: flex;
+    transform: translateX(0);
+}
+
     }
 
     .menu-toggle {
