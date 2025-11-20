@@ -67,7 +67,6 @@
 
         /* Tooltip de descripción */
         .fc-event:hover {
-            background-color: #b30000 !important; /* rojo más intenso al pasar */
             cursor: pointer;
         }
 
@@ -80,6 +79,7 @@
             font-size: 0.9rem;
             display: none;
             z-index: 1000;
+            pointer-events: none;
         }
     </style>
 </head>
@@ -148,6 +148,8 @@
 
             // Inicializar FullCalendar
             var calendarEl = document.getElementById('calendar');
+            var tooltip = document.getElementById('tooltip');
+
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
                 headerToolbar: {
@@ -165,8 +167,22 @@
                     { title: 'Entrega de carpetas - 1er año a 6to año', start: '2025-12-18', description: 'Acto de Egresados 6to y entrega de carpetas de primaria Hora 19' },
                     { title: 'Acto protocolar en el Club A. Independiente', start: '2025-03-22', description: 'Hora 8:30' }
                 ],
-                eventClick: function(info) {
-                    alert(info.event.title + "\n" + info.event.extendedProps.description);
+                eventDidMount: function(info) {
+                    info.el.addEventListener('mouseenter', function(e) {
+                        tooltip.innerText = info.event.extendedProps.description;
+                        tooltip.style.display = 'block';
+                        tooltip.style.left = e.pageX + 10 + 'px';
+                        tooltip.style.top = e.pageY + 10 + 'px';
+                        info.el.style.backgroundColor = '#b30000';
+                    });
+                    info.el.addEventListener('mousemove', function(e) {
+                        tooltip.style.left = e.pageX + 10 + 'px';
+                        tooltip.style.top = e.pageY + 10 + 'px';
+                    });
+                    info.el.addEventListener('mouseleave', function() {
+                        tooltip.style.display = 'none';
+                        info.el.style.backgroundColor = '';
+                    });
                 }
             });
             calendar.render();
@@ -181,19 +197,6 @@
             }
             checkResize();
             window.addEventListener('resize', checkResize);
-
-            // Tooltip hover
-            const tooltip = document.getElementById('tooltip');
-            calendarEl.addEventListener('mouseover', function(e){
-                if(e.target.classList.contains('fc-event-title')){
-                    e.target.parentElement.style.backgroundColor = '#b30000';
-                }
-            });
-            calendarEl.addEventListener('mouseout', function(e){
-                if(e.target.classList.contains('fc-event-title')){
-                    e.target.parentElement.style.backgroundColor = '';
-                }
-            });
 
             // Menú hamburguesa
             const menuToggle = document.querySelector('.menu-toggle');
