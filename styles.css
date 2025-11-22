@@ -265,7 +265,7 @@ footer {
     .navbar {
         display: flex !important;
         justify-content: space-between !important;
-        align-items: center !important;
+        align-items: flex-start !important;
     }
 
     .nav-links {
