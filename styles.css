@@ -12,7 +12,6 @@ body {
 
 h1, h2 {
     color: #003366;
-    word-wrap: break-word;
 }
 
 p {
@@ -24,8 +23,10 @@ p {
 =============================== */
 .navbar {
     display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: space-between;
+    flex-wrap: nowrap;
     background: #003366;
     padding: 10px 20px;
     color: white;
@@ -35,8 +36,10 @@ p {
 
 .logo-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
+    flex-shrink: 0;
 }
 
 .logo {
@@ -48,7 +51,6 @@ p {
 .school-name {
     font-size: 1.2rem;
     font-weight: 600;
-    color: white;
 }
 
 /* MENÚ */
@@ -76,31 +78,34 @@ p {
     cursor: pointer;
     color: white;
     display: none;
-    margin-right: 10px;
+    margin-left: 0; /* Siempre a la izquierda */
 }
 
 /* ===============================
-   HERO (UNIVERSAL)
+   HERO
 =============================== */
 .hero, .page-hero {
     background-color: #ffcccc;
-    padding: 60px 20px;
+    padding: 80px 20px 40px 20px; /* más padding arriba para que no tape el menú */
     text-align: center;
     margin: 0;
     border-radius: 0;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-text h1,
 .page-hero h1 {
     color: #003366;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 10px;
+    word-wrap: break-word; /* Ajusta el texto largo */
 }
 
 .hero-text p,
 .page-hero p {
     color: #336699;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 /* ===============================
@@ -185,50 +190,44 @@ footer {
 =============================== */
 @media (max-width: 768px) {
 
-    /* Mostrar hamburguesa siempre a la izquierda */
     .menu-toggle {
         display: block;
-        order: -1; /* fuerza que quede a la izquierda del navbar */
+        order: -1; /* Siempre antes del logo y enlaces */
+        margin-right: 20px;
     }
 
     /* Menú móvil */
     .nav-links {
-        flex-direction: column;
-        position: relative;
+        display: flex;
+        position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 250px;
+        height: 100vh;
         background-color: #003366;
-        padding: 0;
-        margin: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
+        padding: 80px 20px 20px 20px; /* deja espacio para el header */
+        flex-direction: column;
+        gap: 20px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        overflow-y: auto;
     }
 
     .nav-links.active {
-        max-height: 500px; /* suficiente para todos los links */
+        transform: translateX(0);
     }
 
-    .nav-links li {
-        text-align: center;
-        padding: 15px 0;
+    /* Ajustes hero y título en móvil */
+    .hero, .page-hero {
+        padding: 120px 20px 40px 20px; /* más espacio arriba */
     }
 
-    .nav-links li a {
-        font-size: 1.2rem;
+    .hero-text h1, .page-hero h1 {
+        font-size: 1.8rem;
     }
 
-    /* Hero móvil */
-    .hero {
-        padding: 40px 20px 20px;
-    }
-
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-
-    .hero-text p {
+    .hero-text p, .page-hero p {
         font-size: 1rem;
     }
 }
@@ -242,7 +241,6 @@ footer {
         flex-direction: row !important;
         position: static !important;
         transform: none !important;
-        max-height: none !important;
         background: none !important;
         width: auto !important;
         padding: 0 !important;
