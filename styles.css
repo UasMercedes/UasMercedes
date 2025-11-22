@@ -11,7 +11,7 @@ body {
 }
 
 h1, h2 {
-    color: #003366; /* Azul institucional */
+    color: #003366;
 }
 
 p {
@@ -23,9 +23,8 @@ p {
 =============================== */
 .navbar {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
     flex-wrap: nowrap;
     background: #003366;
     padding: 10px 20px;
@@ -36,10 +35,8 @@ p {
 
 .logo-container {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 10px;
-    flex-shrink: 0;
 }
 
 .logo {
@@ -78,19 +75,17 @@ p {
     font-size: 30px;
     cursor: pointer;
     color: white;
-    margin-right: 20px;
 }
 
 /* ===============================
-   HERO (UNIVERSAL)
+   HERO
 =============================== */
 .hero, .page-hero {
     background-color: #ffcccc;
-    padding: 20px 20px;
+    padding: 20px;
     text-align: center;
     margin: 0;
     border-radius: 0;
-    max-width: 100%;
 }
 
 .hero-text h1,
@@ -185,39 +180,30 @@ footer {
 }
 
 /* ===============================
-   RESPONSIVE - CELULAR
+   RESPONSIVE
 =============================== */
 @media (max-width: 768px) {
 
-    /* Mostrar hamburguesa siempre a la izquierda */
     .menu-toggle {
         display: block;
-        order: -1; /* hamburguesa primero */
+        order: -1; /* hamburguesa siempre a la izquierda */
         margin-right: 10px;
     }
 
-    /* Menú móvil */
     .nav-links {
-        display: flex;
         flex-direction: column;
         gap: 20px;
         list-style: none;
-        position: absolute; /* debajo del navbar */
-        top: 60px; /* altura navbar */
-        left: 0;
+        display: none; /* oculto por defecto */
         width: 100%;
         background-color: #003366;
-        padding: 20px;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease;
-        z-index: 999;
+        padding: 10px 0;
     }
 
     .nav-links.active {
-        transform: translateY(0);
+        display: flex;
     }
 
-    /* Ajustes hero en móvil */
     .hero-text h1 {
         font-size: 2rem;
     }
@@ -235,10 +221,9 @@ footer {
         display: flex !important;
         flex-direction: row !important;
         position: static !important;
-        transform: none !important;
-        background: none !important;
         width: auto !important;
         padding: 0 !important;
+        background: none !important;
     }
 
     .menu-toggle {
