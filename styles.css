@@ -226,4 +226,39 @@ footer {
         font-size: 1rem;
     }
 }
+/* NAVBAR BASE */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Esto separa logo a la izquierda y menú a la derecha */
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Contenedor del logo + nombre */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* MENÚ */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+}
+
+/* En pantallas grandes, aseguramos que no se mueva */
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex !important;   /* fuerza a que aparezca horizontal */
+        flex-direction: row !important;
+    }
+
+    .menu-toggle {
+        display: none; /* oculta la hamburguesa en PC */
+    }
+}
+
 
