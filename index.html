@@ -10,27 +10,36 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* EVITA ESPACIO BLANCO A LA DERECHA EN CELULAR */
+        body {
+            overflow-x: hidden;
+        }
+    </style>
 </head>
 <body>
 
     <!-- NAVBAR -->
     <header class="navbar">
+
+        <!-- Botón hamburguesa A LA IZQUIERDA -->
+        <span class="menu-toggle">☰</span>
+
         <div class="logo-container">
             <img src="logo.jpg" alt="School Logo" class="logo">
             <span class="school-name">Uruguayan American School – Mercedes</span>
         </div>
 
-   <ul class="nav-links">
-    <li><a href="/UasMercedes/index.html" class="btn">Home</a></li>
-    <li><a href="/UasMercedes/news.html" class="btn">News</a></li>
-    <li><a href="/UasMercedes/events.html" class="btn">Events</a></li>
-    <li><a href="/UasMercedes/gallery.html" class="btn">Gallery</a></li>
-    <li><a href="/UasMercedes/info.html" class="btn">Information</a></li>
-    <li><a href="/UasMercedes/contact.html" class="btn">Contact</a></li>
-</ul>
+        <ul class="nav-links">
+            <li><a href="/UasMercedes/index.html" class="btn">Home</a></li>
+            <li><a href="/UasMercedes/news.html" class="btn">News</a></li>
+            <li><a href="/UasMercedes/events.html" class="btn">Events</a></li>
+            <li><a href="/UasMercedes/gallery.html" class="btn">Gallery</a></li>
+            <li><a href="/UasMercedes/info.html" class="btn">Information</a></li>
+            <li><a href="/UasMercedes/contact.html" class="btn">Contact</a></li>
+        </ul>
 
-
-        <span class="menu-toggle">☰</span>
     </header>
 
     <!-- HERO SECTION -->
@@ -91,6 +100,7 @@
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
+
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
@@ -98,3 +108,4 @@
 
 </body>
 </html>
+
