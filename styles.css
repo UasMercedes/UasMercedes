@@ -19,11 +19,14 @@ p {
 /* ===============================
    NAVBAR
 =============================== */
+
 .navbar {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background: #003366; /* Azul institucional */
+    flex-wrap: nowrap;
+    background: #003366;
     padding: 10px 20px;
     color: white;
     position: relative;
@@ -31,8 +34,10 @@ p {
 
 .logo-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
+    flex-shrink: 0;
 }
 
 .logo {
@@ -46,11 +51,13 @@ p {
     font-weight: 600;
 }
 
-/* Enlaces visibles en PC */
+/* MENÚ */
 .nav-links {
     display: flex;
     gap: 20px;
     list-style: none;
+    align-items: center;
+    margin-left: auto;
 }
 
 .nav-links li a {
@@ -63,44 +70,50 @@ p {
     text-decoration: underline;
 }
 
-/* Botón menú hamburguesa - oculto en PC */
+/* Botón menú hamburguesa */
 .menu-toggle {
     display: none;
     font-size: 30px;
     cursor: pointer;
 }
 
+
 /* ===============================
-   HERO / TITULO PRINCIPAL
+   HERO (UNIVERSAL)
 =============================== */
-.page-hero {
-    background-color: #ffcccc;
-      padding: 10px 20px;
+
+.hero, .page-hero {
+    background-color: #ffcccc; /* rojo clarito */
+    padding: 40px 20px;
     text-align: center;
+    margin: 0;          /* elimina márgenes */
+    border-radius: 0;   /* elimina bordes redondeados */
+    max-width: 100%;    /* ocupa ancho total */
 }
 
-
+.hero-text h1,
 .page-hero h1 {
-    color: #003366; /* azul oscuro */
+    color: #003366;
     font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
+.hero-text p,
 .page-hero p {
-    color: #336699; /* azul más claro */
+    color: #336699;
     font-size: 1.2rem;
 }
 
+
 /* ===============================
-   SECCIONES
+   SECCIONES GENERALES
 =============================== */
 section {
     padding: 40px 20px;
     max-width: 900px;
-    margin: auto;
-    background-color: #fff; /* fondo blanco para secciones */
+    margin: 20px auto;
+    background-color: #fff;
     border-radius: 8px;
-    margin-bottom: 20px;
 }
 
 section h2 {
@@ -111,13 +124,14 @@ section p {
     color: #333;
 }
 
+
 /* ===============================
    BOTONES PREMIUM
 =============================== */
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background: #003366; /* azul institucional */
+    background: #003366;
     color: white;
     text-decoration: none;
     border-radius: 12px;
@@ -126,11 +140,11 @@ section p {
     box-shadow: 0 4px 6px rgba(0,0,0,0.15);
     transition: all 0.3s ease;
     border: 2px solid #003366;
-    margin: 0 5px; /* un poquito de espacio entre botones */
+    margin: 0 5px;
 }
 
 .btn:hover {
-    background: #b30000; /* rojo institucional */
+    background: #b30000;
     border-color: #b30000;
     color: white;
     transform: translateY(-2px);
@@ -142,11 +156,12 @@ section p {
     box-shadow: 0 4px 6px rgba(0,0,0,0.15);
 }
 
+
 /* ===============================
    FOOTER
 =============================== */
 footer {
-    background: #003366; /* azul institucional */
+    background: #003366;
     color: white;
     padding: 20px;
 }
@@ -167,12 +182,6 @@ footer {
     width: auto;
 }
 
-.footer-bottom {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 0.9rem;
-}
-
 .social-icons a {
     margin-right: 10px;
     color: white;
@@ -180,43 +189,44 @@ footer {
     font-size: 1.5rem;
 }
 
+
 /* ===============================
    RESPONSIVE - CELULAR
 =============================== */
+
 @media (max-width: 768px) {
-    .nav-links {
-    position: absolute;
-    top: 80px;
-    left: 0;             /* Ahora se posiciona a la izquierda */
-    right: auto;         /* Quitamos el lado derecho */
-    width: 200px;        /* Ajusta si querés */
-    background-color: #003366; 
-    padding: 20px;
-    flex-direction: column;
-    gap: 20px;
-    transform: translateX(-100%); /* Ocultamos hacia la izquierda */
-    transition: transform 0.3s ease;
-    z-index: 999;
-    }
 
-    .nav-links.active {
-        display: flex;
-    transform: translateX(0);
-}
-
+    .navbar {
+        flex-direction: row;
+        align-items: center;
     }
 
     .menu-toggle {
         display: block;
+        color: white;
     }
 
-    .navbar {
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: auto;
+        width: 200px;
+        background-color: #003366;
+        padding: 20px;
         flex-direction: column;
-        align-items: flex-start;
+        gap: 20px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
     }
 
     .hero {
-        height: 300px;
+        padding: 40px 20px;
     }
 
     .hero-text h1 {
@@ -227,92 +237,21 @@ footer {
         font-size: 1rem;
     }
 }
-/* NAVBAR BASE */
-.navbar {
-    display: flex;
-    justify-content: space-between; /* Esto separa logo a la izquierda y menú a la derecha */
-    align-items: center;
-    padding: 10px 20px;
-}
 
-/* Contenedor del logo + nombre */
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
 
-/* MENÚ */
-.nav-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    align-items: center;
-}
+/* ===============================
+   DESKTOP FORZADO (MENÚ A LA DERECHA)
+=============================== */
 
-/* En pantallas grandes, aseguramos que no se mueva */
 @media (min-width: 769px) {
-    .nav-links {
-        display: flex !important;   /* fuerza a que aparezca horizontal */
-        flex-direction: row !important;
-    }
-
-    .menu-toggle {
-        display: none; /* oculta la hamburguesa en PC */
-    }
-}
-/* FORZAR MENÚ A LA DERECHA EN PC */
-@media (min-width: 769px) {
-    .navbar {
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: flex-start !important;
-    }
-
     .nav-links {
         display: flex !important;
         flex-direction: row !important;
-        margin-left: auto !important;  /* esto empuja los botones a la derecha */
     }
 
     .menu-toggle {
         display: none !important;
     }
 }
-/* --- REPARACIÓN DEL HEADER EN ESCRITORIO --- */
-
-.navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap; /* evita que el logo o el menú salten a otra fila */
-}
-
-/* logo + nombre juntos y alineados */
-.logo-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0; /* evita que se achiquen */
-}
-
-/* menú alineado a la derecha */
-.nav-links {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    list-style: none;
-    margin-left: auto; /* empuja el menú hacia la derecha */
-}
-
-/* ocultar hamburguesa en PC */
-@media (min-width: 769px) {
-    .menu-toggle {
-        display: none;
-    }
-}
-
 
 
