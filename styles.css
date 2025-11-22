@@ -260,5 +260,23 @@ footer {
         display: none; /* oculta la hamburguesa en PC */
     }
 }
+/* FORZAR MENÚ A LA DERECHA EN PC */
+@media (min-width: 769px) {
+    .navbar {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .nav-links {
+        display: flex !important;
+        flex-direction: row !important;
+        margin-left: auto !important;  /* esto empuja los botones a la derecha */
+    }
+
+    .menu-toggle {
+        display: none !important;
+    }
+}
 
 
