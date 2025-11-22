@@ -278,5 +278,40 @@ footer {
         display: none !important;
     }
 }
+/* --- REPARACIÓN DEL HEADER EN ESCRITORIO --- */
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap; /* evita que el logo o el menú salten a otra fila */
+}
+
+/* logo + nombre juntos y alineados */
+.logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0; /* evita que se achiquen */
+}
+
+/* menú alineado a la derecha */
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+    margin-left: auto; /* empuja el menú hacia la derecha */
+}
+
+/* ocultar hamburguesa en PC */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
 
 
