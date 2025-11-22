@@ -75,7 +75,7 @@ p {
 =============================== */
 .page-hero {
     background-color: #ffcccc;
-    padding: 20px 20px; /* antes 60px */
+      padding: 10px 20px;
     text-align: center;
 }
 
