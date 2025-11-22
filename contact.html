@@ -16,23 +16,23 @@
 
     <!-- NAVBAR -->
     <header class="navbar">
+        <!-- Botón hamburguesa -->
+        <span class="menu-toggle">☰</span>
+
         <div class="logo-container">
             <img src="logo.jpg" alt="Logo UAS Mercedes" class="logo" width="120">
             <span class="school-name">Uruguayan American School Mercedes</span>
         </div>
 
-   <ul class="nav-links">
-    <li><a href="index.html" class="btn">Home</a></li>
-    <li><a href="news.html" class="btn">News</a></li>
-    <li><a href="events.html" class="btn">Events</a></li>
-    <li><a href="gallery.html" class="btn">Gallery</a></li>
-    <li><a href="info.html" class="btn">Information</a></li>
-    <li><a href="contact.html" class="btn">Contact</a></li>
-</ul>
-
-
+        <ul class="nav-links">
+            <li><a href="index.html" class="btn">Home</a></li>
+            <li><a href="news.html" class="btn">News</a></li>
+            <li><a href="events.html" class="btn">Events</a></li>
+            <li><a href="gallery.html" class="btn">Gallery</a></li>
+            <li><a href="info.html" class="btn">Information</a></li>
+            <li><a href="contact.html" class="btn">Contact</a></li>
+        </ul>
     </header>
-
 
     <!-- HERO SECTION -->
     <section class="hero">
@@ -65,7 +65,6 @@
             <button type="submit" class="btn">Send Message</button>
         </form>
 
-    
         <h2>Our Location</h2>
         <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.128447560481!2d-58.034285!3d-33.262017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95826e91b178ff5f%3A0x7b7a223bda23b3c6!2s18%20De%20Julio%20538%2C%20Mercedes!5e0!3m2!1sen!2suy!4v1700000000000!5m2!1sen!2suy" 
@@ -102,6 +101,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- SCRIPT MENÚ HAMBURGUESA -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 
 </body>
 </html>
