@@ -11,7 +11,7 @@ body {
 }
 
 h1, h2 {
-    color: #003366;
+    color: #003366; /* Azul institucional */
 }
 
 p {
@@ -23,19 +23,22 @@ p {
 =============================== */
 .navbar {
     display: flex;
+    flex-direction: row;
     align-items: center;
     flex-wrap: nowrap;
     background: #003366;
     padding: 10px 20px;
     color: white;
     position: relative;
-    z-index: 1000; /* navbar sobre todo */
+    z-index: 1000;
 }
 
 .logo-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
+    flex-shrink: 0;
 }
 
 .logo {
@@ -47,6 +50,7 @@ p {
 .school-name {
     font-size: 1.2rem;
     font-weight: 600;
+    color: white;
 }
 
 /* MENÚ */
@@ -54,6 +58,7 @@ p {
     display: flex;
     gap: 20px;
     list-style: none;
+    align-items: center;
     margin-left: auto;
 }
 
@@ -69,19 +74,25 @@ p {
 
 /* Ícono menú hamburguesa */
 .menu-toggle {
-    display: none;
     font-size: 30px;
     cursor: pointer;
     color: white;
+    display: none;
+    margin-left: 20px; /* Siempre a la izquierda del navbar */
 }
 
 /* ===============================
-   HERO
+   HERO (UNIVERSAL)
 =============================== */
 .hero, .page-hero {
     background-color: #ffcccc;
-    padding: 20px;
+    padding: 60px 20px 40px; /* más espacio arriba para no tapar */
     text-align: center;
+    margin: 0;
+    border-radius: 0;
+    max-width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-text h1,
@@ -89,6 +100,7 @@ p {
     color: #003366;
     font-size: 2.5rem;
     margin-bottom: 10px;
+    word-wrap: break-word;
 }
 
 .hero-text p,
@@ -179,41 +191,38 @@ footer {
 =============================== */
 @media (max-width: 768px) {
 
+    /* Mostrar hamburguesa */
     .menu-toggle {
         display: block;
-        margin-left: auto;
+        order: -1; /* siempre a la izquierda */
     }
 
+    /* Menú móvil */
     .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #003366;
+        display: flex;
         flex-direction: column;
-        display: none;
-        padding: 10px 0;
-        z-index: 999;
-    }
-
-    .nav-links li {
-        text-align: center;
-        margin: 10px 0;
+        position: fixed;
+        top: 0;
+        left: -250px; /* fuera de la pantalla inicialmente */
+        width: 250px;
+        height: 100vh;
+        background-color: #003366;
+        padding-top: 80px;
+        gap: 20px;
+        transition: left 0.3s ease;
+        z-index: 9999;
     }
 
     .nav-links.active {
-        display: flex;
+        left: 0; /* se despliega desde la izquierda */
     }
 
-    .hero-text h1,
-    .page-hero h1 {
-        font-size: 1.8rem;
-        line-height: 1.2;
-        word-wrap: break-word;
+    /* Ajustes hero en móvil */
+    .hero-text h1 {
+        font-size: 2rem;
     }
 
-    .hero-text p,
-    .page-hero p {
+    .hero-text p {
         font-size: 1rem;
     }
 }
@@ -226,6 +235,8 @@ footer {
         display: flex !important;
         flex-direction: row !important;
         position: static !important;
+        transform: none !important;
+        background: none !important;
         width: auto !important;
         padding: 0 !important;
     }
