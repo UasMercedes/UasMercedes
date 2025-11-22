@@ -11,7 +11,7 @@ body {
 }
 
 h1, h2 {
-    color: #003366; /* Azul institucional */
+    color: #003366;
 }
 
 p {
@@ -23,9 +23,8 @@ p {
 =============================== */
 .navbar {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    flex-wrap: nowrap;
+    justify-content: space-between;
     background: #003366;
     padding: 10px 20px;
     color: white;
@@ -35,10 +34,8 @@ p {
 
 .logo-container {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 10px;
-    flex-shrink: 0;
 }
 
 .logo {
@@ -78,7 +75,6 @@ p {
     cursor: pointer;
     color: white;
     display: none;
-    margin-left: 20px; /* Siempre a la izquierda del navbar */
 }
 
 /* ===============================
@@ -86,13 +82,10 @@ p {
 =============================== */
 .hero, .page-hero {
     background-color: #ffcccc;
-    padding: 60px 20px 40px; /* más espacio arriba para no tapar */
+    padding: 60px 20px;
     text-align: center;
     margin: 0;
     border-radius: 0;
-    max-width: 100%;
-    position: relative;
-    z-index: 1;
 }
 
 .hero-text h1,
@@ -191,33 +184,41 @@ footer {
 =============================== */
 @media (max-width: 768px) {
 
-    /* Mostrar hamburguesa */
     .menu-toggle {
         display: block;
-        order: -1; /* siempre a la izquierda */
     }
 
     /* Menú móvil */
     .nav-links {
-        display: flex;
         flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: -250px; /* fuera de la pantalla inicialmente */
-        width: 250px;
-        height: 100vh;
+        position: absolute;
+        top: 100%; /* justo debajo del navbar */
+        left: 0;
+        width: 100%;
         background-color: #003366;
-        padding-top: 80px;
-        gap: 20px;
-        transition: left 0.3s ease;
-        z-index: 9999;
+        padding: 20px 0;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
     }
 
     .nav-links.active {
-        left: 0; /* se despliega desde la izquierda */
+        transform: translateY(0);
     }
 
-    /* Ajustes hero en móvil */
+    .nav-links li {
+        text-align: center;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+    }
+
+    /* Ajustes hero para móvil */
+    .hero {
+        padding: 40px 20px 20px; /* menos padding arriba */
+    }
+
     .hero-text h1 {
         font-size: 2rem;
     }
@@ -245,5 +246,6 @@ footer {
         display: none !important;
     }
 }
+
 
 
