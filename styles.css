@@ -53,7 +53,7 @@ p {
 
 /* MENÚ */
 .nav-links {
-    display: flex;
+    display: none; /* OCULTO por defecto -> NECESARIO para móvil */
     gap: 20px;
     list-style: none;
     align-items: center;
@@ -70,25 +70,25 @@ p {
     text-decoration: underline;
 }
 
-/* Botón menú hamburguesa */
+/* Ícono menú hamburguesa */
 .menu-toggle {
     display: none;
     font-size: 30px;
     cursor: pointer;
+    color: white;
 }
-
 
 /* ===============================
    HERO (UNIVERSAL)
 =============================== */
 
 .hero, .page-hero {
-    background-color: #ffcccc; /* rojo clarito */
-    padding: 40px 20px;
+    background-color: #ffcccc;
+    padding: 50px 20px;
     text-align: center;
-    margin: 0;          /* elimina márgenes */
-    border-radius: 0;   /* elimina bordes redondeados */
-    max-width: 100%;    /* ocupa ancho total */
+    margin: 0;
+    border-radius: 0;
+    max-width: 100%;
 }
 
 .hero-text h1,
@@ -103,7 +103,6 @@ p {
     color: #336699;
     font-size: 1.2rem;
 }
-
 
 /* ===============================
    SECCIONES GENERALES
@@ -124,9 +123,8 @@ section p {
     color: #333;
 }
 
-
 /* ===============================
-   BOTONES PREMIUM
+   BOTONES
 =============================== */
 .btn {
     display: inline-block;
@@ -150,12 +148,6 @@ section p {
     transform: translateY(-2px);
     box-shadow: 0 6px 10px rgba(0,0,0,0.25);
 }
-
-.btn:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-}
-
 
 /* ===============================
    FOOTER
@@ -189,28 +181,21 @@ footer {
     font-size: 1.5rem;
 }
 
-
 /* ===============================
    RESPONSIVE - CELULAR
 =============================== */
 
 @media (max-width: 768px) {
 
-    .navbar {
-        flex-direction: row;
-        align-items: center;
-    }
-
     .menu-toggle {
         display: block;
-        color: white;
     }
 
     .nav-links {
+        display: flex;
         position: absolute;
         top: 80px;
         left: 0;
-        right: auto;
         width: 200px;
         background-color: #003366;
         padding: 20px;
@@ -225,10 +210,6 @@ footer {
         transform: translateX(0);
     }
 
-    .hero {
-        padding: 40px 20px;
-    }
-
     .hero-text h1 {
         font-size: 2rem;
     }
@@ -238,20 +219,26 @@ footer {
     }
 }
 
-
 /* ===============================
-   DESKTOP FORZADO (MENÚ A LA DERECHA)
+   DESKTOP
 =============================== */
 
 @media (min-width: 769px) {
+
     .nav-links {
         display: flex !important;
         flex-direction: row !important;
+        position: static !important;
+        transform: none !important;
+        background: none !important;
+        width: auto !important;
+        padding: 0 !important;
     }
 
     .menu-toggle {
         display: none !important;
     }
 }
+
 
 
