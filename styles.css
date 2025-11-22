@@ -23,8 +23,10 @@ p {
 =============================== */
 .navbar {
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
     background: #003366;
     padding: 10px 20px;
     color: white;
@@ -34,8 +36,10 @@ p {
 
 .logo-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
+    flex-shrink: 0;
 }
 
 .logo {
@@ -54,8 +58,8 @@ p {
     display: flex;
     gap: 20px;
     list-style: none;
-    margin-left: auto;
     align-items: center;
+    margin-left: auto;
 }
 
 .nav-links li a {
@@ -70,11 +74,11 @@ p {
 
 /* Ícono menú hamburguesa */
 .menu-toggle {
+    display: none;
     font-size: 30px;
     cursor: pointer;
     color: white;
-    display: none;
-    margin-right: 10px; /* separación del logo */
+    margin-right: 20px;
 }
 
 /* ===============================
@@ -82,7 +86,7 @@ p {
 =============================== */
 .hero, .page-hero {
     background-color: #ffcccc;
-    padding: 40px 20px 20px 20px; /* más arriba para separarlo del navbar */
+    padding: 20px 20px;
     text-align: center;
     margin: 0;
     border-radius: 0;
@@ -94,7 +98,7 @@ p {
     color: #003366;
     font-size: 2.5rem;
     margin-bottom: 10px;
-    word-wrap: break-word; /* evita que el título se corte */
+    word-wrap: break-word;
 }
 
 .hero-text p,
@@ -143,6 +147,7 @@ section p {
 .btn:hover {
     background: #b30000;
     border-color: #b30000;
+    color: white;
     transform: translateY(-2px);
     box-shadow: 0 6px 10px rgba(0,0,0,0.25);
 }
@@ -184,31 +189,32 @@ footer {
 =============================== */
 @media (max-width: 768px) {
 
-    /* Mostrar hamburguesa */
+    /* Mostrar hamburguesa siempre a la izquierda */
     .menu-toggle {
         display: block;
+        order: -1; /* hamburguesa primero */
+        margin-right: 10px;
     }
 
     /* Menú móvil */
     .nav-links {
         display: flex;
         flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 250px;
-        height: 100vh;
-        background-color: #003366;
-        padding-top: 80px; /* separa del navbar */
-        padding-left: 20px;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
         gap: 20px;
-        z-index: 9999;
+        list-style: none;
+        position: absolute; /* debajo del navbar */
+        top: 60px; /* altura navbar */
+        left: 0;
+        width: 100%;
+        background-color: #003366;
+        padding: 20px;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
     }
 
     .nav-links.active {
-        transform: translateX(0);
+        transform: translateY(0);
     }
 
     /* Ajustes hero en móvil */
