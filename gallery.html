@@ -16,20 +16,22 @@
 
     <!-- NAVBAR -->
     <header class="navbar">
+        <!-- Botón hamburguesa -->
+        <span class="menu-toggle">☰</span>
+
         <div class="logo-container">
             <img src="logo.jpg" alt="Logo UAS Mercedes" class="logo" width="120">
             <span class="school-name">Uruguayan American School Mercedes</span>
         </div>
 
-   <ul class="nav-links">
-    <li><a href="/UasMercedes/index.html" class="btn">Home</a></li>
-    <li><a href="/UasMercedes/news.html" class="btn">News</a></li>
-    <li><a href="/UasMercedes/events.html" class="btn">Events</a></li>
-    <li><a href="/UasMercedes/gallery.html" class="btn">Gallery</a></li>
-    <li><a href="/UasMercedes/info.html" class="btn">Information</a></li>
-    <li><a href="/UasMercedes/contact.html" class="btn">Contact</a></li>
-</ul>
-
+        <ul class="nav-links">
+            <li><a href="/UasMercedes/index.html" class="btn">Home</a></li>
+            <li><a href="/UasMercedes/news.html" class="btn">News</a></li>
+            <li><a href="/UasMercedes/events.html" class="btn">Events</a></li>
+            <li><a href="/UasMercedes/gallery.html" class="btn">Gallery</a></li>
+            <li><a href="/UasMercedes/info.html" class="btn">Information</a></li>
+            <li><a href="/UasMercedes/contact.html" class="btn">Contact</a></li>
+        </ul>
     </header>
 
     <!-- HERO SECTION -->
@@ -78,5 +80,16 @@
         </div>
     </footer>
 
+    <!-- SCRIPT MENÚ HAMBURGUESA -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
 </body>
 </html>
+
