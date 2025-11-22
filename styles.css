@@ -24,13 +24,12 @@ p {
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     flex-wrap: nowrap;
     background: #003366;
     padding: 10px 20px;
     color: white;
     position: relative;
-    z-index: 1000;
+    z-index: 1000; /* navbar sobre todo */
 }
 
 .logo-container {
@@ -55,7 +54,6 @@ p {
     display: flex;
     gap: 20px;
     list-style: none;
-    align-items: center;
     margin-left: auto;
 }
 
@@ -84,8 +82,6 @@ p {
     background-color: #ffcccc;
     padding: 20px;
     text-align: center;
-    margin: 0;
-    border-radius: 0;
 }
 
 .hero-text h1,
@@ -93,7 +89,6 @@ p {
     color: #003366;
     font-size: 2.5rem;
     margin-bottom: 10px;
-    word-wrap: break-word;
 }
 
 .hero-text p,
@@ -180,35 +175,45 @@ footer {
 }
 
 /* ===============================
-   RESPONSIVE
+   RESPONSIVE - CELULAR
 =============================== */
 @media (max-width: 768px) {
 
     .menu-toggle {
         display: block;
-        order: -1; /* hamburguesa siempre a la izquierda */
-        margin-right: 10px;
+        margin-left: auto;
     }
 
     .nav-links {
-        flex-direction: column;
-        gap: 20px;
-        list-style: none;
-        display: none; /* oculto por defecto */
+        position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
         background-color: #003366;
+        flex-direction: column;
+        display: none;
         padding: 10px 0;
+        z-index: 999;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 10px 0;
     }
 
     .nav-links.active {
         display: flex;
     }
 
-    .hero-text h1 {
-        font-size: 2rem;
+    .hero-text h1,
+    .page-hero h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        word-wrap: break-word;
     }
 
-    .hero-text p {
+    .hero-text p,
+    .page-hero p {
         font-size: 1rem;
     }
 }
@@ -223,15 +228,11 @@ footer {
         position: static !important;
         width: auto !important;
         padding: 0 !important;
-        background: none !important;
     }
 
     .menu-toggle {
         display: none !important;
     }
 }
-
-
-
 
 
