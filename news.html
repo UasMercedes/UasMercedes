@@ -16,21 +16,21 @@
 
     <!-- NAVBAR -->
     <header class="navbar">
+        <span class="menu-toggle">☰</span> <!-- Menú hamburguesa -->
+
         <div class="logo-container">
             <img src="logo.jpg" alt="Logo UAS Mercedes" class="logo" width="120">
             <span class="school-name">Uruguayan American School Mercedes</span>
         </div>
 
         <ul class="nav-links">
-    <li><a href="index.html" class="btn">Home</a></li>
-    <li><a href="news.html" class="btn">News</a></li>
-    <li><a href="events.html" class="btn">Events</a></li>
-    <li><a href="gallery.html" class="btn">Gallery</a></li>
-    <li><a href="info.html" class="btn">Information</a></li>
-    <li><a href="contact.html" class="btn">Contact</a></li>
-</ul>
-
-
+            <li><a href="index.html" class="btn">Home</a></li>
+            <li><a href="news.html" class="btn">News</a></li>
+            <li><a href="events.html" class="btn">Events</a></li>
+            <li><a href="gallery.html" class="btn">Gallery</a></li>
+            <li><a href="info.html" class="btn">Information</a></li>
+            <li><a href="contact.html" class="btn">Contact</a></li>
+        </ul>
     </header>
 
     <!-- HERO SECTION -->
@@ -89,6 +89,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- SCRIPT MENÚ HAMBURGUESA -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 
 </body>
 </html>
