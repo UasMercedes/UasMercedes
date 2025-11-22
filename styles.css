@@ -74,10 +74,11 @@ p {
    HERO / TITULO PRINCIPAL
 =============================== */
 .page-hero {
-    background-color: #ffcccc; /* rojo clarito */
-    padding: 60px 20px;
+    background-color: #ffcccc;
+    padding: 20px 20px; /* antes 60px */
     text-align: center;
 }
+
 
 .page-hero h1 {
     color: #003366; /* azul oscuro */
