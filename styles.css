@@ -192,33 +192,35 @@ footer {
         display: block;
     }
 
-    /* Menú móvil */
+    /* Menú móvil que empuja contenido */
     .nav-links {
         display: flex;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 250px;
-        height: 100vh;
-        background-color: #003366;
-        padding: 60px 20px;
         flex-direction: column;
-        gap: 20px;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        z-index: 999;
+        gap: 15px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        width: 100%;
+        background-color: #003366;
+        padding: 0 20px;
+        margin-top: 10px; /* separa del logo */
     }
 
     .nav-links.active {
-        transform: translateX(0);
+        max-height: 500px; /* suficiente para mostrar todos los links */
+        padding: 20px;
     }
 
     /* Ajustes hero en móvil */
-    .hero-text h1 {
-        font-size: 2rem;
+    .hero-text h1,
+    .page-hero h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        word-wrap: break-word;
     }
 
-    .hero-text p {
+    .hero-text p,
+    .page-hero p {
         font-size: 1rem;
     }
 }
@@ -241,7 +243,6 @@ footer {
         display: none !important;
     }
 }
-
 
 
 
