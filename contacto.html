@@ -121,30 +121,38 @@
         });
     </script>
 
-    <!-- EmailJS envío -->
-   <script>
+  <!-- EmailJS envío -->
+<script>
 document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    // 1) Notificación a la escuela
-    emailjs.send("service_uasmercedes", "template_1a6rlun", {
-        nombre: this.nombre.value,
-        email: this.email.value,
-        mensaje: this.mensaje.value
+    const nombre = this.nombre.value;
+    const email = this.email.value;
+    const mensaje = this.mensaje.value;
+
+    // Envío a la escuela (template_1a6rlun)
+    const promEscuela = emailjs.send("service_uasmercedes", "template_1a6rlun", {
+        name: nombre,          // coincide con {{name}}
+        email: email,          // coincide con {{email}} (Reply To)
+        message: mensaje,      // coincide con {{message}}
+        title: "Consulta web"  // rellena {{title}} del asunto
     });
 
-    // 2) Auto-reply al usuario
-    emailjs.send("service_uasmercedes", "template_d1kkoho", {
-        email: this.email.value
+    // Auto-reply al usuario (template_d1kkoho)
+    const promAutoReply = emailjs.send("service_uasmercedes", "template_d1kkoho", {
+        email: email           // para {{email}} en el Auto-Reply
     });
- .then(function() {
-        alert("Mensaje enviado correctamente.");
-    }, function(error) {
-        console.log("ERROR EMAILJS:", error);
-        alert("Error al enviar el mensaje. Verifique la configuración.");
+
+    Promise.all([promEscuela, promAutoReply])
+        .then(function() {
+            alert("Mensaje enviado correctamente.");
+        })
+        .catch(function(error) {
+            console.log("ERROR EMAILJS:", error);
+            alert("Error al enviar el mensaje. Verifique la configuración.");
+        });
 });
 </script>
-
 
 </body>
 </html>
