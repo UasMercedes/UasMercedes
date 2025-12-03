@@ -122,22 +122,26 @@
     </script>
 
     <!-- EmailJS envío -->
-    <script>
-    document.getElementById("contactForm").addEventListener("submit", function(event){
-        event.preventDefault();
+   <script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-        emailjs.send("service_uasmercedes", "template_d1kkoho", {
-            nombre: this.nombre.value,
-            email: this.email.value,
-            mensaje: this.mensaje.value
-        })
-        .then(function() {
-            alert("Mensaje enviado correctamente.");
-        }, function(error) {
-            alert("Error al enviar el mensaje. Verifique la configuración.");
-        });
+    // 1) Notificación a la escuela
+    emailjs.send("service_uasmercedes", "template_1a6rlun", {
+        nombre: this.nombre.value,
+        email: this.email.value,
+        mensaje: this.mensaje.value
     });
-    </script>
+
+    // 2) Auto-reply al usuario
+    emailjs.send("service_uasmercedes", "template_d1kkoho", {
+        email: this.email.value
+    });
+
+    alert("Mensaje enviado correctamente.");
+});
+</script>
+
 
 </body>
 </html>
