@@ -137,8 +137,11 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     emailjs.send("service_uasmercedes", "template_d1kkoho", {
         email: this.email.value
     });
-
-    alert("Mensaje enviado correctamente.");
+ .then(function() {
+        alert("Mensaje enviado correctamente.");
+    }, function(error) {
+        console.log("ERROR EMAILJS:", error);
+        alert("Error al enviar el mensaje. Verifique la configuración.");
 });
 </script>
 
