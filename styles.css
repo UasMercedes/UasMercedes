@@ -92,7 +92,7 @@ p {
 .hero-text h1,
 .page-hero h1 {
     color: #003366;
-    font-size: clamp(10px, 4vw, 42px);
+    font-size: clamp(24px, 6vw, 42px);
     margin-bottom: 10px;
     overflow-wrap: anywhere;
 }
@@ -141,52 +141,29 @@ section {
 footer {
     background: #003366;
     color: white;
-    padding: 30px 20px;
+    padding: 20px;
 }
 
 .footer-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
-.footer-left,
-.footer-center,
-.footer-right {
-    flex: 1 1 250px;       /* Se acomodan solos */
-    min-width: 250px;      /* Evita que se aplasten */
-}
-
-.footer-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+.footer-left, .footer-center, .footer-right {
+    flex: 1;
+    margin: 10px;
 }
 
 .footer-logo {
-    height: 60px;
-    margin-bottom: 10px;
+    height: 50px;
 }
 
-.footer-school-name {
-    margin-top: 5px;
-    font-weight: bold;
+.social-icons a {
+    margin-right: 10px;
+    color: white;
+    font-size: 1.5rem;
 }
-
-.footer-center p {
-    margin: 6px 0;
-}
-
-.footer-right {
-    text-align: center;
-}
-
-.social-ico
-
 
 /* ===============================
    RESPONSIVE - CELULAR
@@ -227,16 +204,10 @@ footer {
     .hero, .page-hero {
         padding-top: 120px;
     }
-.hero-text h1,
-.page-hero h1 {
-    white-space: nowrap;           /* Siempre en una línea */
-    overflow: hidden;
-    font-size: clamp(14px, 5vw, 42px); /* Se achica automáticamente según el espacio */
-    text-align: center;
-    line-height: 1.2;
-}
 
-
+    .hero-text h1, .page-hero h1 {
+        font-size: 1.8rem;
+    }
 
     .school-name {
         font-size: 1rem;
@@ -259,4 +230,5 @@ footer {
         display: none !important;
     }
 }
+
 
