@@ -23,42 +23,50 @@ p {
 =============================== */
 .navbar {
     display: flex;
-    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    flex-wrap: nowrap;
     background: #003366;
-    padding: 10px 20px;
+    padding: 12px 20px;
     color: white;
     position: relative;
     z-index: 1000;
 }
 
+/* Botón hamburguesa */
+.menu-toggle {
+    font-size: 32px;
+    cursor: pointer;
+    color: white;
+    display: none;
+    margin-right: 15px;
+}
+
+/* Logo + nombre */
 .logo-container {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 10px;
-    flex-shrink: 0;
+    flex-shrink: 1;
 }
 
 .logo {
-    height: 60px;
+    height: 55px;
     width: auto;
     border-radius: 5px;
 }
 
 .school-name {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 600;
+    overflow-wrap: anywhere;
+    max-width: 200px;
 }
 
-/* MENÚ */
+/* Enlaces */
 .nav-links {
+    list-style: none;
     display: flex;
     gap: 20px;
-    list-style: none;
-    align-items: center;
     margin-left: auto;
 }
 
@@ -72,34 +80,21 @@ p {
     text-decoration: underline;
 }
 
-/* Ícono menú hamburguesa */
-.menu-toggle {
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
-    display: none;
-    margin-left: 0; /* Siempre a la izquierda */
-}
-
 /* ===============================
    HERO
 =============================== */
 .hero, .page-hero {
     background-color: #ffcccc;
-    padding: 80px 20px 40px 20px; /* más padding arriba para que no tape el menú */
+    padding: 80px 20px 40px 20px;
     text-align: center;
-    margin: 0;
-    border-radius: 0;
-    max-width: 100%;
-    box-sizing: border-box;
 }
 
 .hero-text h1,
 .page-hero h1 {
     color: #003366;
-    font-size: 2rem;
+    font-size: clamp(24px, 6vw, 42px);
     margin-bottom: 10px;
-    word-wrap: break-word; /* Ajusta el texto largo */
+    overflow-wrap: anywhere;
 }
 
 .hero-text p,
@@ -119,14 +114,6 @@ section {
     border-radius: 8px;
 }
 
-section h2 {
-    color: #003366;
-}
-
-section p {
-    color: #333;
-}
-
 /* ===============================
    BOTONES
 =============================== */
@@ -139,18 +126,13 @@ section p {
     border-radius: 12px;
     font-weight: 600;
     font-size: 1rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-    transition: all 0.3s ease;
-    border: 2px solid #003366;
     margin: 0 5px;
+    transition: 0.3s ease;
 }
 
 .btn:hover {
     background: #b30000;
     border-color: #b30000;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 10px rgba(0,0,0,0.25);
 }
 
 /* ===============================
@@ -175,13 +157,11 @@ footer {
 
 .footer-logo {
     height: 50px;
-    width: auto;
 }
 
 .social-icons a {
     margin-right: 10px;
     color: white;
-    text-decoration: none;
     font-size: 1.5rem;
 }
 
@@ -192,43 +172,46 @@ footer {
 
     .menu-toggle {
         display: block;
-        order: -1; /* Siempre antes del logo y enlaces */
-        margin-right: 20px;
     }
 
-    /* Menú móvil */
+    /* Menú móvil — se abre DEBAJO del header, no encima */
     .nav-links {
-        display: flex;
-        position: fixed;
-        top: 0;
+        position: absolute;
+        top: 100%;
         left: 0;
-        width: 250px;
-        height: 100vh;
-        background-color: #003366;
-        padding: 80px 20px 20px 20px; /* deja espacio para el header */
+        width: 100%;
         flex-direction: column;
-        gap: 20px;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        z-index: 1000;
-        overflow-y: auto;
+        background: #003366;
+        padding: 20px 0;
+        display: none;
+        gap: 15px;
+        border-bottom: 2px solid #002244;
     }
 
     .nav-links.active {
-        transform: translateX(0);
+        display: flex;
     }
 
-    /* Ajustes hero y título en móvil */
+    .nav-links li {
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
+    /* Ajuste del título en móvil */
     .hero, .page-hero {
-        padding: 120px 20px 40px 20px; /* más espacio arriba */
+        padding-top: 120px;
     }
 
     .hero-text h1, .page-hero h1 {
         font-size: 1.8rem;
     }
 
-    .hero-text p, .page-hero p {
+    .school-name {
         font-size: 1rem;
+        max-width: 150px;
     }
 }
 
@@ -236,17 +219,15 @@ footer {
    DESKTOP
 =============================== */
 @media (min-width: 769px) {
+
     .nav-links {
         display: flex !important;
-        flex-direction: row !important;
         position: static !important;
-        transform: none !important;
-        background: none !important;
-        width: auto !important;
-        padding: 0 !important;
+        flex-direction: row !important;
     }
 
     .menu-toggle {
         display: none !important;
     }
 }
+
