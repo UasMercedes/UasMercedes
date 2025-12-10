@@ -204,14 +204,15 @@ footer {
     .hero, .page-hero {
         padding-top: 120px;
     }
-
 .hero-text h1,
 .page-hero h1 {
-    white-space: nowrap;     /* ❗ NO SE ROMPE EN VARIAS LÍNEAS */
-    overflow: hidden;        /* ❗ Evita que genere scroll */
-    text-overflow: ellipsis; /* ❗ Agrega "..." si queda demasiado largo */
-    font-size: clamp(22px, 5vw, 38px); /* Ajuste automático según pantalla */
+    white-space: nowrap;           /* Siempre en una línea */
+    overflow: hidden;
+    font-size: clamp(14px, 5vw, 42px); /* Se achica automáticamente según el espacio */
+    text-align: center;
+    line-height: 1.2;
 }
+
 
 
     .school-name {
