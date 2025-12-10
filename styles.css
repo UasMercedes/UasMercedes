@@ -205,9 +205,14 @@ footer {
         padding-top: 120px;
     }
 
-    .hero-text h1, .page-hero h1 {
-        font-size: 1.8rem;
-    }
+.hero-text h1,
+.page-hero h1 {
+    white-space: nowrap;     /* ❗ NO SE ROMPE EN VARIAS LÍNEAS */
+    overflow: hidden;        /* ❗ Evita que genere scroll */
+    text-overflow: ellipsis; /* ❗ Agrega "..." si queda demasiado largo */
+    font-size: clamp(22px, 5vw, 38px); /* Ajuste automático según pantalla */
+}
+
 
     .school-name {
         font-size: 1rem;
