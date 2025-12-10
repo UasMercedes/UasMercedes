@@ -34,28 +34,28 @@ p {
     z-index: 1000;
 }
 
+/* LOGO + TÍTULO */
 .logo-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    flex-shrink: 0;
+    flex-shrink: 1;
+    min-width: 0; /* permite el ellipsis */
 }
 
 .logo {
-    height: 60px;
+    height: 50px;
     width: auto;
     border-radius: 5px;
 }
 
-/* 🔥 TÍTULO SIEMPRE EN UNA SOLA LÍNEA */
 .school-name {
-    font-size: clamp(14px, 4vw, 32px);
+    font-size: clamp(14px, 3vw, 22px); /* tamaño balanceado */
     font-weight: 600;
     white-space: nowrap;
-    flex-grow: 1;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; /* si no entra, agrega ... */
 }
 
 /* MENÚ */
@@ -70,7 +70,9 @@ p {
 .nav-links li a {
     color: white;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1.1rem; /* más grande */
+    padding: 8px 14px;
 }
 
 .nav-links li a:hover {
@@ -83,7 +85,7 @@ p {
     cursor: pointer;
     color: white;
     display: none;
-    margin-left: 0;
+    margin-right: 20px;
 }
 
 /* ===============================
@@ -102,9 +104,8 @@ p {
 .hero-text h1,
 .page-hero h1 {
     color: #003366;
-    font-size: 2rem;
+    font-size: clamp(18px, 5vw, 36px);
     margin-bottom: 10px;
-    word-wrap: break-word;
 }
 
 .hero-text p,
@@ -147,7 +148,6 @@ section p {
     box-shadow: 0 4px 6px rgba(0,0,0,0.15);
     transition: all 0.3s ease;
     border: 2px solid #003366;
-    margin: 0 5px;
 }
 
 .btn:hover {
@@ -164,14 +164,14 @@ section p {
 footer {
     background: #003366;
     color: white;
-    padding: 30px 20px;
+    padding: 20px;
 }
 
 .footer-container {
     display: flex;
     justify-content: space-between;
-    gap: 30px;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .footer-left, .footer-center, .footer-right {
@@ -198,8 +198,6 @@ footer {
 
     .menu-toggle {
         display: block;
-        order: -1;
-        margin-right: 20px;
     }
 
     /* Menú móvil */
@@ -224,23 +222,13 @@ footer {
         transform: translateX(0);
     }
 
-    /* Ajustes hero */
+    /* Hero más limpio */
     .hero, .page-hero {
-        padding: 120px 20px 40px 20px;
+        padding: 110px 20px 40px 20px;
     }
 
     .hero-text h1, .page-hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero-text p, .page-hero p {
-        font-size: 1rem;
-    }
-
-    /* Footer móvil más limpio */
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
+        font-size: clamp(18px, 6vw, 30px);
     }
 }
 
