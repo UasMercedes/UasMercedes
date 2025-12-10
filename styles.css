@@ -92,7 +92,7 @@ p {
 .hero-text h1,
 .page-hero h1 {
     color: #003366;
-    font-size: clamp(24px, 6vw, 42px);
+    font-size: clamp(10px, 4vw, 42px);
     margin-bottom: 10px;
     overflow-wrap: anywhere;
 }
