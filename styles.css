@@ -23,50 +23,47 @@ p {
 =============================== */
 .navbar {
     display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    flex-wrap: nowrap;
     background: #003366;
-    padding: 12px 20px;
+    padding: 10px 20px;
     color: white;
     position: relative;
     z-index: 1000;
 }
 
-/* Botón hamburguesa */
-.menu-toggle {
-    font-size: 32px;
-    cursor: pointer;
-    color: white;
-    display: none;
-    margin-right: 15px;
-}
-
-/* Logo + nombre */
 .logo-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
-    flex-shrink: 1;
+    flex-shrink: 0;
 }
 
 .logo {
-    height: 55px;
+    height: 60px;
     width: auto;
     border-radius: 5px;
 }
 
+/* 🔥 TÍTULO SIEMPRE EN UNA SOLA LÍNEA */
 .school-name {
-    font-size: 1.15rem;
+    font-size: clamp(14px, 4vw, 32px);
     font-weight: 600;
-    overflow-wrap: anywhere;
-    max-width: 200px;
+    white-space: nowrap;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* Enlaces */
+/* MENÚ */
 .nav-links {
-    list-style: none;
     display: flex;
     gap: 20px;
+    list-style: none;
+    align-items: center;
     margin-left: auto;
 }
 
@@ -80,6 +77,15 @@ p {
     text-decoration: underline;
 }
 
+/* Ícono menú hamburguesa */
+.menu-toggle {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    display: none;
+    margin-left: 0;
+}
+
 /* ===============================
    HERO
 =============================== */
@@ -87,14 +93,18 @@ p {
     background-color: #ffcccc;
     padding: 80px 20px 40px 20px;
     text-align: center;
+    margin: 0;
+    border-radius: 0;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-text h1,
 .page-hero h1 {
     color: #003366;
-    font-size: clamp(24px, 6vw, 42px);
+    font-size: 2rem;
     margin-bottom: 10px;
-    overflow-wrap: anywhere;
+    word-wrap: break-word;
 }
 
 .hero-text p,
@@ -114,6 +124,14 @@ section {
     border-radius: 8px;
 }
 
+section h2 {
+    color: #003366;
+}
+
+section p {
+    color: #333;
+}
+
 /* ===============================
    BOTONES
 =============================== */
@@ -126,13 +144,18 @@ section {
     border-radius: 12px;
     font-weight: 600;
     font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    border: 2px solid #003366;
     margin: 0 5px;
-    transition: 0.3s ease;
 }
 
 .btn:hover {
     background: #b30000;
     border-color: #b30000;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.25);
 }
 
 /* ===============================
@@ -141,27 +164,30 @@ section {
 footer {
     background: #003366;
     color: white;
-    padding: 20px;
+    padding: 30px 20px;
 }
 
 .footer-container {
     display: flex;
     justify-content: space-between;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .footer-left, .footer-center, .footer-right {
     flex: 1;
-    margin: 10px;
+    min-width: 220px;
 }
 
 .footer-logo {
     height: 50px;
+    width: auto;
 }
 
 .social-icons a {
     margin-right: 10px;
     color: white;
+    text-decoration: none;
     font-size: 1.5rem;
 }
 
@@ -172,46 +198,49 @@ footer {
 
     .menu-toggle {
         display: block;
+        order: -1;
+        margin-right: 20px;
     }
 
-    /* Menú móvil — se abre DEBAJO del header, no encima */
+    /* Menú móvil */
     .nav-links {
-        position: absolute;
-        top: 100%;
+        display: flex;
+        position: fixed;
+        top: 0;
         left: 0;
-        width: 100%;
+        width: 250px;
+        height: 100vh;
+        background-color: #003366;
+        padding: 80px 20px 20px 20px;
         flex-direction: column;
-        background: #003366;
-        padding: 20px 0;
-        display: none;
-        gap: 15px;
-        border-bottom: 2px solid #002244;
+        gap: 20px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        overflow-y: auto;
     }
 
     .nav-links.active {
-        display: flex;
+        transform: translateX(0);
     }
 
-    .nav-links li {
-        text-align: center;
-    }
-
-    .nav-links a {
-        font-size: 1.2rem;
-    }
-
-    /* Ajuste del título en móvil */
+    /* Ajustes hero */
     .hero, .page-hero {
-        padding-top: 120px;
+        padding: 120px 20px 40px 20px;
     }
 
     .hero-text h1, .page-hero h1 {
         font-size: 1.8rem;
     }
 
-    .school-name {
+    .hero-text p, .page-hero p {
         font-size: 1rem;
-        max-width: 150px;
+    }
+
+    /* Footer móvil más limpio */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
     }
 }
 
@@ -219,16 +248,18 @@ footer {
    DESKTOP
 =============================== */
 @media (min-width: 769px) {
-
     .nav-links {
         display: flex !important;
-        position: static !important;
         flex-direction: row !important;
+        position: static !important;
+        transform: none !important;
+        background: none !important;
+        width: auto !important;
+        padding: 0 !important;
     }
 
     .menu-toggle {
         display: none !important;
     }
 }
-
 
