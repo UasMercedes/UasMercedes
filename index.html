@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,13 +40,13 @@
 
     </header>
 
-    <!-- HERO SLIDER -->
-    <section class="hero-slider">
-        <div class="slide active" style="background-image: url('images/hero.1.JPG');"></div>
-        <div class="slide" style="background-image: url('images/hero.2.jpg');"></div>
-        <div class="slide" style="background-image: url('images/hero.3.JPG');"></div>
+    <!-- HERO (con slider tipo Woodlands) -->
+    <section class="page-hero">
 
-        <div class="hero-slider-text">
+        <!-- Fondo dinámico -->
+        <div class="hero-slider"></div>
+
+        <div class="hero-text">
             <h1>Bienvenidos a Uruguayan American School Mercedes</h1>
             <p>Construyendo un futuro a través de valores, creatividad y una educación bilingüe.</p>
         </div>
@@ -56,7 +56,8 @@
     <section class="about">
         <h2>Sobre nuestra escuela</h2>
         <p>
-           Uruguayan American School Mercedes está comprometida con brindar una educación bilingüe, multicultural y basada en valores, que promueva el crecimiento académico y personal de cada estudiante.
+            Uruguayan American School Mercedes está comprometida con brindar una educación bilingüe,
+            multicultural y basada en valores, que promueva el crecimiento académico y personal de cada estudiante.
         </p>
     </section>
 
@@ -70,6 +71,7 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
+
             <div class="footer-left">
                 <img src="logo.jpg" class="footer-logo" alt="School Logo">
                 <p class="footer-school-name">Uruguayan American School de Mercedes</p>
@@ -90,10 +92,11 @@
                     <a href="https://www.youtube.com/@UASMercedesOficial" target="_blank">▶️</a>
                 </div>
             </div>
+
         </div>
     </footer>
 
-    <!-- MENU SCRIPT -->
+    <!-- SCRIPT MENÚ -->
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
@@ -103,23 +106,5 @@
         });
     </script>
 
-    <!-- HERO SLIDER SCRIPT -->
-    <script>
-        let slides = document.querySelectorAll('.hero-slider .slide');
-        let index = 0;
-
-        function showSlide() {
-            slides.forEach(slide => slide.classList.remove('active'));
-            index = (index + 1) % slides.length;
-            slides[index].classList.add('active');
-        }
-
-        setInterval(showSlide, 4000);
-    </script>
-
 </body>
 </html>
-
-</body>
-</html>
-
