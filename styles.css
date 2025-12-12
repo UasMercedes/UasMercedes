@@ -170,6 +170,29 @@ p {
     .hero-text p {
         font-size: clamp(12px, 3vw, 16px);
     }
+   /* Botones de navegación */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+    user-select: none;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
 }
 
 /* ===============================
