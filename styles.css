@@ -99,10 +99,10 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 80px; /* no tapa el menú fijo */
+    margin-top: 80px;
 }
 
-/* rutas reales: /images/ */
+/* slider */
 .hero-slider {
     position: absolute;
     top: 0;
@@ -110,12 +110,12 @@ p {
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
     animation: heroFade 15s infinite;
 }
 
-/* 3 imágenes, 5s cada una */
+/* animación */
 @keyframes heroFade {
     0%   {background-image: url('images/hero.1.JPG');}
     33%  {background-image: url('images/hero.2.jpg');}
@@ -123,26 +123,20 @@ p {
     100% {background-image: url('images/hero.1.JPG');}
 }
 
-/* Texto encima */
+/* texto */
 .hero-text {
     position: relative;
     text-align: center;
-    color: white;
     z-index: 2;
     padding: 20px;
     max-width: 90%;
-    background: rgba(0, 0, 0, 0.35);
-    border-radius: 10px;
+    background: transparent; /* SACADO EL FONDO GRIS */
 }
 
-.hero-text h1 {
-    font-size: clamp(20px, 5vw, 36px);
-    margin: 0 0 10px 0;
-}
-
+.hero-text h1,
 .hero-text p {
-    font-size: 1.1rem;
-    margin: 0;
+    color: #ffffff; /* TEXTO BLANCO QUE RESALTA */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7); /* SOMBRA PARA DAR LEGIBILIDAD */
 }
 
 /* ===============================
