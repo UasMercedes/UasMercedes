@@ -20,57 +20,49 @@
            HERO SLIDER (MITAD DE ALTURA)
         =============================== */
         .page-hero {
-            width: 100vw !important;
-            max-width: 100vw !important;
+            width: 100vw;
             height: 70vh;
-            margin: 0 !important;
-            padding: 0 !important;
             position: relative;
             overflow: hidden;
         }
 
         .hero-slider {
-            width: 100% !important;
-            height: 100%;
             display: flex;
-            position: absolute;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-        }
-
-        .hero-slider img {
-            width: 100vw !important;
+            width: 300%; /* 3 imágenes */
             height: 100%;
-            object-fit: cover;
-            flex-shrink: 0;
             transition: transform 0.5s ease;
         }
 
+        .hero-slider img {
+            width: 100vw;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
         .hero-text {
-            position: absolute !important;
-            top: 50% !important;
-            left: 50% !important;
-            transform: translate(-50%, -50%) !important;
-            text-align: center !important;
-            max-width: 90% !important;
-            color: white !important;
-            background: none !important;
-            padding: 0 !important;
-            margin: 0 auto !important;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            max-width: 90%;
+            color: white;
+            background: rgba(0,0,0,0.4);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(3px);
         }
 
         .hero-text h1 {
             font-size: clamp(24px, 4vw, 36px);
-            margin: 0 !important;
+            margin: 0;
             white-space: nowrap;
-            color: white !important;
         }
 
         .hero-text p {
             font-size: clamp(14px, 2vw, 20px);
-            margin-top: 10px !important;
-            color: white !important;
+            margin-top: 10px;
             white-space: normal;
         }
 
@@ -147,7 +139,6 @@
 
 </section>
 
-
     <!-- ABOUT -->
     <section class="about">
         <h2>Sobre nuestra escuela</h2>
@@ -211,21 +202,19 @@ const nextBtn = document.querySelector('.next');
 let current = 0;
 
 function showSlide(index) {
-    // ajustar índice para que nunca salga del rango
-    current = (index + images.length) % images.length; 
-    slider.style.transform = `translateX(-${current * 100}%)`;
+    current = (index + images.length) % images.length; // ciclar imágenes
+    slider.style.transform = `translateX(-${current * 100}vw)`; // usa vw para que no aparezca blanco
 }
 
-// Flechas
 prevBtn.addEventListener('click', () => showSlide(current - 1));
 nextBtn.addEventListener('click', () => showSlide(current + 1));
 
 // Auto slide cada 5s
 setInterval(() => showSlide(current + 1), 5000);
-
-// efecto de slide suave
-slider.style.transition = "transform 0.5s ease";
 </script>
+
+</body>
+</html>
 
 
 </body>
