@@ -87,56 +87,50 @@ p {
     text-decoration: underline;
 }
 
-/* ===============================
-   HERO SLIDER (Woodlands-style)
-=============================== */
+/* -------------------------------- */
+/* HERO - IMÁGENES FULL WIDTH */
+/* -------------------------------- */
 
 .page-hero {
     position: relative;
-    height: 360px;
     width: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 80px;
+    margin: 0;
+    padding: 0;
 }
 
-/* slider */
+/* Las imágenes del slider */
 .hero-slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    width: 100vw;               /* ancho real de la ventana */
+    height: 70vh;               /* altura como la de Woodlands */
+    overflow: hidden;
+}
+
+.hero-slider img {
+    width: 100vw;               
     height: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    animation: heroFade 15s infinite;
+    object-fit: cover;          /* que cubra todo */
+    display: block;
 }
 
-/* animación */
-@keyframes heroFade {
-    0%   {background-image: url('images/hero.1.JPG');}
-    33%  {background-image: url('images/hero.2.jpg');}
-    66%  {background-image: url('images/hero.3.JPG');}
-    100% {background-image: url('images/hero.1.JPG');}
-}
-
-/* texto */
+/* Texto sobre el hero */
 .hero-text {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 2;
-    padding: 20px;
-    max-width: 90%;
-    background: transparent; /* SACADO EL FONDO GRIS */
+    color: white;               /* visible */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.7); /* resalta sobre fotos */
+    padding: 0 20px;
 }
 
-.hero-text h1,
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
 .hero-text p {
-    color: #ffffff; /* TEXTO BLANCO QUE RESALTA */
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.7); /* SOMBRA PARA DAR LEGIBILIDAD */
+    font-size: 1.4rem;
 }
 
 /* ===============================
