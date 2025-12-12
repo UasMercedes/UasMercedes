@@ -1,90 +1,102 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UAS Mercedes</title>
+    <title>Uruguayan American School de Mercedes</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+    </style>
 </head>
 <body>
 
-<!-- NAV -->
-<header>
-    <nav class="navbar">
-        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-        <div class="logo">UAS Mercedes</div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="propuestas.html">Propuestas</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <!-- Botón hamburguesa -->
+        <span class="menu-toggle">☰</span>
+
+        <div class="logo-container">
+            <img src="logo.jpg" alt="School Logo" class="logo">
+            <span class="school-name">Uruguayan American School de Mercedes</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/UasMercedes/index.html" class="btn">Inicio</a></li>
+            <li><a href="/UasMercedes/novedades.html" class="btn">Novedades</a></li>
+            <li><a href="/UasMercedes/calendario.html" class="btn">Calendario</a></li>
+            <li><a href="/UasMercedes/informacion.html" class="btn">Información</a></li>
+            <li><a href="/UasMercedes/contacto.html" class="btn">Contacto</a></li>
         </ul>
-    </nav>
-</header>
 
-<!-- HERO CAROUSEL (ESTILO WOODLANDS, NO FULLSCREEN) -->
-<section class="hero-carousel">
-    <div class="carousel-container">
-        <div class="carousel-slide fade">
-            <img src="images/hero1.JPG" alt="Imagen 1">
+    </header>
+
+    <!-- HERO -->
+    <section class="page-hero">
+        <div class="hero-text">
+            <h1>Bienvenidos a Uruguayan American School Mercedes</h1>
+            <p>Construyendo un futuro a través de valores, creatividad y una educación bilingüe.</p>
         </div>
-        <div class="carousel-slide fade">
-            <img src="images/hero2.jpg" alt="Imagen 2">
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+        <h2>Sobre nuestra escuela</h2>
+        <p>
+           Uruguayan American School Mercedes está comprometida con brindar una educación bilingüe, multicultural y basada en valores, que promueva el crecimiento académico y personal de cada estudiante.
+        </p>
+    </section>
+
+    <!-- NEWS -->
+    <section class="news-preview">
+        <h2>Últimas noticias</h2>
+        <p>Visitá nuestra sección de noticias para ver las actividades, eventos y proyectos recientes.</p>
+        <a href="news.html" class="btn">Novedades</a>
+    </section>
+
+   <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="logo.jpg" class="footer-logo" alt="School Logo">
+                <p class="footer-school-name">Uruguayan American School de Mercedes</p>
+            </div>
+
+            <div class="footer-center">
+                <p><strong>Dirección:</strong> 18 De Julio 538, 75000 Mercedes, Soriano</p>
+                <p><strong>Email:</strong> uasdireccion@gmail.com</p>
+                <p><strong>Teléfono:</strong> 4532 3962</p>
+                <p><strong>Celular:</strong> 092 323 962 – 097 385 182</p>
+            </div>
+
+            <div class="footer-right">
+                <p><strong>Seguinos:</strong></p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/uasmercedes/" target="_blank">🔵</a>
+                    <a href="https://www.instagram.com/uas_mercedes/" target="_blank">📸</a>
+                    <a href="https://www.youtube.com/@UASMercedesOficial" target="_blank">▶️</a>
+                </div>
+            </div>
         </div>
-        <div class="carousel-slide fade">
-            <img src="images/hero3.JPG" alt="Imagen 3">
-        </div>
-    </div>
+    </footer>
 
-    <div class="carousel-dots">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
-</section>
+    <!-- MENÚ -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
 
-<!-- CONTENIDO PRINCIPAL -->
-<section class="contenido">
-    <h2>Bienvenidos a UAS Mercedes</h2>
-    <p>Texto de ejemplo para que sigas armando tu página.</p>
-</section>
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 
-<script>
-function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
-}
 
-/***  CAROUSEL  ***/
-let slideIndex = 0;
-showSlides();
-
-function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("carousel-slide");
-    let dots = document.getElementsByClassName("dot");
-
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }
-
-    for (i = 0; i < dots.length; i++) {
-        dots[i].classList.remove("active-dot");
-    }
-
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].classList.add("active-dot");
-
-    setTimeout(showSlides, 3500);
-}
-
-function currentSlide(n) {
-    slideIndex = n - 1;
-    showSlides();
-}
-</script>
-
-</body>
-</html>
