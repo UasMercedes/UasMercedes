@@ -87,29 +87,46 @@ p {
     text-decoration: underline;
 }
 
-/* -------------------------------- */
-/* HERO - IMÁGENES FULL WIDTH */
-/* -------------------------------- */
+/* ========== HERO ESTILO WOODLANDS ========== */
 
 .page-hero {
     position: relative;
     width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-/* Las imágenes del slider */
-.hero-slider {
-    width: 100vw;               /* ancho real de la ventana */
-    height: 70vh;               /* altura como la de Woodlands */
+    height: 300px; /* altura como Woodlands */
+    margin-top: 80px; /* para no tapar el menú */
     overflow: hidden;
 }
 
-.hero-slider img {
-    width: 100vw;               
+/* Contenedor del slider */
+.hero-slider {
+    width: 100%;
     height: 100%;
-    object-fit: cover;          /* que cubra todo */
-    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Imágenes del slider */
+.hero-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+    animation: slideShow 15s infinite;
+}
+
+/* ANIMACIÓN: 3 imágenes, 5s cada una */
+@keyframes slideShow {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(0); }
+
+    40% { transform: translateX(-100%); }
+    66% { transform: translateX(-100%); }
+
+    73% { transform: translateX(-200%); }
+    100% { transform: translateX(-200%); }
 }
 
 /* Texto sobre el hero */
@@ -119,18 +136,26 @@ p {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white;               /* visible */
-    text-shadow: 0 2px 10px rgba(0,0,0,0.7); /* resalta sobre fotos */
-    padding: 0 20px;
+    color: white;
+    text-shadow: 0px 3px 15px rgba(0,0,0,0.8);
+    padding: 10px;
 }
 
 .hero-text h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: clamp(22px, 5vw, 38px);
+    margin: 0;
 }
 
 .hero-text p {
-    font-size: 1.4rem;
+    font-size: clamp(14px, 3vw, 20px);
+    margin-top: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-hero {
+        height: 220px;
+    }
 }
 
 /* ===============================
