@@ -82,78 +82,94 @@ p {
     text-decoration: underline;
 }
 
+/* ===============================
+   HERO SLIDER (MITAD DE ALTURA)
+=============================== */
+
 .page-hero {
-    width: 100vw;
-    height: 50vh;
+    width: 100vw !important;       /* ancho completo de la ventana */
+    max-width: 100vw !important;   /* ignora cualquier max-width de padres */
+    height: 70vh;                  /* mitad de la pantalla */
+    margin: 0 !important;          /* quita márgenes */
+    padding: 0 !important;         /* quita padding */
     position: relative;
     overflow: hidden;
 }
 
+/* Contenedor del slider */
 .hero-slider {
-    display: flex;
-    width: 300%; /* 3 imágenes */
+    width: 100% !important;
     height: 100%;
-    transition: transform 0.5s ease;
-}
-
-.hero-slider img {
-    width: 100%; /* ocupa toda la pantalla */
-    flex-shrink: 0;
-    object-fit: cover;
-}
-
-.hero-text {
+    display: flex;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    max-width: 90%;
-    color: white;
-    background: rgba(0,0,0,0.4);
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    backdrop-filter: blur(3px);
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+/* Imágenes */
+.hero-slider img {
+    width: 100vw !important;       /* ancho total de la ventana */
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+    animation: slideShow 15s infinite;
+}
+
+/* ANIMACIÓN DE 3 IMÁGENES */
+@keyframes slideShow {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(0); }
+    40% { transform: translateX(-100%); }
+    66% { transform: translateX(-100%); }
+    73% { transform: translateX(-200%); }
+    100% { transform: translateX(-200%); }
+}
+
+/* TEXTO ENCIMA DEL SLIDER */
+.hero-text {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    text-align: center !important;
+    max-width: 90% !important;
+    color: white !important;       /* fuerza texto blanco */
+    background: none !important;   /* elimina recuadro gris */
+    padding: 0 !important;
+    margin: 0 auto !important;
 }
 
 .hero-text h1 {
     font-size: clamp(24px, 4vw, 36px);
-    margin: 0;
-    white-space: nowrap;
+    margin: 0 !important;
+    white-space: nowrap;           /* intenta mantener en una línea */
+    color: white !important;
 }
 
 .hero-text p {
     font-size: clamp(14px, 2vw, 20px);
-    margin-top: 10px;
-    white-space: normal;
+    margin-top: 10px !important;
+    color: white !important;
+    white-space: normal;           /* permite quiebre de línea en párrafo */
 }
 
-/* Flechas */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
-    border: none;
-    color: white;
-    font-size: 2rem;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    z-index: 10;
-    border-radius: 5px;
-    user-select: none;
-}
-
-.prev { left: 20px; }
-.next { right: 20px; }
-
-.prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
-
-/* Responsive */
+/* ===============================
+   RESPONSIVE HERO
+=============================== */
 @media (max-width: 768px) {
-    .page-hero { height: 35vh; }
-    .hero-text h1 { font-size: clamp(18px, 5vw, 28px); white-space: normal; }
-    .hero-text p { font-size: clamp(12px, 3vw, 16px); }
+    .page-hero {
+        height: 35vh; /* altura menor en móviles */
+    }
+
+    .hero-text h1 {
+        font-size: clamp(18px, 5vw, 28px);
+        white-space: normal; /* permite quiebre de línea en móviles */
+    }
+
+    .hero-text p {
+        font-size: clamp(12px, 3vw, 16px);
+    }
 }
 
 /* ===============================
