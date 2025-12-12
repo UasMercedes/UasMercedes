@@ -88,8 +88,9 @@ p {
 
 .page-hero {
     position: relative;
-    width: 100%;       /* todo el ancho */
-    height: 50vh;      /* mitad de la altura de la pantalla */
+    width: 100vw;        /* ancho completo de la ventana */
+    height: 50vh;        /* mitad de la altura de la pantalla */
+    margin: 0;           /* sin márgenes */
     overflow: hidden;
 }
 
@@ -106,9 +107,9 @@ p {
 
 /* Imágenes */
 .hero-slider img {
-    width: 100%;
+    width: 100vw;        /* ancho completo de la ventana */
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;   /* cubre todo el contenedor */
     flex-shrink: 0;
     animation: slideShow 15s infinite;
 }
@@ -130,22 +131,24 @@ p {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white;              /* texto blanco */
+    color: white;          /* texto blanco */
     text-shadow: 0px 3px 15px rgba(0,0,0,0.8);
-    padding: 0;                /* quita el recuadro gris */
-    background: none;          /* quita el fondo gris */
+    padding: 0;            /* sin recuadro gris */
+    background: none;      /* sin fondo */
+    max-width: 90%;        /* evita que el texto se salga del hero */
 }
 
 .hero-text h1 {
-    font-size: clamp(24px, 5vw, 40px);
+    font-size: clamp(24px, 4vw, 36px);
     margin: 0;
-    white-space: nowrap;       /* una sola línea */
+    white-space: nowrap;   /* intenta mantener en una línea */
 }
 
 .hero-text p {
-    font-size: clamp(14px, 2vw, 22px);
+    font-size: clamp(14px, 2vw, 20px);
     margin-top: 10px;
     color: white;
+    white-space: normal;   /* permite quiebre de línea en el párrafo */
 }
 
 /* ===============================
@@ -157,14 +160,14 @@ p {
     }
 
     .hero-text h1 {
-        font-size: clamp(20px, 6vw, 30px);
+        font-size: clamp(18px, 5vw, 28px);
+        white-space: normal; /* permite quiebre de línea en móviles */
     }
 
     .hero-text p {
-        font-size: clamp(12px, 3vw, 18px);
+        font-size: clamp(12px, 3vw, 16px);
     }
 }
-
 
 /* ===============================
    SECCIONES GENERALES
