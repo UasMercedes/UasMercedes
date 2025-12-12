@@ -40,9 +40,13 @@
 
     </header>
 
-    <!-- HERO -->
-    <section class="page-hero">
-        <div class="hero-text">
+    <!-- HERO SLIDER -->
+    <section class="hero-slider">
+        <div class="slide active" style="background-image: url('images/hero.1.JPG');"></div>
+        <div class="slide" style="background-image: url('images/hero.2.jpg');"></div>
+        <div class="slide" style="background-image: url('images/hero.3.JPG');"></div>
+
+        <div class="hero-slider-text">
             <h1>Bienvenidos a Uruguayan American School Mercedes</h1>
             <p>Construyendo un futuro a través de valores, creatividad y una educación bilingüe.</p>
         </div>
@@ -63,7 +67,7 @@
         <a href="news.html" class="btn">Novedades</a>
     </section>
 
-   <!-- FOOTER -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-left">
@@ -89,7 +93,7 @@
         </div>
     </footer>
 
-    <!-- MENÚ -->
+    <!-- MENU SCRIPT -->
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
@@ -98,6 +102,23 @@
             navLinks.classList.toggle('active');
         });
     </script>
+
+    <!-- HERO SLIDER SCRIPT -->
+    <script>
+        let slides = document.querySelectorAll('.hero-slider .slide');
+        let index = 0;
+
+        function showSlide() {
+            slides.forEach(slide => slide.classList.remove('active'));
+            index = (index + 1) % slides.length;
+            slides[index].classList.add('active');
+        }
+
+        setInterval(showSlide, 4000);
+    </script>
+
+</body>
+</html>
 
 </body>
 </html>
