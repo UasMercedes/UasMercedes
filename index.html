@@ -122,19 +122,11 @@
     <script>
 document.addEventListener("DOMContentLoaded", () => {
     const slider = document.querySelector(".hero-slider");
-    const slides = document.querySelectorAll(".hero-slider img");
     const prev = document.querySelector(".prev");
     const next = document.querySelector(".next");
 
     let index = 0;
-    const total = slides.length;
-
-    // Ajustar ancho del slider
-    slider.style.width = `${total * 100}vw`;
-
-    slides.forEach(slide => {
-        slide.style.width = "100vw";
-    });
+    const total = 3; // SOLO 3 IMÁGENES
 
     function showSlide(i) {
         index = (i + total) % total;
@@ -144,7 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
     next.addEventListener("click", () => showSlide(index + 1));
     prev.addEventListener("click", () => showSlide(index - 1));
 
-    // auto slide (opcional)
     setInterval(() => showSlide(index + 1), 5000);
 });
 </script>
