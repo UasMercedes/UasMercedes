@@ -26,14 +26,19 @@ p {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+
     background: #003366;
-    padding: 10px 20px;
     color: white;
+
+    height: 65px;              /* 🔽 más baja */
+    padding: 0 20px;           /* 🔽 sin padding vertical */
+
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
 }
+
 
 .logo-container {
     display: flex;
