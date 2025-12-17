@@ -200,18 +200,18 @@ section h2 {
     color: #003366;
 }
 
-/* ===============================
+/* =============================
    BOTONES
 =============================== */
 .btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 8px 18px;
     background: #003366;
     color: white;
     text-decoration: none;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 1rem;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 14px;
     border: 2px solid #003366;
     transition: 0.3s;
 }
