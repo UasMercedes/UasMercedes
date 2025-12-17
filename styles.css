@@ -118,7 +118,7 @@ p {
     object-fit: cover;
     flex-shrink: 0
         transform: translateY(-10px);
-   object-position: center 10%;
+   object-position: center 20%;
 
 }
 }
