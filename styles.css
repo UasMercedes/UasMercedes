@@ -1,7 +1,15 @@
 /* ===============================
    RESET
 =============================== */
-* {
+*
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -152,6 +160,14 @@ section {
     margin: 30px auto;
     padding: 40px 20px;
     border-radius: 8px;
+}
+
+.page-hero {
+    padding: 0 !important;
+    margin: 65px 0 0 0 !important; /* solo baja lo justo por la navbar */
+    max-width: none !important;
+    background: none !important;
+    border-radius: 0 !important;
 }
 
 h2 {
