@@ -485,4 +485,46 @@ h2 {
     .material-card {
         text-align: center;
     }
+}/* ===============================
+   HERO MATERIALES
+=============================== */
+.hero-materiales {
+    margin-top: 65px; /* altura navbar */
+    height: 40vh;
+    width: 100%;
+    background-image: url("images/utiles.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
+
+.hero-materiales-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 51, 102, 0.55); /* azul UAS translúcido */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero-materiales-overlay h1 {
+    font-size: clamp(26px, 5vw, 42px);
+    margin-bottom: 10px;
+}
+
+.hero-materiales-overlay p {
+    font-size: clamp(14px, 3vw, 20px);
+    font-weight: 400;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-materiales {
+        height: 30vh;
+    }
+}
+
