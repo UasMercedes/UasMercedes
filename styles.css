@@ -260,15 +260,8 @@ footer {
    RESPONSIVE NAV
 =============================== */
 @media (max-width: 768px) {
-       
-   /* Ajuste para el botón hamburguesa */
 .menu-toggle {
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
     display: block;
-    margin-left: auto;
-    z-index: 1100; /* Asegura que esté por encima del menú */
 }
  }
 
