@@ -286,3 +286,46 @@ h2 {
         padding: 8px 12px;
     }
 }
+@media (max-width: 768px) {
+
+    /* Asegura ancho completo en TODA la página */
+    body, html {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    section,
+    footer,
+    .about,
+    .news-preview,
+    .footer,
+    .footer-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding-left: 16px;
+        padding-right: 16px;
+        box-sizing: border-box;
+    }
+
+    /* Footer en columna */
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        width: 100%;
+        align-items: center;
+    }
+
+    .footer-logo {
+        max-width: 120px;
+        height: auto;
+    }
+}
+
