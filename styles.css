@@ -355,6 +355,42 @@ h2 {
     height: auto;
     display: block;
 }
+
+/* ====== BLOQUE LISTA DE MATERIALES (INFO) ====== */
+
+.materiales-info {
+    display: flex;
+    justify-content: center;
+    margin: 60px 20px;
+}
+
+.materiales-link {
+    text-decoration: none;
+    background-color: #f2f2f2;
+    color: #1f1f1f;
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.materiales-link i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #b30000;
+}
+
+.materiales-link h2 {
+    margin-bottom: 10px;
+}
+
+.materiales-link:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
 /* ===============================
    MATERIAL STYLE – AL ESTILO CSS.EDU.UY
 =============================== */
