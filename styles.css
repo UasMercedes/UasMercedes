@@ -355,5 +355,73 @@ h2 {
     height: auto;
     display: block;
 }
+/* ====== BLOQUE LISTA DE MATERIALES (INFO) ====== */
+
+.materiales-info {
+    display: flex;
+    justify-content: center;
+    margin: 60px 20px;
+}
+
+.materiales-link {
+    text-decoration: none;
+    background-color: #f2f2f2;
+    color: #1f1f1f;
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.materiales-link i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #b30000;
+}
+
+.materiales-link h2 {
+    margin-bottom: 10px;
+}
+
+.materiales-link:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+/* ====== PÁGINA MATERIALES ====== */
+
+.materiales {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.materiales h1 {
+    margin-bottom: 40px;
+}
+
+.materiales-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.material-card {
+    background-color: #b30000;
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.material-card:hover {
+    background-color: #8f0000;
+    transform: translateY(-4px);
+}
+
 
 
