@@ -260,11 +260,21 @@ footer {
    RESPONSIVE NAV
 =============================== */
 @media (max-width: 768px) {
-    .menu-toggle { display: block; }
+       
+   /* Ajuste para el botón hamburguesa */
+.menu-toggle {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    display: block;
+    margin-left: auto;
+    z-index: 1100; /* Asegura que esté por encima del menú */
+}
+ }
 
     .nav-links {
         position: fixed;
-        top: 0;
+        top: 65px;
         left: 0;
         width: 250px;
         height: 100vh;
@@ -274,7 +284,7 @@ footer {
         gap: 20px;
         transform: translateX(-100%);
         transition: 0.3s ease;
-        z-index: 1000;
+        z-index: 999;
     }
 
     .nav-links.active {
