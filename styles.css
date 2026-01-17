@@ -219,17 +219,19 @@ h2 {
     =============================== */
 
     .navbar {
-        height: auto;
-        padding: 10px 16px;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
+        padding: 10px 16px;
+        height: 70px;
+        position: relative;
     }
 
     .logo-container {
         display: flex;
         align-items: center;
         gap: 8px;
-        flex-wrap: wrap;
-        max-width: calc(100% - 50px);
+        max-width: 80%;
     }
 
     .logo {
@@ -246,11 +248,13 @@ h2 {
     .menu-toggle {
         display: block;
         font-size: 1.8rem;
+        cursor: pointer;
+        z-index: 1001;
     }
 
     .nav-links {
-        position: fixed;
-        top: 100%;
+        position: absolute;
+        top: 70px; /* JUSTO DEBAJO DEL HEADER */
         left: 0;
         width: 100%;
         background: #003366;
@@ -260,7 +264,7 @@ h2 {
         padding: 25px 0;
         transform: translateY(-120%);
         transition: transform 0.3s ease;
-        z-index: 999;
+        z-index: 1000;
     }
 
     .nav-links.active {
