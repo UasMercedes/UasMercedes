@@ -423,5 +423,18 @@ h2 {
     transform: translateY(-4px);
 }
 
+/* ====== SECCIONES MATERIALES ====== */
+
+.materiales-seccion {
+    margin-bottom: 60px;
+}
+
+.materiales-seccion h2 {
+    margin-bottom: 25px;
+    color: #b30000;
+    font-size: 28px;
+}
+
+
 
 
