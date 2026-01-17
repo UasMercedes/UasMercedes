@@ -30,15 +30,14 @@ p {
     background: #003366;
     color: white;
 
-    height: 65px;              /* 🔽 más baja */
-    padding: 0 20px;           /* 🔽 sin padding vertical */
+    height: 65px;              /* Más baja */
+    padding: 0 20px;           /* Sin padding vertical */
 
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
 }
-
 
 .logo-container {
     display: flex;
@@ -53,9 +52,6 @@ p {
     display: block;
 }
 
-
-}
-
 .school-name {
     font-size: clamp(14px, 3vw, 22px);
     font-weight: 600;
@@ -68,6 +64,7 @@ p {
     color: white;
     display: none;
     margin-left: auto;
+    z-index: 1100; /* Asegura que esté por encima del menú */
 }
 
 .nav-links {
@@ -93,13 +90,12 @@ p {
 /* ===============================
    HERO SLIDER (MITAD DE ALTURA)
 =============================== */
-
 .page-hero {
-    width: 100vw !important;       /* ancho completo de la ventana */
-    max-width: 100vw !important;   /* ignora cualquier max-width de padres */
-    height: 70vh;                  /* mitad de la pantalla */
-    margin: 0 !important;          /* quita márgenes */
-    padding: 0 !important;         /* quita padding */
+    width: 100vw !important;       /* Ancho completo de la ventana */
+    max-width: 100vw !important;   /* Ignora cualquier max-width de padres */
+    height: 70vh;                  /* Mitad de la pantalla */
+    margin: 0 !important;          /* Quita márgenes */
+    padding: 0 !important;         /* Quita padding */
     position: relative;
     overflow: hidden;
 }
@@ -116,20 +112,9 @@ p {
     width: 100vw;
     height: 100%;
     object-fit: cover;
-    flex-shrink: 0
-        transform: translateY(-10px);
-   object-position: center 30%;
-
-}
-}
-
-/* Imágenes */
-.hero-slider img {
-    width: 100vw !important;       /* ancho total de la ventana */
-    height: 100%;
-    object-fit: cover;
     flex-shrink: 0;
-    animation: slideShow 15s infinite;
+    transform: translateY(-10px);
+    object-position: center 30%;
 }
 
 /* ANIMACIÓN DE 3 IMÁGENES */
@@ -150,8 +135,8 @@ p {
     transform: translate(-50%, -50%) !important;
     text-align: center !important;
     max-width: 90% !important;
-    color: white !important;       /* fuerza texto blanco */
-    background: none !important;   /* elimina recuadro gris */
+    color: white !important;
+    background: none !important;
     padding: 0 !important;
     margin: 0 auto !important;
 }
@@ -159,7 +144,7 @@ p {
 .hero-text h1 {
     font-size: clamp(24px, 4vw, 36px);
     margin: 0 !important;
-    white-space: nowrap;           /* intenta mantener en una línea */
+    white-space: nowrap;
     color: white !important;
 }
 
@@ -167,7 +152,7 @@ p {
     font-size: clamp(14px, 2vw, 20px);
     margin-top: 10px !important;
     color: white !important;
-    white-space: normal;           /* permite quiebre de línea en párrafo */
+    white-space: normal;
 }
 
 /* ===============================
@@ -175,12 +160,12 @@ p {
 =============================== */
 @media (max-width: 768px) {
     .page-hero {
-        height: 35vh; /* altura menor en móviles */
+        height: 35vh; /* Altura menor en móviles */
     }
 
     .hero-text h1 {
         font-size: clamp(18px, 5vw, 28px);
-        white-space: normal; /* permite quiebre de línea en móviles */
+        white-space: normal;
     }
 
     .hero-text p {
@@ -260,14 +245,13 @@ footer {
    RESPONSIVE NAV
 =============================== */
 @media (max-width: 768px) {
-.menu-toggle {
-    display: block;
-}
- }
+    .menu-toggle {
+        display: block;
+    }
 
     .nav-links {
         position: fixed;
-        top: 0;
+        top: 65px; /* Ajuste para que se abra debajo del navbar */
         left: 0;
         width: 250px;
         height: 100vh;
@@ -277,7 +261,7 @@ footer {
         gap: 20px;
         transform: translateX(-100%);
         transition: 0.3s ease;
-        z-index: 1000;
+        z-index: 999; /* Menor que el botón hamburguesa y las flechas */
     }
 
     .nav-links.active {
@@ -302,10 +286,11 @@ footer {
     .menu-toggle {
         display: none !important;
     }
-   /* ===============================
+}
+
+/* ===============================
    HERO SLIDER - FLECHAS
 =============================== */
-
 .page-hero {
     position: relative;
 }
@@ -320,7 +305,7 @@ footer {
     font-size: 2.5rem;
     padding: 10px 18px;
     cursor: pointer;
-    z-index: 20;
+    z-index: 1000; /* Menor que el botón hamburguesa pero mayor que el menú */
     border-radius: 6px;
     user-select: none;
 }
@@ -337,5 +322,4 @@ footer {
     background: rgba(0, 0, 0, 0.8);
 }
 
-}
 
