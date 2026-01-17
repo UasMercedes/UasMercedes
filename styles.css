@@ -423,71 +423,87 @@ h2 {
     transform: translateY(-4px);
 }
 
-/* ====== SECCIONES MATERIALES ====== */
+/* ===============================
+   MATERIALES
+=============================== */
 
-.materiales-seccion {
-    margin-bottom: 60px;
+.materiales {
+    max-width: 1200px;
+    margin: 120px auto 60px;
+    padding: 0 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.materiales-seccion h2 {
-    margin-bottom: 25px;
-    color: #b30000;
-    font-size: 28px;
+.materiales h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: #003366;
 }
 
-/* ====== GRID MATERIALES ====== */
-
+/* GRID DOS COLUMNAS */
 .materiales-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    margin-top: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
 }
 
-/* Cada sección */
+/* SECCIÓN */
 .materiales-seccion {
-    background: #f8f8f8;
+    background: #ffffff;
     padding: 30px;
-    border-radius: 12px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* Títulos */
 .materiales-seccion h2 {
     text-align: center;
-    margin-bottom: 30px;
-    color: #b30000;
-    font-size: 26px;
+    color: #003366;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
 }
 
-/* Tarjetas */
+/* LISTA */
 .materiales-lista {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 14px;
 }
 
+/* TARJETAS */
 .material-card {
+    display: block;
     text-align: center;
-    padding: 16px;
-    background: white;
-    border-radius: 8px;
+    padding: 14px;
+    background: #f4f6f8;
+    color: #003366;
+    text-decoration: none;
     font-weight: 600;
-    transition: 0.3s ease;
+    border-radius: 10px;
+    transition: all 0.25s ease;
 }
 
 .material-card:hover {
     background: #003366;
-    color: white;
+    color: #ffffff;
+    transform: translateY(-3px);
 }
 
-/* ====== RESPONSIVE ====== */
+/* ===============================
+   RESPONSIVE
+=============================== */
 @media (max-width: 768px) {
+
+    .materiales {
+        margin-top: 100px;
+    }
+
     .materiales-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .materiales-seccion {
+        padding: 25px;
     }
 }
-
-
-
-
-
