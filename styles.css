@@ -214,23 +214,52 @@ h2 {
 =============================== */
 @media (max-width: 768px) {
 
-    /* Navbar */
+    /* ===============================
+       NAVBAR
+    =============================== */
+
+    .navbar {
+        height: auto;
+        padding: 10px 16px;
+        align-items: center;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        max-width: calc(100% - 50px);
+    }
+
+    .logo {
+        height: 40px;
+        width: auto;
+    }
+
+    .school-name {
+        font-size: 14px;
+        line-height: 1.2;
+        white-space: normal;
+    }
+
     .menu-toggle {
         display: block;
+        font-size: 1.8rem;
     }
 
     .nav-links {
         position: fixed;
-        top: 65px;
+        top: 100%;
         left: 0;
         width: 100%;
         background: #003366;
         flex-direction: column;
         align-items: center;
         gap: 20px;
-        padding: 30px 0;
+        padding: 25px 0;
         transform: translateY(-120%);
-        transition: 0.3s ease;
+        transition: transform 0.3s ease;
         z-index: 999;
     }
 
@@ -238,9 +267,14 @@ h2 {
         transform: translateY(0);
     }
 
-    /* Hero */
+    /* ===============================
+       HERO
+    =============================== */
+
     .page-hero {
+        width: 100vw;
         height: 40vh;
+        margin: 0;
     }
 
     .hero-arrow {
@@ -248,5 +282,3 @@ h2 {
         padding: 8px 12px;
     }
 }
-
-
