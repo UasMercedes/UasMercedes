@@ -492,6 +492,7 @@ h2 {
     margin-top: 65px; /* altura navbar */
     height: 40vh;
     width: 100%;
+   margin-left: calc(-50vw + 50%);
     background-image: url("images/utiles.jpg");
     background-size: cover;
     background-position: center;
