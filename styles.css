@@ -490,13 +490,17 @@ h2 {
 =============================== */
 .hero-materiales {
     margin-top: 65px; /* altura navbar */
-    height: 40vh;
-    width: 100%;
-   margin-left: calc(-50vw + 50%);
+    width: 100vw;
+    height: 260px; /* hero más angosto */
     background-image: url("images/utiles.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
 }
 
 .hero-materiales-overlay {
