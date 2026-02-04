@@ -526,6 +526,92 @@ h2 {
     .hero-materiales {
         height: 30vh;
     }
+
+   /* ==== ESTILO NOVEDADES (cards + color + onda) ==== */
+
+/* Contenedor principal */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Título principal */
+main > h1, main h2 {
+    font-size: clamp(28px, 5vw, 36px);
+    text-align: center;
+    font-weight: 800;
+    color: #003366; /* azul institucional */
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+/* Lista de novedades como cards */
+.novedad-card {
+    background: #e8edfa; /* azul muy suave */
+    border-left: 6px solid #003366;
+    border-radius: 12px;
+    padding: 18px 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, background 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Icono rojo al principio */
+.novedad-card::before {
+    content: "🔴"; /* icono rojo */
+    font-size: 1.8rem;
+}
+
+/* Hover suave */
+.novedad-card:hover {
+    background: #dfe7f5;
+    transform: translateY(-3px);
+}
+
+/* Título dentro de cada card */
+.novedad-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #003366;
+    margin: 0;
+}
+
+/* “Read More” al final */
+.novedad-card a {
+    margin-left: auto;
+    font-weight: 600;
+    color: #b30000;
+    text-decoration: none;
+}
+.novedad-card a:hover {
+    text-decoration: underline;
+}
+
+/* Separador onda (SVG al final de hero o inicio de novedades) */
+.wave-divider {
+    display: block;
+    width: 100%;
+    margin-top: -4px;
+}
+
+/* Opcional: si querés un fondo azul arriba */
+.page-hero {
+    background: linear-gradient(135deg, #003366, #0055a5);
+    color: white;
+    text-align: center;
+}
+
+/* Texto del hero si lo usás */
+.page-hero h1 {
+    color: white;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.4);
+    font-size: clamp(32px, 6vw, 48px);
+}
+
 }
 
 }
