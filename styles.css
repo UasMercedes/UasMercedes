@@ -678,3 +678,111 @@ article,
 div {
     background-color: transparent;
 }
+
+/* ================================
+   FONDO GENERAL DEL SITIO
+   ================================ */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-color: #eef6fb; /* celeste muy clarito */
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ================================
+   CONTENIDO GENERAL
+   ================================ */
+
+main {
+    padding: 30px 15px;
+}
+
+/* ================================
+   RECUADROS PARA TEXTOS
+   ================================ */
+
+/* Aplica a casi todo el contenido */
+section,
+article,
+.texto,
+.contenido,
+.card,
+main p,
+main ul,
+main ol {
+    background-color: #fffaf0; /* blanco marfil */
+    border-radius: 22px;
+    padding: 20px 25px;
+    margin: 20px auto;
+    max-width: 1000px;
+    box-shadow: 0 10px 25px rgba(0, 80, 140, 0.12);
+    position: relative;
+}
+
+/* ================================
+   ONDA DECORATIVA
+   ================================ */
+
+section::before,
+article::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    width: 60px;
+    height: 12px;
+    background: #7fb8e6;
+    border-radius: 0 0 50px 50px;
+}
+
+/* ================================
+   TÍTULOS CON MÁS ONDA
+   ================================ */
+
+h1, h2, h3 {
+    color: #0a3c6e;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+h1::after,
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #e63946; /* rojo elegante */
+    border-radius: 10px;
+    margin-top: 6px;
+}
+
+/* ================================
+   PÁRRAFOS
+   ================================ */
+
+p {
+    line-height: 1.6;
+    color: #333;
+    font-size: 1.05rem;
+}
+
+/* ================================
+   LISTAS
+   ================================ */
+
+ul li::marker {
+    color: #e63946;
+}
+
+/* ================================
+   EFECTO SUAVE AL PASAR EL MOUSE
+   ================================ */
+
+section:hover,
+article:hover {
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+}
+
