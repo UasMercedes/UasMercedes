@@ -651,3 +651,30 @@ h2 {
         padding: 18px;
     }
 }
+/* ================================
+   FONDO GENERAL DEL SITIO
+   ================================ */
+
+/* Asegura que todo el sitio tenga fondo */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-color: #eef6fb; /* azul muy clarito, NO blanco */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Si usás un contenedor principal */
+main, 
+.container, 
+.contenido, 
+.wrapper {
+    background-color: transparent;
+}
+
+/* Evita fondos blancos heredados */
+section,
+article,
+div {
+    background-color: transparent;
+}
