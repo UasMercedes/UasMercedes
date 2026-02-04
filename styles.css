@@ -746,3 +746,7 @@ article:hover {
     transform: translateY(-3px);
     box-shadow: 0 14px 30px rgba(0, 80, 140, 0.18);
 }
+section::before,
+article::before {
+    display: none;
+}
