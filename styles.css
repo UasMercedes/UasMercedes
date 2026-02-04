@@ -822,3 +822,20 @@ article::before {
     border-bottom: none;
 }
 
+.materiales-card ul li a {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #0b3c6d;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.materiales-card ul li a:hover {
+    background-color: #e6f1fb;
+    color: #c62828;
+    transform: translateX(6px);
+}
+
+
