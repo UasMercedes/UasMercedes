@@ -684,26 +684,13 @@ div {
    ================================ */
 
 html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
     background-color: #eef6fb; /* celeste muy clarito */
-    font-family: "Segoe UI", Arial, sans-serif;
 }
 
 /* ================================
-   CONTENIDO GENERAL
+   RECUADROS DE CONTENIDO
    ================================ */
 
-main {
-    padding: 30px 15px;
-}
-
-/* ================================
-   RECUADROS PARA TEXTOS
-   ================================ */
-
-/* Aplica a casi todo el contenido */
 section,
 article,
 .texto,
@@ -712,7 +699,7 @@ article,
 main p,
 main ul,
 main ol {
-    background-color: #fffaf0; /* blanco marfil */
+    background-color: rgba(255, 255, 255, 0.96); /* blanco opaco */
     border-radius: 22px;
     padding: 20px 25px;
     margin: 20px auto;
@@ -722,7 +709,7 @@ main ol {
 }
 
 /* ================================
-   ONDA DECORATIVA
+   DETALLE CURVO SUPERIOR
    ================================ */
 
 section::before,
@@ -733,56 +720,29 @@ article::before {
     left: 20px;
     width: 60px;
     height: 12px;
-    background: #7fb8e6;
+    background: #9ecdf0; /* azul institucional suave */
     border-radius: 0 0 50px 50px;
 }
 
 /* ================================
-   TÍTULOS CON MÁS ONDA
-   ================================ */
-
-h1, h2, h3 {
-    color: #0a3c6e;
-    margin-bottom: 12px;
-    position: relative;
-}
-
-h1::after,
-h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: #e63946; /* rojo elegante */
-    border-radius: 10px;
-    margin-top: 6px;
-}
-
-/* ================================
-   PÁRRAFOS
+   TEXTO
    ================================ */
 
 p {
     line-height: 1.6;
-    color: #333;
-    font-size: 1.05rem;
 }
 
 /* ================================
-   LISTAS
+   EFECTO SUAVE
    ================================ */
 
-ul li::marker {
-    color: #e63946;
+section,
+article {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* ================================
-   EFECTO SUAVE AL PASAR EL MOUSE
-   ================================ */
 
 section:hover,
 article:hover {
     transform: translateY(-3px);
-    transition: all 0.3s ease;
+    box-shadow: 0 14px 30px rgba(0, 80, 140, 0.18);
 }
-
