@@ -527,93 +527,127 @@ h2 {
         height: 30vh;
     }
     }
-   /* ==== ESTILO NOVEDADES (cards + color + onda) ==== */
+/* ===============================
+   NOVEDADES – ESTILO VISUAL
+=============================== */
 
-/* Contenedor principal */
-main {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-/* Título principal */
-main > h1, main h2 {
-    font-size: clamp(28px, 5vw, 36px);
-    text-align: center;
-    font-weight: 800;
-    color: #003366; /* azul institucional */
-    margin-bottom: 25px;
-    text-transform: uppercase;
-}
-
-/* Lista de novedades como cards */
-.novedad-card {
-    background: #e8edfa; /* azul muy suave */
-    border-left: 6px solid #003366;
-    border-radius: 12px;
-    padding: 18px 24px;
-    margin-bottom: 18px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, background 0.3s ease;
+/* HERO DE NOVEDADES */
+.hero {
+    margin-top: 65px;
+    height: 260px;
+    background: linear-gradient(135deg, #003366, #0055a5);
     display: flex;
     align-items: center;
-    gap: 14px;
+    justify-content: center;
+    text-align: center;
+    position: relative;
 }
 
-/* Icono rojo al principio */
-.novedad-card::before {
-    content: "🔴"; /* icono rojo */
-    font-size: 1.8rem;
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: white;
+    border-top-left-radius: 100% 80px;
+    border-top-right-radius: 100% 80px;
 }
 
-/* Hover suave */
-.novedad-card:hover {
-    background: #dfe7f5;
-    transform: translateY(-3px);
+.hero-text {
+    color: white;
+    max-width: 800px;
+    padding: 20px;
+    z-index: 2;
 }
 
-/* Título dentro de cada card */
-.novedad-card h3 {
-    font-size: 1.4rem;
-    font-weight: 700;
+.hero-text h1 {
+    font-size: clamp(32px, 6vw, 46px);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: clamp(15px, 3vw, 20px);
+    opacity: 0.95;
+}
+
+/* CONTENEDOR NOVEDADES */
+.news-content {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.news-content > h2 {
+    text-align: center;
+    font-size: 2.4rem;
     color: #003366;
-    margin: 0;
+    margin-bottom: 10px;
 }
 
-/* “Read More” al final */
-.novedad-card a {
-    margin-left: auto;
-    font-weight: 600;
-    color: #b30000;
-    text-decoration: none;
+.news-content > p {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #555;
 }
-.novedad-card a:hover {
+
+/* TARJETAS DE NOTICIAS */
+.news-item {
+    background: #e9f0fa;
+    border-left: 6px solid #003366;
+    border-radius: 16px;
+    padding: 22px 26px;
+    margin-bottom: 22px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item::before {
+    content: "●";
+    color: #b30000;
+    font-size: 28px;
+    position: absolute;
+    top: 18px;
+    left: -18px;
+}
+
+.news-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+.news-item h3 {
+    color: #003366;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.news-item p {
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.news-item .btn {
+    background: transparent;
+    color: #b30000;
+    font-weight: 700;
+    padding: 0;
+}
+
+.news-item .btn:hover {
+    background: none;
     text-decoration: underline;
 }
 
-/* Separador onda (SVG al final de hero o inicio de novedades) */
-.wave-divider {
-    display: block;
-    width: 100%;
-    margin-top: -4px;
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero {
+        height: 200px;
+    }
+
+    .news-item {
+        padding: 18px;
+    }
 }
-
-/* Opcional: si querés un fondo azul arriba */
-.page-hero {
-    background: linear-gradient(135deg, #003366, #0055a5);
-    color: white;
-    text-align: center;
-}
-
-/* Texto del hero si lo usás */
-.page-hero h1 {
-    color: white;
-    text-shadow: 0 3px 10px rgba(0,0,0,0.4);
-    font-size: clamp(32px, 6vw, 48px);
-}
-
-}
-
-}
-
-
