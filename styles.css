@@ -1150,5 +1150,54 @@ h2::after {
   transform: scale(1.1);
 }
 
+/* ======================================
+   NUEVO ESTILO GLOBAL PARA HERO INTERNOS
+====================================== */
+
+.hero{
+  position: relative;
+  width: 100%;
+  padding: 100px 20px 90px;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+
+  background: linear-gradient(120deg, #1e3c72, #2a5298);
+}
+
+
+/* detalle decorativo moderno */
+.hero::after{
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: white;
+  border-radius: 50% 50% 0 0;
+}
+
+
+/* textos */
+.hero-text h1{
+  margin: 0;
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.hero-text p{
+  margin-top: 15px;
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+
+/* separa mejor el contenido que sigue */
+.news-content,
+.page-content{
+  margin-top: 40px;
+}
+
 
 
