@@ -3,11 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <title>Equipo</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+  .hero-equipo{
+    padding: 60px 20px;
+    text-align: center;
+    background: #e9eef5;
+  }
+
+  .botones-equipo{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 50px;
+  }
+
+  .boton-equipo{
+    position: relative;
+    display: block;
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  }
+
+  .boton-equipo img{
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .boton-equipo::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    transition: background 0.3s ease;
+  }
+
+  .boton-equipo span{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 16px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .boton-equipo:hover img{
+    transform: scale(1.08);
+  }
+
+  .boton-equipo:hover::after{
+    background: rgba(0,0,0,0.55);
+  }
+  </style>
+
 </head>
 
 <body>
-
 
 <section class="hero-equipo">
   <h1>Nuestro equipo</h1>
@@ -33,4 +91,6 @@
 
 </section>
 
+</body>
+</html>
 
