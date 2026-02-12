@@ -1214,3 +1214,61 @@ main, .news-content, .page-content {
   font-size: 16px;
   opacity: 0.95;
 }
+
+/* ======================================
+   HERO SLIM CON PRESENCIA
+====================================== */
+
+.hero{
+  width: 100%;
+  padding: 45px 20px 35px;   /* más finito */
+  text-align: center;
+  color: white;
+  background: linear-gradient(120deg, #1e3c72, #2a5298);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* título con fuerza */
+.hero-text h1{
+  margin: 0;
+  font-size: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* bajada */
+.hero-text p{
+  margin-top: 6px;
+  font-size: 15px;
+  opacity: 0.95;
+}
+/* ======================================
+   HERO SLIM CON PRESENCIA
+====================================== */
+
+.hero{
+  width: 100%;
+  padding: 45px 20px 35px;   /* más finito */
+  text-align: center;
+  color: white;
+  background: linear-gradient(120deg, #1e3c72, #2a5298);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* título con fuerza */
+.hero-text h1{
+  margin: 0;
+  font-size: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* bajada */
+.hero-text p{
+  margin-top: 6px;
+  font-size: 15px;
+  opacity: 0.95;
+}
+
