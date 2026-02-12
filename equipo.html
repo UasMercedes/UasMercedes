@@ -1,41 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equipo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo – Uruguayan American School de Mercedes</title>
 
-  <!-- tu hoja de estilos general -->
-  <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <section class="hero-equipo">
-    <h1>Nuestro equipo</h1>
-    <p>Seleccioná el sector para ver el listado del personal.</p>
-  </section>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <span class="menu-toggle">☰</span>
 
-  <!-- BOTONES -->
-  <section class="botones-equipo">
+        <div class="logo-container">
+            <img src="logo.jpg" alt="Logo UAS Mercedes" class="logo" width="120">
+            <span class="school-name">Uruguayan American School de Mercedes</span>
+        </div>
 
-    <a href="docs/early-years.pdf" class="boton-equipo">
-      <img src="images/early-years.jpg" alt="Early Years">
-      <span>Early Years</span>
-    </a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="btn">Inicio</a></li>
+            <li><a href="novedades.html" class="btn">Novedades</a></li>
+            <li><a href="calendario.html" class="btn">Calendario</a></li>
+            <li><a href="informacion.html" class="btn">Información</a></li>
+            <li><a href="contacto.html" class="btn">Contacto</a></li>
+        </ul>
+    </header>
 
-    <a href="docs/primary.pdf" class="boton-equipo">
-      <img src="images/primary.jpg" alt="Primary">
-      <span>Primary</span>
-    </a>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Nuestro equipo</h1>
+            <p>Seleccioná el sector para ver el listado del personal.</p>
+        </div>
+    </section>
 
-    <a href="docs/personal.pdf" class="boton-equipo">
-      <img src="images/personal.jpg" alt="Personal">
-      <span>Personal</span>
-    </a>
+    <!-- CONTENIDO -->
+    <section class="news-content">
 
-  </section>
+        <div class="botones-equipo">
+
+            <a href="docs/early-years.pdf" class="boton-equipo">
+                <img src="images/early-years.jpg" alt="Early Years">
+                <span>Early Years</span>
+            </a>
+
+            <a href="docs/primary.pdf" class="boton-equipo">
+                <img src="images/primary.jpg" alt="Primary">
+                <span>Primary</span>
+            </a>
+
+            <a href="docs/personal.pdf" class="boton-equipo">
+                <img src="images/personal.jpg" alt="Personal">
+                <span>Personal</span>
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="logo.jpg" class="footer-logo" alt="School Logo">
+                <p class="footer-school-name">Uruguayan American School de Mercedes</p>
+                <img src="logocam.jpg" class="footer-cambridge" alt="Cambridge International School">
+            </div>
+
+            <div class="footer-center">
+                <p><strong>Dirección:</strong> 18 De Julio 538, Mercedes, Soriano</p>
+                <p><strong>Email:</strong> uasdireccion@gmail.com</p>
+                <p><strong>Teléfono:</strong> 4532 3962</p>
+                <p><strong>Celular:</strong> 092 323 962 – 097 385 182</p>
+            </div>
+
+            <div class="footer-right">
+                <p><strong>Seguinos:</strong></p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/uasmercedes/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/uas_mercedes/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@UASMercedesOficial" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT MENÚ -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 
 </body>
 </html>
