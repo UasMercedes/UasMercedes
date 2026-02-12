@@ -1149,55 +1149,43 @@ h2::after {
 .boton-equipo:hover img{
   transform: scale(1.1);
 }
+/* ===============================
+   GLOBAL – HERO INTERNO MODERNO
+=============================== */
 
-/* ======================================
-   NUEVO ESTILO GLOBAL PARA HERO INTERNOS
-====================================== */
-
-.hero{
-  position: relative;
+.hero {
   width: 100%;
-  padding: 100px 20px 90px;
+  padding: 120px 20px 80px;
   text-align: center;
   color: white;
-  overflow: hidden;
-
-  background: linear-gradient(120deg, #1e3c72, #2a5298);
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease infinite;
+  position: relative;
 }
 
-
-/* detalle decorativo moderno */
-.hero::after{
-  content: "";
-  position: absolute;
-  bottom: -40px;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background: white;
-  border-radius: 50% 50% 0 0;
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-
-/* textos */
-.hero-text h1{
-  margin: 0;
+.hero-text h1 {
   font-size: 44px;
   font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.hero-text p{
-  margin-top: 15px;
+.hero-text p {
+  margin-top: 12px;
   font-size: 18px;
-  opacity: 0.95;
+  opacity: 0.9;
 }
 
-
-/* separa mejor el contenido que sigue */
-.news-content,
-.page-content{
+/* Separa bien el contenido siguiente */
+main, .news-content, .page-content {
   margin-top: 40px;
 }
-
-
-
