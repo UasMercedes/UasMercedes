@@ -847,23 +847,6 @@ body {
     background: linear-gradient(to bottom, #eef4ff, #f7f9fc);
 }
 
-/* Contenedores principales */
-section,
-.news-content,
-.materiales,
-main {
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(4px);
-    border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    padding: 30px;
-}
-
-/* Títulos */
-h1, h2, h3 {
-    color: #003366;
-    font-weight: 800;
-}
 
 /* Subrayado elegante debajo de títulos */
 h2::after {
@@ -906,15 +889,6 @@ h2::after {
     transform: translateY(-4px);
 }
 
-/* Hero más impactante */
-.hero {
-    background: linear-gradient(rgba(0,51,102,0.75), rgba(0,51,102,0.75)),
-                url("images/hero.jpg");
-    background-size: cover;
-    background-position: center;
-    padding: 120px 20px;
-    border-radius: 0 0 30px 30px;
-}
 
 /* Textos hero */
 .hero h1 {
