@@ -1189,3 +1189,28 @@ h2::after {
 main, .news-content, .page-content {
   margin-top: 40px;
 }
+/* ======================================
+   HERO INTERNO COMPACTO (GLOBAL)
+====================================== */
+
+.hero{
+  width: 100%;
+  padding: 60px 20px 40px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(120deg, #1e3c72, #2a5298);
+}
+
+/* título */
+.hero-text h1{
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* subtítulo */
+.hero-text p{
+  margin-top: 8px;
+  font-size: 16px;
+  opacity: 0.95;
+}
