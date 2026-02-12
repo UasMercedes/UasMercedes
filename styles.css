@@ -901,3 +901,19 @@ h2::after {
     font-size: 18px;
 }
 
+.equipo-home{
+  padding: 60px 20px;
+  text-align: center;
+  background: #f4f6f8;
+}
+
+.btn-equipo{
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #2b6cb0;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
