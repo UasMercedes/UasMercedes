@@ -12,12 +12,17 @@
 
 </head>
 
+
 <body>
+
+
 <section class="team-page">
 
     <h1>Early Years Team</h1>
 
+
     <div class="team-gallery">
+
 
         <div class="team-card">
             <img src="images/equipo/early-years-01.jpg" alt="Early Years Team Member">
@@ -83,9 +88,57 @@
             <img src="images/equipo/early-years-16.jpg" alt="Early Years Team Member">
         </div>
 
+
     </div>
 
+
 </section>
-    </body>
+
+
+
+<script>
+
+const images = document.querySelectorAll(".team-card img");
+
+
+images.forEach(image => {
+
+    image.addEventListener("click", () => {
+
+
+        const overlay = document.createElement("div");
+
+        overlay.classList.add("image-overlay");
+
+
+        const bigImage = document.createElement("img");
+
+        bigImage.src = image.src;
+
+
+        overlay.appendChild(bigImage);
+
+
+        document.body.appendChild(overlay);
+
+
+
+        overlay.addEventListener("click", () => {
+
+            overlay.remove();
+
+        });
+
+
+    });
+
+
+});
+
+
+</script>
+
+
+</body>
 
 </html>
