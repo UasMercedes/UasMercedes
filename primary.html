@@ -12,6 +12,7 @@
 
 </head>
 
+
 <body>
 
 
@@ -19,7 +20,9 @@
 
     <h1>Primary Team</h1>
 
+
     <div class="team-gallery">
+
 
         <div class="team-card">
             <img src="images/equipo/primary-01.jpg" alt="Primary Team Member">
@@ -85,84 +88,57 @@
             <img src="images/equipo/primary-16.jpg" alt="Primary Team Member">
         </div>
 
+
     </div>
 
+
 </section>
+
+
+
+<script>
+
+const images = document.querySelectorAll(".team-card img");
+
+
+images.forEach(image => {
+
+    image.addEventListener("click", () => {
+
+
+        const overlay = document.createElement("div");
+
+        overlay.classList.add("image-overlay");
+
+
+        const bigImage = document.createElement("img");
+
+        bigImage.src = image.src;
+
+
+        overlay.appendChild(bigImage);
+
+
+        document.body.appendChild(overlay);
+
+
+
+        overlay.addEventListener("click", () => {
+
+            overlay.remove();
+
+        });
+
+
+    });
+
+
+});
+
+
+</script>
 
 
 </body>
 
 </html>
-<section class="team-page">
-
-    <h1>Primary Team</h1>
-
-    <div class="team-gallery">
-
-        <div class="team-card">
-            <img src="images/equipo/primary-01.jpg" alt="Primary Team Member">
-        </div>
-
-        <div class="team-card">
-            <img src="images/equipo/primary-02.jpg" alt="Primary Team Member">
-        </div>
-
-        <div class="team-card">
-            <img src="images/equipo/primary-03.jpg" alt="Primary Team Member">
-        </div>
-
-        <div class="team-card">
-            <img src="images/equipo/primary-04.jpg" alt="Primary Team Member">
-        </div>
-
-        <div class="team-card">
-            <img src="images/equipo/primary-05.jpg" alt="Primary Team Member">
-        </div>
-
-        <div class="team-card">
-            <img src="images/equipo/primary-06.jpg" alt="Primary Team Member">
-        </div>
-
-        <div class="team-card">
-            <img src="images/equipo/primary-07.jpg" alt="Primary Team Member">
-        </div>
-
-        <div class="team-card">
-            <img src="images/equipo/primary-08.jpg" alt="Primary Team Member">
-        </div>
-
-        <div class="team-card">
-            <img src="images/equipo/primary-09.jpg" alt="Primary Team Member">
-        </div>
-
-        <div class="team-card">
-            <img src="images/equipo/primary-10.jpg" alt="Primary Team Member">
-        </div>
-
-        <div class="team-card">
-            <img src="images/equipo/primary-11.jpg" alt="Primary Team Member">
-        </div>
-
-        <div class="team-card">
-            <img src="images/equipo/primary-12.jpg" alt="Primary Team Member">
-        </div>
-
-        <div class="team-card">
-            <img src="images/equipo/primary-13.jpg" alt="Primary Team Member">
-        </div>
-
-        <div class="team-card">
-            <img src="images/equipo/primary-14.jpg" alt="Primary Team Member">
-        </div>
-
-        <div class="team-card">
-            <img src="images/equipo/primary-15.jpg" alt="Primary Team Member">
-        </div>
-
-        <div class="team-card">
-            <img src="images/equipo/primary-16.jpg" alt="Primary Team Member">
-        </div>
-
-    </div>
-
-</section>
