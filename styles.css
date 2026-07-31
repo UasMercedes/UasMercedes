@@ -1393,4 +1393,47 @@ main, .news-content, .page-content {
         grid-template-columns: 1fr;
     }
 
+
+/* ===== FORCE ADMINISTRATION GALLERY ===== */
+
+section.team-page .team-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+}
+
+section.team-page .team-gallery .team-card {
+    height: 280px !important;
+    width: 100% !important;
+    overflow: hidden !important;
+}
+
+section.team-page .team-gallery .team-card img {
+    width: 100% !important;
+    height: 280px !important;
+    max-width: 100% !important;
+    max-height: 280px !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+
+/* TABLET */
+@media(max-width:900px){
+
+    section.team-page .team-gallery {
+        grid-template-columns: repeat(2,1fr) !important;
+    }
+
+}
+
+
+/* CELULAR */
+@media(max-width:600px){
+
+    section.team-page .team-gallery {
+        grid-template-columns:1fr !important;
+    }
+
 }
