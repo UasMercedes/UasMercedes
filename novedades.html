@@ -1,122 +1,362 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News – Uruguayan American School de Mercedes</title>
 
-    <!-- Font Awesome (iconos redes sociales) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
+    <title>Novedades – Uruguayan American School de Mercedes</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
 
-    <!-- CSS -->
+    <!-- CSS general del sitio -->
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* HERO */
+        .novedades-hero {
+            background-color: #ffcccc;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .novedades-hero h1 {
+            margin: 0 0 10px;
+            color: #003366;
+            font-size: 2.5rem;
+        }
+
+        .novedades-hero p {
+            margin: 0;
+            color: #336699;
+            font-size: 1.2rem;
+        }
+
+        /* CONTENIDO PRINCIPAL */
+        .novedades-section {
+            padding: 60px 20px;
+            background-color: #f7f8fa;
+        }
+
+        .novedades-container {
+            width: 100%;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .novedades-container h2 {
+            margin: 0 0 35px;
+            color: #003366;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        /* CONTENEDOR DE LOS DOS BOTONES */
+        .novedades-options {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 30px;
+        }
+
+        /* BOTONES / TARJETAS */
+        .novedades-card {
+            display: flex;
+            min-height: 260px;
+            padding: 35px 25px;
+            border: 2px solid transparent;
+            border-radius: 16px;
+            background-color: #ffffff;
+            box-shadow: 0 6px 18px rgba(0, 51, 102, 0.12);
+            color: #003366;
+            text-align: center;
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .novedades-card:hover {
+            transform: translateY(-6px);
+            border-color: #b30000;
+            box-shadow: 0 12px 26px rgba(0, 51, 102, 0.18);
+        }
+
+        .novedades-card i {
+            margin-bottom: 22px;
+            color: #b30000;
+            font-size: 4rem;
+        }
+
+        .novedades-card h3 {
+            margin: 0 0 12px;
+            color: #003366;
+            font-size: 1.6rem;
+        }
+
+        .novedades-card p {
+            max-width: 320px;
+            margin: 0;
+            color: #555555;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* BOTÓN HAMBURGUESA */
+        .menu-toggle {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        /* CELULARES */
+        @media screen and (max-width: 768px) {
+            .novedades-hero {
+                padding: 40px 20px;
+            }
+
+            .novedades-hero h1 {
+                font-size: 2rem;
+            }
+
+            .novedades-hero p {
+                font-size: 1rem;
+            }
+
+            .novedades-section {
+                padding: 40px 16px;
+            }
+
+            .novedades-options {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .novedades-card {
+                min-height: 220px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- NAVBAR -->
     <header class="navbar">
-        <span class="menu-toggle">☰</span> <!-- Menú hamburguesa -->
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
 
         <div class="logo-container">
-            <img src="logo.jpg" alt="Logo UAS Mercedes" class="logo" width="120">
-            <span class="school-name">Uruguayan American School de Mercedes</span>
-         
+            <img
+                src="logo.jpg"
+                alt="Logo UAS Mercedes"
+                class="logo"
+                width="120"
+            >
+
+            <span class="school-name">
+                Uruguayan American School de Mercedes
+            </span>
         </div>
 
         <ul class="nav-links">
-            <li><a href="index.html" class="btn">Inicio</a></li>
-            <li><a href="novedades.html" class="btn">Novedades</a></li>
-            <li><a href="calendario.html" class="btn">Calendario</a></li>
-            <li><a href="informacion.html" class="btn">Información</a></li>
-            <li><a href="contacto.html" class="btn">Contacto</a></li>
+            <li>
+                <a href="index.html" class="btn">Inicio</a>
+            </li>
+
+            <li>
+                <a href="novedades.html" class="btn">Novedades</a>
+            </li>
+
+            <li>
+                <a href="calendario.html" class="btn">Calendario</a>
+            </li>
+
+            <li>
+                <a href="informacion.html" class="btn">Información</a>
+            </li>
+
+            <li>
+                <a href="contacto.html" class="btn">Contacto</a>
+            </li>
         </ul>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Últimas noticias</h1>
-            <p>Mantenete al día con los eventos, proyectos y comunicados de nuestra institución.</p>
-        </div>
+    <!-- HERO -->
+    <section class="novedades-hero">
+        <h1>Novedades</h1>
+
+        <p>
+            Accedé a información y recuerdos de nuestra comunidad educativa.
+        </p>
     </section>
 
-    <!-- NEWS CONTENT -->
-    <section class="news-content">
-        <h2>Novedades</h2>
-        <p>Conocé las novedades más recientes de nuestra comunidad educativa.:</p>
-              <section class="materiales-info">
-    <a href="materiales.html" class="materiales-link">
-        <i class="fa-solid fa-list-check"></i>
-        <h2>Lista de Materiales</h2>
-        <p>Accedé a las listas de materiales por grado</p>
-    </a>
-</section>
+    <!-- CONTENIDO -->
+    <main>
+        <section class="novedades-section">
+            <div class="novedades-container">
 
-        <article class="news-item">
-            <h3>Science Fair 2025</h3>
-            <p>Our students participated in the annual Science Fair with amazing projects about renewable energy.</p>
-            <a href="#" class="btn">Read More</a>
-        </article>
+                <h2>¿Qué querés consultar?</h2>
 
-        <article class="news-item">
-            <h3>Sports Day</h3>
-            <p>The Sports Day was full of fun, teamwork, and healthy competition. Congratulations to all participants!</p>
-            <a href="#" class="btn">Read More</a>
-        </article>
+                <div class="novedades-options">
 
-        <article class="news-item">
-            <h3>Art Exhibition</h3>
-            <p>Students showcased their creativity in the annual Art Exhibition. Families and friends were amazed!</p>
-            <a href="#" class="btn">Read More</a>
-        </article>
-    </section>
+                    <!-- LISTA DE MATERIALES -->
+                    <a
+                        href="materiales.html"
+                        class="novedades-card"
+                    >
+                        <i class="fa-solid fa-list-check"></i>
+
+                        <h3>Lista de materiales</h3>
+
+                        <p>
+                            Accedé a las listas de materiales correspondientes
+                            a cada nivel y grado.
+                        </p>
+                    </a>
+
+                    <!-- GALERÍA -->
+                    <a
+                        href="galeria.html"
+                        class="novedades-card"
+                    >
+                        <i class="fa-solid fa-images"></i>
+
+                        <h3>Galería</h3>
+
+                        <p>
+                            Mirá las fotografías de actividades, celebraciones,
+                            proyectos y eventos de nuestra institución.
+                        </p>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
+
             <div class="footer-left">
-                <img src="logo.jpg" class="footer-logo" alt="School Logo">
-                <p class="footer-school-name">Uruguayan American School de Mercedes</p>
-                        <img src="logocam.jpg" class="footer-cambridge" alt="Cambridge International School">
+                <img
+                    src="logo.jpg"
+                    class="footer-logo"
+                    alt="Logo de la escuela"
+                >
+
+                <p class="footer-school-name">
+                    Uruguayan American School de Mercedes
+                </p>
+
+                <img
+                    src="logocam.jpg"
+                    class="footer-cambridge"
+                    alt="Cambridge International School"
+                >
             </div>
 
             <div class="footer-center">
-                <p><strong>Dirección:</strong> 18 De Julio 538, 75000 Mercedes, Soriano</p>
-                <p><strong>Email:</strong> uasdireccion@gmail.com</p>
-                <p><strong>Teléfono:</strong> 4532 3962</p>
-                        <p><strong>Celular:</strong> 092 323 962 – 097 385 182</p>
+                <p>
+                    <strong>Dirección:</strong>
+                    18 de Julio 538, 75000 Mercedes, Soriano
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    uasdireccion@gmail.com
+                </p>
+
+                <p>
+                    <strong>Teléfono:</strong>
+                    4532 3962
+                </p>
+
+                <p>
+                    <strong>Celular:</strong>
+                    092 323 962 – 097 385 182
+                </p>
             </div>
 
             <div class="footer-right">
                 <p><strong>Seguinos:</strong></p>
-               <div class="social-icons">
-    <a href="https://www.facebook.com/uasmercedes/" target="_blank" aria-label="Facebook">
-        <i class="fa-brands fa-facebook-f"></i>
-    </a>
-    <a href="https://www.instagram.com/uas_mercedes/" target="_blank" aria-label="Instagram">
-        <i class="fa-brands fa-instagram"></i>
-    </a>
-    <a href="https://www.youtube.com/@UASMercedesOficial" target="_blank" aria-label="YouTube">
-        <i class="fa-brands fa-youtube"></i>
-    </a>
-</div>
 
+                <div class="social-icons">
+
+                    <a
+                        href="https://www.facebook.com/uasmercedes/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/uas_mercedes/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="https://www.youtube.com/@UASMercedesOficial"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube"
+                    >
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                </div>
             </div>
+
         </div>
     </footer>
 
-    <!-- SCRIPT MENÚ HAMBURGUESA -->
+    <!-- MENÚ HAMBURGUESA -->
     <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
 
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener("click", function () {
+                    const menuIsOpen =
+                        navLinks.classList.toggle("active");
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        menuIsOpen.toString()
+                    );
+                });
+            }
         });
     </script>
 
