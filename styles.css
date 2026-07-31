@@ -1485,3 +1485,20 @@ section.team-page .team-gallery .team-card img {
     object-fit: contain !important;
     border-radius: 15px;
 }
+
+   .image-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+
+.image-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+}
