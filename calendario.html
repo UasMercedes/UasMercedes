@@ -161,11 +161,11 @@
 
     { title: 'Natalicio de José Gervasio Artigas', start: '2026-06-19', description: 'Acto 10:30 h' },
 
-    { title: 'Vacaciones de Invierno', start: '2026-06-29', end: '2026-07-11', description: 'Vacaciones de Invierno' color: '#2E8B57' },
+    { title: 'Vacaciones de Invierno', start: '2026-06-29', end: '2026-07-11', description: 'Vacaciones de Invierno', color: '#2E8B57' },
 
     { title: 'Obra de teatro en inglés', start: '2026-07-20', description: 'The Company - En la escuela' },
 
-    { title: 'Semana de entrega de boletines', start: '2026-07-20', end: '2026-07-25', description: 'Entrega de boletines' },
+    { title: 'Semana de entrega de boletines', start: '2026-07-20', end: '2026-07-25', description: 'Entrega de boletines',  color: '#EF6C00'},
 
     { title: 'Asueto', start: '2026-08-24', description: 'Asueto' },
 
@@ -177,7 +177,7 @@
 
     { title: 'Family Day', start: '2026-09-13', description: 'Family Day' },
 
-    { title: 'Entrega de boletines / Plays', start: '2026-09-14', end: '2026-09-19', description: 'Entrega de boletines y Plays'  color: '#EF6C00'},
+    { title: 'Entrega de boletines / Plays', start: '2026-09-14', end: '2026-09-19', description: 'Entrega de boletines y Plays' ,  color: '#EF6C00'},
 
     { title: 'Vacaciones de Primavera', start: '2026-09-21', end: '2026-09-26', description: 'Vacaciones de Primavera' },
 
@@ -187,7 +187,7 @@
 
     { title: 'Celebración de Halloween', start: '2026-10-30', description: 'Halloween' },
 
-    { title: 'Entrega de boletines', start: '2026-11-09', end: '2026-11-14', description: 'Entrega de boletines'  color: '#EF6C00' },
+    { title: 'Entrega de boletines', start: '2026-11-09', end: '2026-11-14', description: 'Entrega de boletines' , color: '#EF6C00' },
 
     { title: 'Acto cultural Toddlers y Nursery', start: '2026-12-04', description: '8:30 h - En la escuela' },
 
@@ -200,19 +200,19 @@
     {
         title: 'Entrega de carpetas EARLY YEARS',
         start: '2026-12-15',
-        description: 'Entrega de carpetas'  color: '#EF6C00'
+        description: 'Entrega de carpetas' , color: '#EF6C00'
     },
 
     {
         title: 'Entrega de carpetas PRIMARY',
         start: '2026-12-16',
-        description: 'Entrega de carpetas'  color: '#EF6C00'
+        description: 'Entrega de carpetas' , color: '#EF6C00'
     },
 
     {
         title: 'Acto Protocolar',
         start: '2026-12-17',
-        description: 'Club A. Independiente - 08:30 h'   color: '#C62828'
+        description: 'Club A. Independiente - 08:30 h' ,  color: '#C62828'
     },
 
     {
@@ -220,9 +220,13 @@
         start: '2026-12-18',
         description: 'Finalización de Cursos'
     }
-
 ],
-                    alert(info.event.title + "\n" + info.event.extendedProps.description);
+
+eventClick: function(info) {
+
+    alert(info.event.title + "\n" + info.event.extendedProps.description);
+
+}
                 }
             });
             calendar.render();
