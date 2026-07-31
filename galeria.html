@@ -1,1 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Galería – Uruguayan American School de Mercedes</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS general del sitio -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* HERO DE LA GALERÍA */
+        .galeria-hero {
+            padding: 60px 20px;
+            background-color: #ffcccc;
+            text-align: center;
+        }
+
+        .galeria-hero h1 {
+            margin: 0 0 10px;
+            color: #003366;
+            font-size: 2.5rem;
+        }
+
+        .galeria-hero p {
+            max-width: 750px;
+            margin: 0 auto;
+            color: #336699;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* SECCIÓN PRINCIPAL */
+        .galeria-section {
+            padding: 60px 20px;
+            background-color: #f7f8fa;
+        }
+
+        .galeria-container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* VOLVER A NOVEDADES */
+        .volver-link {
+            display: inline-flex;
+            margin-bottom: 30px;
+            color: #003366;
+            font-weight: 600;
+            text-decoration: none;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s ease;
+        }
+
+        .volver-link:hover {
+            color: #b30000;
+        }
+
+        /* TÍTULO DE LOS ÁLBUMES */
+        .galeria-title {
+            margin: 0 0 10px;
+            color: #003366;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .galeria-description {
+            max-width: 680px;
+            margin: 0 auto 40px;
+            color: #555555;
+            font-size: 1rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* CUADRÍCULA DE ÁLBUMES */
+        .albumes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        /* TARJETA DE CADA ÁLBUM */
+        .album-card {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            min-height: 300px;
+            border-radius: 16px;
+            background-color: #003366;
+            box-shadow: 0 7px 20px rgba(0, 51, 102, 0.18);
+            color: #ffffff;
+            text-decoration: none;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .album-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 14px 30px rgba(0, 51, 102, 0.28);
+        }
+
+        /* FOTO DE PORTADA */
+        .album-cover {
+            display: block;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .album-card:hover .album-cover {
+            transform: scale(1.06);
+        }
+
+        /* OSCURECIDO SOBRE LA IMAGEN */
+        .album-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            padding: 24px;
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0, 30, 65, 0.95) 0%,
+                    rgba(0, 30, 65, 0.25) 60%,
+                    rgba(0, 30, 65, 0.08) 100%
+                );
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .album-overlay i {
+            margin-bottom: 12px;
+            color: #ffcccc;
+            font-size: 1.7rem;
+        }
+
+        .album-overlay h2 {
+            margin: 0 0 7px;
+            color: #ffffff;
+            font-size: 1.35rem;
+        }
+
+        .album-overlay p {
+            margin: 0;
+            color: #f1f1f1;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        /* ÁLBUM SIN FOTO DE PORTADA */
+        .album-placeholder {
+            display: flex;
+            width: 100%;
+            height: 300px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #003366,
+                    #336699
+                );
+            align-items: center;
+            justify-content: center;
+        }
+
+        .album-placeholder > i {
+            color: rgba(255, 255, 255, 0.25);
+            font-size: 5rem;
+        }
+
+        /* BOTÓN HAMBURGUESA */
+        .menu-toggle {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        /* TABLETS */
+        @media screen and (max-width: 950px) {
+            .albumes-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* CELULARES */
+        @media screen and (max-width: 650px) {
+            .galeria-hero {
+                padding: 40px 20px;
+            }
+
+            .galeria-hero h1 {
+                font-size: 2rem;
+            }
+
+            .galeria-hero p {
+                font-size: 1rem;
+            }
+
+            .galeria-section {
+                padding: 35px 16px;
+            }
+
+            .galeria-title {
+                font-size: 1.7rem;
+            }
+
+            .albumes-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .album-card {
+                min-height: 260px;
+            }
+
+            .album-cover,
+            .album-placeholder {
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <div class="logo-container">
+            <img
+                src="logo.jpg"
+                alt="Logo UAS Mercedes"
+                class="logo"
+                width="120"
+            >
+
+            <span class="school-name">
+                Uruguayan American School de Mercedes
+            </span>
+        </div>
+
+        <ul class="nav-links">
+            <li>
+                <a href="index.html" class="btn">Inicio</a>
+            </li>
+
+            <li>
+                <a href="novedades.html" class="btn">Novedades</a>
+            </li>
+
+            <li>
+                <a href="calendario.html" class="btn">Calendario</a>
+            </li>
+
+            <li>
+                <a href="informacion.html" class="btn">Información</a>
+            </li>
+
+            <li>
+                <a href="contacto.html" class="btn">Contacto</a>
+            </li>
+        </ul>
+    </header>
+
+    <!-- HERO -->
+    <section class="galeria-hero">
+        <h1>Galería</h1>
+
+        <p>
+            Compartimos algunos de los momentos, proyectos, celebraciones
+            y experiencias que forman parte de nuestra comunidad educativa.
+        </p>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <section class="galeria-section">
+            <div class="galeria-container">
+
+                <a href="novedades.html" class="volver-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Volver a Novedades
+                </a>
+
+                <h2 class="galeria-title">Nuestros álbumes</h2>
+
+                <p class="galeria-description">
+                    Seleccioná una carpeta para ver las fotografías
+                    correspondientes a cada actividad o evento.
+                </p>
+
+                <div class="albumes-grid">
+
+                    <!-- ÁLBUM 1: PROYECTO BILINGÜE -->
+                    <a
+                        href="album-proyecto-bilingue.html"
+                        class="album-card"
+                    >
+                        <div class="album-placeholder">
+                            <i class="fa-solid fa-images"></i>
+                        </div>
+
+                        <div class="album-overlay">
+                            <i class="fa-solid fa-folder-open"></i>
+
+                            <h2>Proyecto Bilingüe</h2>
+
+                            <p>
+                                Actividades, presentaciones y experiencias
+                                de nuestro proyecto bilingüe.
+                            </p>
+                        </div>
+                    </a>
+
+                    <!-- ÁLBUM 2 -->
+                    <a
+                        href="album-campamentos.html"
+                        class="album-card"
+                    >
+                        <div class="album-placeholder">
+                            <i class="fa-solid fa-images"></i>
+                        </div>
+
+                        <div class="album-overlay">
+                            <i class="fa-solid fa-folder-open"></i>
+
+                            <h2>Campamentos</h2>
+
+                            <p>
+                                Experiencias y actividades al aire libre.
+                            </p>
+                        </div>
+                    </a>
+
+                    <!-- ÁLBUM 3 -->
+                    <a
+                        href="album-plays.html"
+                        class="album-card"
+                    >
+                        <div class="album-placeholder">
+                            <i class="fa-solid fa-images"></i>
+                        </div>
+
+                        <div class="album-overlay">
+                            <i class="fa-solid fa-folder-open"></i>
+
+                            <h2>Plays</h2>
+
+                            <p>
+                                Obras y presentaciones en inglés.
+                            </p>
+                        </div>
+                    </a>
+
+                    <!-- ÁLBUM 4 -->
+                    <a
+                        href="album-actos.html"
+                        class="album-card"
+                    >
+                        <div class="album-placeholder">
+                            <i class="fa-solid fa-images"></i>
+                        </div>
+
+                        <div class="album-overlay">
+                            <i class="fa-solid fa-folder-open"></i>
+
+                            <h2>Actos culturales</h2>
+
+                            <p>
+                                Celebraciones y presentaciones escolares.
+                            </p>
+                        </div>
+                    </a>
+
+                    <!-- ÁLBUM 5 -->
+                    <a
+                        href="album-salidas.html"
+                        class="album-card"
+                    >
+                        <div class="album-placeholder">
+                            <i class="fa-solid fa-images"></i>
+                        </div>
+
+                        <div class="album-overlay">
+                            <i class="fa-solid fa-folder-open"></i>
+
+                            <h2>Salidas didácticas</h2>
+
+                            <p>
+                                Aprendizajes y experiencias fuera del aula.
+                            </p>
+                        </div>
+                    </a>
+
+                    <!-- ÁLBUM 6 -->
+                    <a
+                        href="album-celebraciones.html"
+                        class="album-card"
+                    >
+                        <div class="album-placeholder">
+                            <i class="fa-solid fa-images"></i>
+                        </div>
+
+                        <div class="album-overlay">
+                            <i class="fa-solid fa-folder-open"></i>
+
+                            <h2>Celebraciones</h2>
+
+                            <p>
+                                Fechas especiales de nuestra comunidad.
+                            </p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-left">
+                <img
+                    src="logo.jpg"
+                    class="footer-logo"
+                    alt="Logo de la escuela"
+                >
+
+                <p class="footer-school-name">
+                    Uruguayan American School de Mercedes
+                </p>
+
+                <img
+                    src="logocam.jpg"
+                    class="footer-cambridge"
+                    alt="Cambridge International School"
+                >
+            </div>
+
+            <div class="footer-center">
+                <p>
+                    <strong>Dirección:</strong>
+                    18 de Julio 538, 75000 Mercedes, Soriano
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    uasdireccion@gmail.com
+                </p>
+
+                <p>
+                    <strong>Teléfono:</strong>
+                    4532 3962
+                </p>
+
+                <p>
+                    <strong>Celular:</strong>
+                    092 323 962 – 097 385 182
+                </p>
+            </div>
+
+            <div class="footer-right">
+                <p><strong>Seguinos:</strong></p>
+
+                <div class="social-icons">
+
+                    <a
+                        href="https://www.facebook.com/uasmercedes/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/uas_mercedes/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="https://www.youtube.com/@UASMercedesOficial"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube"
+                    >
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- MENÚ HAMBURGUESA -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener("click", function () {
+                    const menuIsOpen =
+                        navLinks.classList.toggle("active");
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        menuIsOpen.toString()
+                    );
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
