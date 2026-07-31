@@ -1358,89 +1358,39 @@ main, .news-content, .page-content {
   opacity: 0.95;
 }
 
-/* ANUARIO EQUIPO - FORZAR TAMAÑO DE IMAGEN */
-
-section.team-page .team-gallery {
-    display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 25px !important;
-}
-
-section.team-page .team-gallery .team-card {
-    width: 100% !important;
-    height: 300px !important;
-    overflow: hidden !important;
-}
-
-section.team-page .team-gallery .team-card img {
-    width: 100% !important;
-    height: 300px !important;
-    min-width: 0 !important;
-    max-width: none !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    object-fit: cover !important;
-    display: block !important;
-}
-
-
-/* TABLET */
-@media(max-width: 900px){
-
-    section.team-page .team-gallery {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-
-}
-
-
-/* CELULAR */
-@media(max-width: 600px){
-
-    section.team-page .team-gallery {
-        grid-template-columns: 1fr !important;
-    }
-
-}
-
-/* ===== FIX ANUARIO EQUIPO ===== */
+/* ===== ANUARIO EQUIPO ===== */
 
 .team-page .team-gallery {
-    display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    gap: 20px !important;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
 }
 
-.team-page .team-gallery .team-card {
-    height: 280px !important;
-    width: 100% !important;
-    overflow: hidden !important;
-}
-
-.team-page .team-gallery .team-card img {
-    width: 100% !important;
-    height: 280px !important;
-    object-fit: cover !important;
-    object-position: center !important;
-    display: block !important;
+.team-page .team-gallery img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 15px;
 }
 
 
 /* TABLET */
-@media(max-width: 900px){
+@media(max-width:900px){
 
     .team-page .team-gallery {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }
 
 
 /* CELULAR */
-@media(max-width: 600px){
+@media(max-width:600px){
 
     .team-page .team-gallery {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr;
     }
 
 }
