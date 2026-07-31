@@ -1,247 +1,576 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events – Uruguayan American School de Mercedes</title>
 
-    <!-- Font Awesome (iconos redes sociales) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
+    <title>Eventos – Uruguayan American School de Mercedes</title>
+
+    <!-- Font Awesome: iconos de redes sociales -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
 
     <!-- CSS propio -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- FullCalendar CSS y JS global (funciona en todos los navegadores) -->
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <!-- FullCalendar -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.js"></script>
+
+    <!-- Idiomas de FullCalendar -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/locales-all.global.min.js"></script>
 
     <style>
-        /* HERO / TITULO PRINCIPAL */
+        /* HERO / TÍTULO PRINCIPAL */
         .page-hero {
-            background-color: #ffcccc; /* rojo clarito */
+            background-color: #ffcccc;
             padding: 60px 20px;
             text-align: center;
         }
 
         .page-hero h1 {
-            color: #003366; /* azul oscuro */
+            color: #003366;
             font-size: 2.5rem;
-            margin-bottom: 10px;
+            margin: 0 0 10px;
         }
 
         .page-hero p {
-            color: #336699; /* azul más claro */
+            color: #336699;
             font-size: 1.2rem;
+            margin: 0;
         }
 
-        /* Contenedor calendario */
+        /* Sección del calendario */
+        .calendar-section {
+            padding: 20px;
+        }
+
+        /* Contenedor del calendario */
         #calendar {
             max-width: 900px;
             margin: 20px auto;
-            background-color: #fff;
             padding: 20px;
+            background-color: #ffffff;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Cambiar color al pasar cursor sobre evento */
-        .fc-event:hover {
-            background-color: #b30000 !important; /* rojo institucional */
+        /* Eventos */
+        .fc-event {
             cursor: pointer;
+        }
+
+        /* Evento al pasar el cursor */
+        .fc-event:hover {
+            filter: brightness(0.85);
+        }
+
+        /* Botones de FullCalendar */
+        .fc .fc-button-primary {
+            background-color: #003366;
+            border-color: #003366;
+        }
+
+        .fc .fc-button-primary:hover {
+            background-color: #b30000;
+            border-color: #b30000;
+        }
+
+        .fc .fc-button-primary:disabled {
+            background-color: #336699;
+            border-color: #336699;
+        }
+
+        /* Título del mes */
+        .fc .fc-toolbar-title {
+            color: #003366;
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.5rem;
+        }
+
+        /* Adaptación para celulares */
+        @media screen and (max-width: 768px) {
+            .page-hero {
+                padding: 40px 15px;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .page-hero p {
+                font-size: 1rem;
+            }
+
+            .calendar-section {
+                padding: 10px;
+            }
+
+            #calendar {
+                margin: 10px auto;
+                padding: 10px;
+            }
+
+            .fc .fc-toolbar {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .fc .fc-toolbar-chunk {
+                display: flex;
+                justify-content: center;
+            }
+
+            .fc .fc-toolbar-title {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- NAVBAR -->
     <header class="navbar">
+
         <!-- Botón hamburguesa -->
-        <span class="menu-toggle">☰</span>
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
 
         <div class="logo-container">
-            <img src="logo.jpg" alt="Logo UAS Mercedes" class="logo">
-            <span class="school-name">Uruguayan American School de Mercedes</span>
+            <img
+                src="logo.jpg"
+                alt="Logo UAS Mercedes"
+                class="logo"
+            >
+
+            <span class="school-name">
+                Uruguayan American School de Mercedes
+            </span>
         </div>
 
         <ul class="nav-links">
-            <li><a href="index.html" class="btn">Inicio</a></li>
-            <li><a href="novedades.html" class="btn">Novedades</a></li>
-            <li><a href="calendario.html" class="btn">Calendario</a></li>
-            <li><a href="informacion.html" class="btn">Información</a></li>
-            <li><a href="contacto.html" class="btn">Contacto</a></li>
+            <li>
+                <a href="index.html" class="btn">Inicio</a>
+            </li>
+
+            <li>
+                <a href="novedades.html" class="btn">Novedades</a>
+            </li>
+
+            <li>
+                <a href="calendario.html" class="btn">Calendario</a>
+            </li>
+
+            <li>
+                <a href="informacion.html" class="btn">Información</a>
+            </li>
+
+            <li>
+                <a href="contacto.html" class="btn">Contacto</a>
+            </li>
         </ul>
     </header>
 
     <!-- HERO PRINCIPAL -->
     <div class="page-hero">
         <h1>Eventos</h1>
-        <p>Revisá todos los próximos eventos, celebraciones y actividades especiales de nuestra institución.</p>
+
+        <p>
+            Revisá todos los próximos eventos, celebraciones y actividades
+            especiales de nuestra institución.
+        </p>
     </div>
 
     <!-- CALENDARIO -->
-    <section>
-        <div id="calendar"></div>
-    </section>
+    <main>
+        <section class="calendar-section">
+            <div id="calendar"></div>
+        </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
+
             <div class="footer-left">
-                <img src="logo.jpg" class="footer-logo" alt="School Logo">
-                <p class="footer-school-name">Uruguayan American School de Mercedes</p>
-                     <img src="logocam.jpg" class="footer-cambridge" alt="Cambridge International School">
+                <img
+                    src="logo.jpg"
+                    class="footer-logo"
+                    alt="Logo de Uruguayan American School"
+                >
+
+                <p class="footer-school-name">
+                    Uruguayan American School de Mercedes
+                </p>
+
+                <img
+                    src="logocam.jpg"
+                    class="footer-cambridge"
+                    alt="Cambridge International School"
+                >
             </div>
 
             <div class="footer-center">
-                <p><strong>Dirección:</strong> 18 De Julio 538, 75000 Mercedes, Soriano</p>
-                <p><strong>Email:</strong> uasdireccion@gmail.com</p>
-                <p><strong>Teléfono:</strong> 4532 3962</p>
-                        <p><strong>Celular:</strong> 092 323 962 – 097 385 182</p>
+                <p>
+                    <strong>Dirección:</strong>
+                    18 de Julio 538, 75000 Mercedes, Soriano
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    uasdireccion@gmail.com
+                </p>
+
+                <p>
+                    <strong>Teléfono:</strong>
+                    4532 3962
+                </p>
+
+                <p>
+                    <strong>Celular:</strong>
+                    092 323 962 – 097 385 182
+                </p>
             </div>
 
             <div class="footer-right">
                 <p><strong>Seguinos:</strong></p>
-               <div class="social-icons">
-    <a href="https://www.facebook.com/uasmercedes/" target="_blank" aria-label="Facebook">
-        <i class="fa-brands fa-facebook-f"></i>
-    </a>
-    <a href="https://www.instagram.com/uas_mercedes/" target="_blank" aria-label="Instagram">
-        <i class="fa-brands fa-instagram"></i>
-    </a>
-    <a href="https://www.youtube.com/@UASMercedesOficial" target="_blank" aria-label="YouTube">
-        <i class="fa-brands fa-youtube"></i>
-    </a>
-</div>
 
+                <div class="social-icons">
+                    <a
+                        href="https://www.facebook.com/uasmercedes/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/uas_mercedes/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="https://www.youtube.com/@UASMercedesOficial"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube"
+                    >
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
             </div>
+
         </div>
     </footer>
 
-    <!-- SCRIPT CALENDARIO Y MENÚ HAMBURGUESA -->
+    <!-- SCRIPT DEL CALENDARIO Y MENÚ HAMBURGUESA -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar FullCalendar
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                height: 600,
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const calendarEl = document.getElementById("calendar");
+
+            if (!calendarEl) {
+                console.error("No se encontró el elemento #calendar.");
+                return;
+            }
+
+            if (typeof FullCalendar === "undefined") {
+                calendarEl.innerHTML =
+                    "<p>No fue posible cargar el calendario. Intentá actualizar la página.</p>";
+
+                console.error("FullCalendar no pudo cargarse.");
+                return;
+            }
+
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: "dayGridMonth",
+
+                /*
+                 * El calendario abrirá en julio de 2026 para que puedas
+                 * comprobar inmediatamente que los eventos aparecen.
+                 *
+                 * Cuando quieras que abra siempre en el mes actual,
+                 * eliminá la línea initialDate.
+                 */
+                initialDate: "2026-07-01",
+
+                locale: "es",
+
+                firstDay: 1,
+
+                height: "auto",
+
                 headerToolbar: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'dayGridMonth,listWeek'
+                    left: "prev,next today",
+                    center: "title",
+                    right: "dayGridMonth,listMonth"
                 },
-               events: [
 
-    { title: 'Campamento Primer Ciclo', start: '2025-11-25', description: 'Evento para Primer Ciclo' },
-    { title: 'Campamento Primer Ciclo', start: '2025-11-26', description: 'Segundo día de campamento' },
-    { title: 'Exámenes Cambridge', start: '2025-11-29', description: 'Exámenes oficiales Cambridge' },
-    { title: 'Acto Cultural Maternal 1 y 2 años', start: '2025-12-05', description: 'Hora 8:30 en la escuela' },
-    { title: 'Acto Cultural 3 años a 6to año', start: '2025-12-10', description: 'Teatro 28 de Febrero - Hora 20:00' },
-    { title: 'Entrega de carpetas – Maternal 1 y 2 años, Inicial 3, 4 y 5 años', start: '2025-12-17', description: 'Hora 19:00' },
-    { title: 'Entrega de carpetas – 1º a 6º año', start: '2025-12-18', description: 'Hora 19:00' },
-    { title: 'Acto protocolar en Club A. Independiente', start: '2025-12-19', description: 'Hora 8:30' },
+                buttonText: {
+                    today: "Hoy",
+                    month: "Mes",
+                    list: "Lista"
+                },
 
-    { title: 'Semana de Turismo', start: '2026-03-30', end: '2026-04-04', description: 'Semana de Turismo' },
+                noEventsContent: "No hay eventos programados.",
 
-    { title: 'Cumpleaños de la escuela', start: '2026-04-07', description: 'Cumpleaños de la escuela' },
+                events: [
+                    {
+                        title: "Campamento Primer Ciclo",
+                        start: "2025-11-25",
+                        description: "Evento para Primer Ciclo"
+                    },
+                    {
+                        title: "Campamento Primer Ciclo",
+                        start: "2025-11-26",
+                        description: "Segundo día de campamento"
+                    },
+                    {
+                        title: "Exámenes Cambridge",
+                        start: "2025-11-29",
+                        description: "Exámenes oficiales Cambridge"
+                    },
+                    {
+                        title: "Acto Cultural Maternal 1 y 2 años",
+                        start: "2025-12-05",
+                        description: "Hora 8:30 en la escuela"
+                    },
+                    {
+                        title: "Acto Cultural 3 años a 6.º año",
+                        start: "2025-12-10",
+                        description: "Teatro 28 de Febrero - Hora 20:00"
+                    },
+                    {
+                        title: "Entrega de carpetas – Maternal e Inicial",
+                        start: "2025-12-17",
+                        description:
+                            "Maternal 1 y 2 años e Inicial 3, 4 y 5 años - Hora 19:00"
+                    },
+                    {
+                        title: "Entrega de carpetas – 1.º a 6.º año",
+                        start: "2025-12-18",
+                        description: "Hora 19:00"
+                    },
+                    {
+                        title: "Acto protocolar en Club A. Independiente",
+                        start: "2025-12-19",
+                        description: "Hora 8:30"
+                    },
+                    {
+                        title: "Semana de Turismo",
+                        start: "2026-03-30",
+                        end: "2026-04-04",
+                        description: "Semana de Turismo"
+                    },
+                    {
+                        title: "Cumpleaños de la escuela",
+                        start: "2026-04-07",
+                        description: "Cumpleaños de la escuela"
+                    },
+                    {
+                        title: "Bicicleteada",
+                        start: "2026-04-12",
+                        description: "Jornada de integración"
+                    },
+                    {
+                        title: "Día del Trabajador",
+                        start: "2026-05-01",
+                        description: "Feriado"
+                    },
+                    {
+                        title: "Teatro en Inglés",
+                        start: "2026-05-20",
+                        description: "Artspot - Teatro 28 de Febrero"
+                    },
+                    {
+                        title: "Semana del Libro",
+                        start: "2026-05-25",
+                        end: "2026-05-30",
+                        description: "Semana del Libro"
+                    },
+                    {
+                        title: "Día del Trabajador de la Enseñanza Privada",
+                        start: "2026-06-15",
+                        description: "Feriado"
+                    },
+                    {
+                        title: "Natalicio de José Gervasio Artigas",
+                        start: "2026-06-19",
+                        description: "Acto 10:30 h"
+                    },
+                    {
+                        title: "Vacaciones de Invierno",
+                        start: "2026-06-29",
+                        end: "2026-07-11",
+                        description: "Vacaciones de Invierno",
+                        color: "#2E8B57"
+                    },
+                    {
+                        title: "Obra de teatro en inglés",
+                        start: "2026-07-20",
+                        description: "The Company - En la escuela"
+                    },
+                    {
+                        title: "Semana de entrega de boletines",
+                        start: "2026-07-20",
+                        end: "2026-07-25",
+                        description: "Entrega de boletines",
+                        color: "#EF6C00"
+                    },
+                    {
+                        title: "Asueto",
+                        start: "2026-08-24",
+                        description: "Asueto"
+                    },
+                    {
+                        title: "Declaratoria de la Independencia",
+                        start: "2026-08-25",
+                        description: "Feriado"
+                    },
+                    {
+                        title: "Foto grupal Early Years",
+                        start: "2026-09-07",
+                        description: "Foto grupal"
+                    },
+                    {
+                        title: "Foto grupal Primary",
+                        start: "2026-09-08",
+                        description: "Foto grupal"
+                    },
+                    {
+                        title: "Family Day",
+                        start: "2026-09-13",
+                        description: "Family Day"
+                    },
+                    {
+                        title: "Entrega de boletines / Plays",
+                        start: "2026-09-14",
+                        end: "2026-09-19",
+                        description: "Entrega de boletines y Plays",
+                        color: "#EF6C00"
+                    },
+                    {
+                        title: "Vacaciones de Primavera",
+                        start: "2026-09-21",
+                        end: "2026-09-26",
+                        description: "Vacaciones de Primavera",
+                        color: "#2E8B57"
+                    },
+                    {
+                        title: "Salidas didácticas Form 5 y Form 6",
+                        start: "2026-10-16",
+                        description: "Salidas didácticas"
+                    },
+                    {
+                        title: "Salidas didácticas Form 5 y Form 6",
+                        start: "2026-10-23",
+                        description: "Salidas didácticas"
+                    },
+                    {
+                        title: "Celebración de Halloween",
+                        start: "2026-10-30",
+                        description: "Halloween"
+                    },
+                    {
+                        title: "Entrega de boletines",
+                        start: "2026-11-09",
+                        end: "2026-11-14",
+                        description: "Entrega de boletines",
+                        color: "#EF6C00"
+                    },
+                    {
+                        title: "Acto cultural Toddlers y Nursery",
+                        start: "2026-12-04",
+                        description: "8:30 h - En la escuela"
+                    },
+                    {
+                        title: "Acto cultural Kinder 3 a Form 6",
+                        start: "2026-12-09",
+                        description: "Teatro 28 de Febrero - 20:30 h"
+                    },
+                    {
+                        title: "Entrega de carpetas Early Years",
+                        start: "2026-12-15",
+                        description: "Entrega de carpetas",
+                        color: "#EF6C00"
+                    },
+                    {
+                        title: "Entrega de carpetas Primary",
+                        start: "2026-12-16",
+                        description: "Entrega de carpetas",
+                        color: "#EF6C00"
+                    },
+                    {
+                        title: "Acto Protocolar",
+                        start: "2026-12-17",
+                        description:
+                            "Club A. Independiente - 08:30 h",
+                        color: "#C62828"
+                    },
+                    {
+                        title: "Finalización de Cursos",
+                        start: "2026-12-18",
+                        description: "Finalización de Cursos"
+                    }
+                ],
 
-    { title: 'Bicicleteada', start: '2026-04-12', description: 'Jornada de integración' },
+                eventClick: function (info) {
+                    const description =
+                        info.event.extendedProps.description ||
+                        "Sin información adicional";
 
-    { title: 'Día del Trabajador', start: '2026-05-01', description: 'Feriado' },
-
-    { title: 'Teatro en Inglés', start: '2026-05-20', description: 'Artspot - Teatro 28 de Febrero' },
-
-    { title: 'Semana del Libro', start: '2026-05-25', end: '2026-05-30', description: 'Semana del Libro' },
-
-    { title: 'Día del Trabajador de la Enseñanza Privada', start: '2026-06-15', description: 'Feriado' },
-
-    { title: 'Natalicio de José Gervasio Artigas', start: '2026-06-19', description: 'Acto 10:30 h' },
-
-    { title: 'Vacaciones de Invierno', start: '2026-06-29', end: '2026-07-11', description: 'Vacaciones de Invierno', color: '#2E8B57' },
-
-    { title: 'Obra de teatro en inglés', start: '2026-07-20', description: 'The Company - En la escuela' },
-
-    { title: 'Semana de entrega de boletines', start: '2026-07-20', end: '2026-07-25', description: 'Entrega de boletines',  color: '#EF6C00'},
-
-    { title: 'Asueto', start: '2026-08-24', description: 'Asueto' },
-
-    { title: 'Declaratoria de la Independencia', start: '2026-08-25', description: 'Feriado' },
-
-    { title: 'Foto grupal Early Years', start: '2026-09-07', description: 'Foto grupal' },
-
-    { title: 'Foto grupal Primary', start: '2026-09-08', description: 'Foto grupal' },
-
-    { title: 'Family Day', start: '2026-09-13', description: 'Family Day' },
-
-    { title: 'Entrega de boletines / Plays', start: '2026-09-14', end: '2026-09-19', description: 'Entrega de boletines y Plays' ,  color: '#EF6C00'},
-
-    { title: 'Vacaciones de Primavera', start: '2026-09-21', end: '2026-09-26', description: 'Vacaciones de Primavera' },
-
-    { title: 'Salidas didácticas Form 5 y Form 6', start: '2026-10-16', description: 'Salidas didácticas' },
-
-    { title: 'Salidas didácticas Form 5 y Form 6', start: '2026-10-23', description: 'Salidas didácticas' },
-
-    { title: 'Celebración de Halloween', start: '2026-10-30', description: 'Halloween' },
-
-    { title: 'Entrega de boletines', start: '2026-11-09', end: '2026-11-14', description: 'Entrega de boletines' , color: '#EF6C00' },
-
-    { title: 'Acto cultural Toddlers y Nursery', start: '2026-12-04', description: '8:30 h - En la escuela' },
-
-    {
-        title: 'Acto cultural Kinder 3 a Form 6',
-        start: '2026-12-09',
-        description: 'Teatro 28 de Febrero - 20:30 h'
-    },
-
-    {
-        title: 'Entrega de carpetas EARLY YEARS',
-        start: '2026-12-15',
-        description: 'Entrega de carpetas' , color: '#EF6C00'
-    },
-
-    {
-        title: 'Entrega de carpetas PRIMARY',
-        start: '2026-12-16',
-        description: 'Entrega de carpetas' , color: '#EF6C00'
-    },
-
-    {
-        title: 'Acto Protocolar',
-        start: '2026-12-17',
-        description: 'Club A. Independiente - 08:30 h' ,  color: '#C62828'
-    },
-
-    {
-        title: 'Finalización de Cursos',
-        start: '2026-12-18',
-        description: 'Finalización de Cursos'
-    }
-],
-
-eventClick: function(info) {
-
-    alert(info.event.title + "\n" + info.event.extendedProps.description);
-
-}
+                    alert(
+                        info.event.title +
+                        "\n\n" +
+                        description
+                    );
                 }
             });
+
             calendar.render();
 
-            // Menú hamburguesa
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
+            /* MENÚ HAMBURGUESA */
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener("click", function () {
+                    const menuIsOpen =
+                        navLinks.classList.toggle("active");
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        menuIsOpen.toString()
+                    );
+                });
+            }
         });
     </script>
 
 </body>
 </html>
-
 
 
