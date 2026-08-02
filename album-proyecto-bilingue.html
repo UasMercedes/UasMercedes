@@ -2,500 +2,619 @@
 <html lang="es">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Proyecto Bilingüe | Uruguayan American School de Mercedes</title>
-
-<link rel="stylesheet" href="styles.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-
-    font-family:'Montserrat',sans-serif;
-    background:#f5f7fb;
-    color:#333;
-
-}
-
-/* ================= HERO ================= */
-
-.hero{
-
-    background:linear-gradient(135deg,#003366,#1d5d9b);
-
-    color:white;
-
-    text-align:center;
-
-    padding:80px 20px;
-
-}
-
-.hero h1{
-
-    font-size:3rem;
-
-    font-weight:700;
-
-    margin-bottom:20px;
-
-    letter-spacing:1px;
-
-}
-
-.hero p{
-
-    max-width:850px;
-
-    margin:auto;
-
-    font-size:1.15rem;
-
-    line-height:1.8;
-
-    opacity:.95;
-
-}
-
-/* ================= CONTENEDOR ================= */
-
-.container{
-
-    max-width:1300px;
-
-    margin:auto;
-
-    padding:60px 25px;
-
-}
-
-/* ================= BOTÓN VOLVER ================= */
-
-.back{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    color:#003366;
-
-    text-decoration:none;
-
-    font-weight:600;
-
-    margin-bottom:45px;
-
-    transition:.3s;
-
-}
-
-.back:hover{
-
-    color:#c62828;
-
-}
-
-/* ================= TITULO ================= */
-
-.section-title{
-
-    text-align:center;
-
-    color:#003366;
-
-    font-size:2rem;
-
-    margin-bottom:12px;
-
-}
-
-.section-subtitle{
-
-    text-align:center;
-
-    color:#666;
-
-    max-width:750px;
-
-    margin:auto;
-
-    margin-bottom:55px;
-
-    line-height:1.8;
-
-}
-
-/* ================= GRID ================= */
-
-.grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-    gap:30px;
-
-}
-
-@media(max-width:700px){
-
-.hero{
-
-padding:60px 20px;
-
-}
-
-.hero h1{
-
-font-size:2.2rem;
-
-}
-
-.hero p{
-
-font-size:1rem;
-
-}
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Proyecto Bilingüe | Uruguayan American School de Mercedes
+    </title>
+
+    <!-- CSS general del sitio -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Montserrat", sans-serif;
+            background-color: #f5f7fb;
+            color: #333333;
+        }
+
+        /* HERO */
+
+        .project-hero {
+            padding: 70px 20px;
+            background: linear-gradient(135deg, #003366, #1d5d9b);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .project-hero h1 {
+            margin: 0 0 18px;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .project-hero p {
+            max-width: 850px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        /* CONTENIDO */
+
+        .project-container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 50px 25px 70px;
+        }
+
+        /* VOLVER */
+
+        .back-link {
+            display: inline-flex;
+            margin-bottom: 35px;
+            color: #003366;
+            font-weight: 600;
+            text-decoration: none;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.25s ease;
+        }
+
+        .back-link:hover {
+            color: #c62828;
+        }
+
+        /* TÍTULOS */
+
+        .section-title {
+            margin: 0 0 12px;
+            color: #003366;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            max-width: 750px;
+            margin: 0 auto 45px;
+            color: #666666;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        /* CUADRÍCULA */
+
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        /* TARJETAS */
+
+        .gallery-card {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            height: 280px;
+            border-radius: 18px;
+            background-color: #003366;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            text-decoration: none;
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-card img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.45s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.08);
+        }
+
+        /* DEGRADADO Y NOMBRE */
+
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            padding: 24px;
+            background: linear-gradient(
+                to top,
+                rgba(0, 24, 55, 0.95) 0%,
+                rgba(0, 24, 55, 0.35) 48%,
+                rgba(0, 24, 55, 0.05) 100%
+            );
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .card-overlay h3 {
+            margin: 0;
+            color: #ffffff;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .card-overlay i {
+            margin-right: 8px;
+            color: #ffcccc;
+        }
+
+        /* BOTÓN HAMBURGUESA */
+
+        .menu-toggle {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        /* TABLETS */
+
+        @media screen and (max-width: 950px) {
+            .classes-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* CELULARES */
+
+        @media screen and (max-width: 650px) {
+            .project-hero {
+                padding: 50px 18px;
+            }
+
+            .project-hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .project-hero p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .project-container {
+                padding: 35px 16px 50px;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+            }
+
+            .section-subtitle {
+                margin-bottom: 30px;
+            }
+
+            .classes-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .gallery-card {
+                height: 250px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-
-<header class="navbar">
-
-<span class="menu-toggle">☰</span>
-
-<div class="logo-container">
-
-<img src="logo.jpg" class="logo">
-
-<span class="school-name">
-
-Uruguayan American School de Mercedes
-
-</span>
-
-</div>
-
-<ul class="nav-links">
-
-<li><a href="index.html" class="btn">Inicio</a></li>
-
-<li><a href="novedades.html" class="btn">Novedades</a></li>
-
-<li><a href="calendario.html" class="btn">Calendario</a></li>
-
-<li><a href="informacion.html" class="btn">Información</a></li>
-
-<li><a href="contacto.html" class="btn">Contacto</a></li>
-
-</ul>
-
-</header>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<h1>Proyecto Bilingüe</h1>
-
-<p>
-
-Cada experiencia representa una oportunidad para aprender, crear y crecer en dos idiomas.
-Seleccioná una clase para descubrir las actividades desarrolladas durante nuestro Proyecto Bilingüe.
-
-</p>
-
-</section>
-
-<!-- CONTENIDO -->
-
-<div class="container">
-
-<a href="galeria.html" class="back">
-
-<i class="fa-solid fa-arrow-left"></i>
-
-Volver a Galería
-
-</a>
-
-<h2 class="section-title">
-
-Elegí una clase
-
-</h2>
-
-<p class="section-subtitle">
-
-Ingresá a la galería correspondiente para recorrer las fotografías de cada grupo durante el Proyecto Bilingüe.
-
-</p>
-
-<div class="grid">
-<!-- TODDLERS -->
-<a href="galeria-clase.html?clase=Toddlers" class="gallery-card">
-    <img src="images/galeria/proyecto-bilingue/Toddlers/toddlers-portada.jpg" alt="Toddlers">
-    <div class="overlay">
-        <h3><i class="fa-regular fa-folder-open"></i> Toddlers</h3>
-    </div>
-</a>
-
-<!-- NURSERY & KINDER 3 -->
-<a href="galeria-clase.html?clase=Nursery-and-Kinder-3" class="gallery-card">
-    <img src="images/galeria/proyecto-bilingue/Nursery-and-Kinder-3/nursery-portada.jpg" alt="Nursery & Kinder 3">
-    <div class="overlay">
-        <h3><i class="fa-regular fa-folder-open"></i> Nursery & Kinder 3</h3>
-    </div>
-</a>
-
-<!-- KINDER 4 -->
-<a href="galeria-clase.html?clase=kinder-4" class="gallery-card">
-    <img src="images/galeria/proyecto-bilingue/kinder-4/k4-portada.jpg" alt="Kinder 4">
-    <div class="overlay">
-        <h3><i class="fa-regular fa-folder-open"></i> Kinder 4</h3>
-    </div>
-</a>
-
-<!-- PREP -->
-<a href="galeria-clase.html?clase=prep" class="gallery-card">
-    <img src="images/galeria/proyecto-bilingue/prep/prep-portada.jpg" alt="Prep">
-    <div class="overlay">
-        <h3><i class="fa-regular fa-folder-open"></i> Prep</h3>
-    </div>
-</a>
-
-<!-- FORM 1 -->
-<a href="galeria-clase.html?clase=Form-01" class="gallery-card">
-    <img src="images/galeria/proyecto-bilingue/Form-01/f1-portada.jpg" alt="Form 1">
-    <div class="overlay">
-        <h3><i class="fa-regular fa-folder-open"></i> Form 1</h3>
-    </div>
-</a>
-
-<!-- FORM 2 -->
-<a href="galeria-clase.html?clase=form-2" class="gallery-card">
-    <img src="images/galeria/proyecto-bilingue/form-2/f2-portada.jpg" alt="Form 2">
-    <div class="overlay">
-        <h3><i class="fa-regular fa-folder-open"></i> Form 2</h3>
-    </div>
-</a>
-
-<!-- FORM 3 -->
-<a href="galeria-clase.html?clase=form-3" class="gallery-card">
-    <img src="images/galeria/proyecto-bilingue/form-3/f3-portada.jpg" alt="Form 3">
-    <div class="overlay">
-        <h3><i class="fa-regular fa-folder-open"></i> Form 3</h3>
-    </div>
-</a>
-
-<!-- FORM 4 -->
-<a href="galeria-clase.html?clase=form-4" class="gallery-card">
-    <img src="images/galeria/proyecto-bilingue/form-4/f4-portada.jpg" alt="Form 4">
-    <div class="overlay">
-        <h3><i class="fa-regular fa-folder-open"></i> Form 4</h3>
-    </div>
-</a>
-
-<!-- FORM 5 -->
-<a href="galeria-clase.html?clase=form-5" class="gallery-card">
-    <img src="images/galeria/proyecto-bilingue/form-5/f5-portada.jpg" alt="Form 5">
-    <div class="overlay">
-        <h3><i class="fa-regular fa-folder-open"></i> Form 5</h3>
-    </div>
-</a>
-
-<!-- FORM 6 -->
-<a href="galeria-clase.html?clase=Form-6" class="gallery-card">
-    <img src="images/galeria/proyecto-bilingue/Form-6/f6-portada.jpg" alt="Form 6">
-    <div class="overlay">
-        <h3><i class="fa-regular fa-folder-open"></i> Form 6</h3>
-    </div>
-</a>
-
-    /* ================= GRID ================= */
-
-.grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-    gap:30px;
-
-}
-    /* ================= TARJETAS ================= */
-
-.gallery-card{
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:18px;
-
-    text-decoration:none;
-
-    height:280px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.12);
-
-    transition:.35s;
-
-    display:block;
-
-}
-
-.gallery-card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 18px 40px rgba(0,0,0,.20);
-
-}
-
-.gallery-card img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    transition:.45s;
-
-}
-
-.gallery-card:hover img{
-
-    transform:scale(1.08);
-
-}
-
-.overlay{
-
-    position:absolute;
-
-    left:0;
-
-    right:0;
-
-    bottom:0;
-
-    padding:22px;
-
-    background:linear-gradient(to top,
-    rgba(0,0,0,.82),
-    rgba(0,0,0,.05));
-
-}
-
-.overlay h3{
-
-    color:white;
-
-    font-size:1.25rem;
-
-    font-weight:600;
-
-}
-
-.overlay i{
-
-    margin-right:8px;
-
-}
-        </div>
-</div>
-
-<footer class="footer">
-
-    <div class="footer-container">
-
-        <div class="footer-left">
-
-            <img src="logo.jpg" class="footer-logo">
-
-            <p class="footer-school-name">
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <div class="logo-container">
+            <img
+                src="logo.jpg"
+                class="logo"
+                alt="Logo UAS Mercedes"
+            >
+
+            <span class="school-name">
                 Uruguayan American School de Mercedes
-            </p>
+            </span>
+        </div>
 
-            <img src="logocam.jpg"
-                 class="footer-cambridge">
+        <ul class="nav-links">
+            <li>
+                <a href="index.html" class="btn">Inicio</a>
+            </li>
+
+            <li>
+                <a href="novedades.html" class="btn">Novedades</a>
+            </li>
+
+            <li>
+                <a href="calendario.html" class="btn">Calendario</a>
+            </li>
+
+            <li>
+                <a href="informacion.html" class="btn">Información</a>
+            </li>
+
+            <li>
+                <a href="contacto.html" class="btn">Contacto</a>
+            </li>
+        </ul>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="project-hero">
+        <h1>Proyecto Bilingüe</h1>
+
+        <p>
+            Cada experiencia representa una oportunidad para aprender,
+            crear y crecer en dos idiomas. Seleccioná una clase para
+            descubrir las actividades desarrolladas durante nuestro
+            Proyecto Bilingüe.
+        </p>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <main class="project-container">
+
+        <a href="galeria.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i>
+            Volver a Galería
+        </a>
+
+        <h2 class="section-title">Elegí una clase</h2>
+
+        <p class="section-subtitle">
+            Ingresá a la galería correspondiente para recorrer las
+            fotografías de cada grupo durante el Proyecto Bilingüe.
+        </p>
+
+        <div class="classes-grid">
+
+            <!-- TODDLERS -->
+
+            <a
+                href="galeria-clase.html?clase=Toddlers"
+                class="gallery-card"
+            >
+                <img
+                    src="images/galeria/proyecto-bilingue/Toddlers/toddlers-portada.jpg"
+                    alt="Proyecto Bilingüe de Toddlers"
+                >
+
+                <div class="card-overlay">
+                    <h3>
+                        <i class="fa-regular fa-folder-open"></i>
+                        Toddlers
+                    </h3>
+                </div>
+            </a>
+
+            <!-- NURSERY Y KINDER 3 -->
+
+            <a
+                href="galeria-clase.html?clase=Nursery-and-Kinder-3"
+                class="gallery-card"
+            >
+                <img
+                    src="images/galeria/proyecto-bilingue/Nursery-and-Kinder-3/nursery-portada.jpg"
+                    alt="Proyecto Bilingüe de Nursery y Kinder 3"
+                >
+
+                <div class="card-overlay">
+                    <h3>
+                        <i class="fa-regular fa-folder-open"></i>
+                        Nursery &amp; Kinder 3
+                    </h3>
+                </div>
+            </a>
+
+            <!-- KINDER 4 -->
+
+            <a
+                href="galeria-clase.html?clase=kinder-4"
+                class="gallery-card"
+            >
+                <img
+                    src="images/galeria/proyecto-bilingue/kinder-4/k4-portada.jpg"
+                    alt="Proyecto Bilingüe de Kinder 4"
+                >
+
+                <div class="card-overlay">
+                    <h3>
+                        <i class="fa-regular fa-folder-open"></i>
+                        Kinder 4
+                    </h3>
+                </div>
+            </a>
+
+            <!-- PREP -->
+
+            <a
+                href="galeria-clase.html?clase=prep"
+                class="gallery-card"
+            >
+                <img
+                    src="images/galeria/proyecto-bilingue/prep/prep-portada.jpg"
+                    alt="Proyecto Bilingüe de Prep"
+                >
+
+                <div class="card-overlay">
+                    <h3>
+                        <i class="fa-regular fa-folder-open"></i>
+                        Prep
+                    </h3>
+                </div>
+            </a>
+
+            <!-- FORM 1 -->
+
+            <a
+                href="galeria-clase.html?clase=Form-01"
+                class="gallery-card"
+            >
+                <img
+                    src="images/galeria/proyecto-bilingue/Form-01/f1-portada.jpg"
+                    alt="Proyecto Bilingüe de Form 1"
+                >
+
+                <div class="card-overlay">
+                    <h3>
+                        <i class="fa-regular fa-folder-open"></i>
+                        Form 1
+                    </h3>
+                </div>
+            </a>
+
+            <!-- FORM 2 -->
+
+            <a
+                href="galeria-clase.html?clase=form-2"
+                class="gallery-card"
+            >
+                <img
+                    src="images/galeria/proyecto-bilingue/form-2/f2-portada.jpg"
+                    alt="Proyecto Bilingüe de Form 2"
+                >
+
+                <div class="card-overlay">
+                    <h3>
+                        <i class="fa-regular fa-folder-open"></i>
+                        Form 2
+                    </h3>
+                </div>
+            </a>
+
+            <!-- FORM 3 -->
+
+            <a
+                href="galeria-clase.html?clase=form-3"
+                class="gallery-card"
+            >
+                <img
+                    src="images/galeria/proyecto-bilingue/form-3/f3-portada.jpg"
+                    alt="Proyecto Bilingüe de Form 3"
+                >
+
+                <div class="card-overlay">
+                    <h3>
+                        <i class="fa-regular fa-folder-open"></i>
+                        Form 3
+                    </h3>
+                </div>
+            </a>
+
+            <!-- FORM 4 -->
+
+            <a
+                href="galeria-clase.html?clase=form-4"
+                class="gallery-card"
+            >
+                <img
+                    src="images/galeria/proyecto-bilingue/form-4/f4-portada.jpg"
+                    alt="Proyecto Bilingüe de Form 4"
+                >
+
+                <div class="card-overlay">
+                    <h3>
+                        <i class="fa-regular fa-folder-open"></i>
+                        Form 4
+                    </h3>
+                </div>
+            </a>
+
+            <!-- FORM 5 -->
+
+            <a
+                href="galeria-clase.html?clase=form-5"
+                class="gallery-card"
+            >
+                <img
+                    src="images/galeria/proyecto-bilingue/form-5/f5-portada.jpg"
+                    alt="Proyecto Bilingüe de Form 5"
+                >
+
+                <div class="card-overlay">
+                    <h3>
+                        <i class="fa-regular fa-folder-open"></i>
+                        Form 5
+                    </h3>
+                </div>
+            </a>
+
+            <!-- FORM 6 -->
+
+            <a
+                href="galeria-clase.html?clase=Form-6"
+                class="gallery-card"
+            >
+                <img
+                    src="images/galeria/proyecto-bilingue/Form-6/f6-portada.jpg"
+                    alt="Proyecto Bilingüe de Form 6"
+                >
+
+                <div class="card-overlay">
+                    <h3>
+                        <i class="fa-regular fa-folder-open"></i>
+                        Form 6
+                    </h3>
+                </div>
+            </a>
 
         </div>
 
-        <div class="footer-center">
+    </main>
 
-            <p><strong>Dirección:</strong> 18 de Julio 538, Mercedes</p>
+    <!-- FOOTER -->
 
-            <p><strong>Email:</strong> uasdireccion@gmail.com</p>
+    <footer class="footer">
+        <div class="footer-container">
 
-            <p><strong>Teléfono:</strong> 4532 3962</p>
+            <div class="footer-left">
+                <img
+                    src="logo.jpg"
+                    class="footer-logo"
+                    alt="Logo de Uruguayan American School"
+                >
 
-            <p><strong>Celular:</strong> 092 323 962 – 097 385 182</p>
+                <p class="footer-school-name">
+                    Uruguayan American School de Mercedes
+                </p>
 
-        </div>
+                <img
+                    src="logocam.jpg"
+                    class="footer-cambridge"
+                    alt="Cambridge International School"
+                >
+            </div>
 
-        <div class="footer-right">
+            <div class="footer-center">
+                <p>
+                    <strong>Dirección:</strong>
+                    18 de Julio 538, 75000 Mercedes, Soriano
+                </p>
 
-            <p><strong>Seguinos</strong></p>
+                <p>
+                    <strong>Email:</strong>
+                    uasdireccion@gmail.com
+                </p>
 
-            <div class="social-icons">
+                <p>
+                    <strong>Teléfono:</strong>
+                    4532 3962
+                </p>
 
-                <a href="https://www.facebook.com/uasmercedes/" target="_blank">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
+                <p>
+                    <strong>Celular:</strong>
+                    092 323 962 – 097 385 182
+                </p>
+            </div>
 
-                <a href="https://www.instagram.com/uas_mercedes/" target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
+            <div class="footer-right">
+                <p><strong>Seguinos:</strong></p>
 
-                <a href="https://www.youtube.com/@UASMercedesOficial" target="_blank">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
+                <div class="social-icons">
 
+                    <a
+                        href="https://www.facebook.com/uasmercedes/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/uas_mercedes/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="https://www.youtube.com/@UASMercedesOficial"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube"
+                    >
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                </div>
             </div>
 
         </div>
+    </footer>
 
-    </div>
+    <!-- MENÚ HAMBURGUESA -->
 
-</footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle =
+                document.querySelector(".menu-toggle");
 
-<script>
+            const navLinks =
+                document.querySelector(".nav-links");
 
-const menuToggle=document.querySelector(".menu-toggle");
-const navLinks=document.querySelector(".nav-links");
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener("click", function () {
+                    const menuIsOpen =
+                        navLinks.classList.toggle("active");
 
-menuToggle.addEventListener("click",()=>{
-
-    navLinks.classList.toggle("active");
-
-});
-
-</script>
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        menuIsOpen.toString()
+                    );
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
