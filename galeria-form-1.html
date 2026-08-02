@@ -9,7 +9,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Galería de clase | Uruguayan American School de Mercedes</title>
+    <title>Form 1 | Uruguayan American School de Mercedes</title>
 
     <!-- CSS general -->
     <link rel="stylesheet" href="styles.css">
@@ -471,16 +471,16 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
 
-            const albumConfigurations = {
-                "Form-1": {
-                    title: "Form-1",
-                    folder:
-                        "images/galeria/proyecto-bilingue/Form-01/",
-                    filePrefix: "Form-01-",
-                    totalPhotos: 7
-                  extension: ".jpg"
-                }
-            };
+           const albumConfigurations = {
+    "Form-01": {
+        title: "Form 1",
+        folder:
+            "images/galeria/proyecto-bilingue/Form-01/",
+        filePrefix: "f1-",
+        totalPhotos: 7,
+        extension: ".jpg"
+    }
+};
 
             const params =
                 new URLSearchParams(window.location.search);
@@ -542,10 +542,10 @@
                     String(number).padStart(3, "0");
 
                 const photoPath =
-                    album.folder +
-                    album.filePrefix +
-                    formattedNumber +
-                    ".jpg";
+    album.folder +
+    album.filePrefix +
+    formattedNumber +
+    album.extension;
 
                 photos.push(photoPath);
 
