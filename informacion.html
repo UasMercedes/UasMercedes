@@ -1,122 +1,720 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Information – Uruguayan American School de Mercedes</title>
 
-    <!-- Font Awesome (iconos redes sociales) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    
+    <title>
+        Información – Uruguayan American School de Mercedes
+    </title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
-    <!-- CSS -->
+    <!-- CSS general -->
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Montserrat", sans-serif;
+            background-color: #f5f7fb;
+            color: #333333;
+        }
+
+        /* HERO */
+
+        .information-hero {
+            padding: 65px 20px;
+            background: linear-gradient(
+                135deg,
+                #003366,
+                #1d5d9b
+            );
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .information-hero h1 {
+            margin: 0 0 14px;
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+
+        .information-hero p {
+            max-width: 760px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        /* CONTENIDO GENERAL */
+
+        .information-main {
+            width: 100%;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 60px 24px 75px;
+        }
+
+        /* CARTA DE LA DIRECTORA */
+
+        .principal-section {
+            margin-bottom: 65px;
+        }
+
+        .principal-card {
+            display: grid;
+            overflow: hidden;
+            border-radius: 22px;
+            background-color: #ffffff;
+            box-shadow: 0 12px 35px rgba(0, 51, 102, 0.13);
+            grid-template-columns: 300px minmax(0, 1fr);
+        }
+
+        .principal-photo-area {
+            display: flex;
+            padding: 40px 30px;
+            background: linear-gradient(
+                160deg,
+                #003366,
+                #336699
+            );
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .principal-photo {
+            display: block;
+            width: 220px;
+            height: 280px;
+            border: 6px solid rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+            object-fit: cover;
+        }
+
+        .principal-content {
+            padding: 45px 48px;
+        }
+
+        .principal-label {
+            display: inline-flex;
+            margin-bottom: 15px;
+            color: #b30000;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .principal-content h2 {
+            margin: 0 0 28px;
+            color: #003366;
+            font-size: 2rem;
+        }
+
+        .principal-letter p {
+            margin: 0 0 18px;
+            color: #444444;
+            font-size: 1rem;
+            line-height: 1.85;
+        }
+
+        .principal-signature {
+            margin-top: 32px;
+            padding-top: 22px;
+            border-top: 1px solid #dce3eb;
+        }
+
+        .principal-signature strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #003366;
+            font-size: 1.2rem;
+        }
+
+        .principal-signature span {
+            color: #666666;
+            font-size: 0.98rem;
+        }
+
+        /* QUIÉNES SOMOS */
+
+        .section-heading {
+            max-width: 760px;
+            margin: 0 auto 38px;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            margin: 0 0 12px;
+            color: #003366;
+            font-size: 2rem;
+        }
+
+        .section-heading p {
+            margin: 0;
+            color: #666666;
+            line-height: 1.7;
+        }
+
+        .information-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .information-card {
+            padding: 32px;
+            border-top: 5px solid #003366;
+            border-radius: 16px;
+            background-color: #ffffff;
+            box-shadow: 0 7px 22px rgba(0, 51, 102, 0.1);
+        }
+
+        .information-icon {
+            display: flex;
+            width: 54px;
+            height: 54px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            background-color: #eaf1f8;
+            color: #003366;
+            font-size: 1.4rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .information-card h3 {
+            margin: 0 0 14px;
+            color: #003366;
+            font-size: 1.35rem;
+        }
+
+        .information-card p {
+            margin: 0;
+            color: #555555;
+            line-height: 1.75;
+        }
+
+        /* VALORES */
+
+        .values-list {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .values-list li {
+            padding: 9px 14px;
+            border-radius: 30px;
+            background-color: #eaf1f8;
+            color: #003366;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+
+        /* MENÚ HAMBURGUESA */
+
+        .menu-toggle {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        /* TABLETS */
+
+        @media screen and (max-width: 900px) {
+            .principal-card {
+                grid-template-columns: 1fr;
+            }
+
+            .principal-photo-area {
+                padding: 35px 20px;
+            }
+
+            .principal-photo {
+                width: 210px;
+                height: 265px;
+            }
+        }
+
+        /* CELULARES */
+
+        @media screen and (max-width: 650px) {
+            .information-hero {
+                padding: 48px 18px;
+            }
+
+            .information-hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .information-hero p {
+                font-size: 1rem;
+            }
+
+            .information-main {
+                padding: 38px 15px 55px;
+            }
+
+            .principal-section {
+                margin-bottom: 48px;
+            }
+
+            .principal-card {
+                border-radius: 16px;
+            }
+
+            .principal-content {
+                padding: 32px 22px;
+            }
+
+            .principal-content h2 {
+                font-size: 1.7rem;
+            }
+
+            .principal-letter p {
+                font-size: 0.97rem;
+                line-height: 1.75;
+            }
+
+            .information-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .information-card {
+                padding: 25px 22px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="logo-container">
-            <img src="logo.jpg" alt="Logo UAS Mercedes" class="logo" width="120">
-            <span class="school-name">Uruguayan American School de Mercedes</span>
-        </div>
 
-        <!-- Botón hamburguesa -->
-        <span class="menu-toggle">☰</span>
+    <header class="navbar">
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <div class="logo-container">
+            <img
+                src="logo.jpg"
+                alt="Logo UAS Mercedes"
+                class="logo"
+                width="120"
+            >
+
+            <span class="school-name">
+                Uruguayan American School de Mercedes
+            </span>
+        </div>
 
         <ul class="nav-links">
-            <li><a href="index.html" class="btn">Inicio</a></li>
-            <li><a href="novedades.html" class="btn">Novedades</a></li>
-            <li><a href="calendario.html" class="btn">Calendario</a></li>
-            <li><a href="informacion.html" class="btn">Información</a></li>
-            <li><a href="contacto.html" class="btn">Contacto</a></li>
+            <li>
+                <a href="index.html" class="btn">Inicio</a>
+            </li>
+
+            <li>
+                <a href="novedades.html" class="btn">Novedades</a>
+            </li>
+
+            <li>
+                <a href="calendario.html" class="btn">Calendario</a>
+            </li>
+
+            <li>
+                <a href="informacion.html" class="btn">Información</a>
+            </li>
+
+            <li>
+                <a href="contacto.html" class="btn">Contacto</a>
+            </li>
         </ul>
+
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Sobre nuestra escuela</h1>
-            <p>Conocé más sobre nuestra misión, visión y valores educativos.</p>
-        </div>
+    <!-- HERO -->
+
+    <section class="information-hero">
+        <h1>Sobre nuestra escuela</h1>
+
+        <p>
+            Conocé nuestra propuesta educativa, los valores que nos
+            representan y el compromiso que guía cada experiencia
+            de aprendizaje.
+        </p>
     </section>
 
-    <!-- INFORMATION CONTENT -->
-    <section class="info-content">
-  
-        <h2>Quiénes somos</h2>
-        <p>
-         Uruguayan American School Mercedes está comprometida con brindar una educación bilingüe, multicultural y basada en valores, que promueva el crecimiento académico y personal de cada estudiante.
-        </p>
+    <!-- CONTENIDO -->
 
-        <h2>Nuestra misión</h2>
-        <p>
-      Educar a los niños en un entorno bilingüe, promoviendo la creatividad, el pensamiento crítico y los valores éticos que los preparen para el futuro.
-        </p>
+    <main class="information-main">
 
-        <h2>Nuestra visión</h2>
-        <p>
-           Ser una institución educativa líder en la región, reconocida por su excelencia académica, su espíritu innovador y su contribución a la comunidad.
-        </p>
+        <!-- CARTA DE LA DIRECTORA -->
 
-        <h2>Nuestros valores</h2>
-        <ul>
-            <li>Respeto</li>
-            <li>Responsabilidad</li>
-            <li>Integridad</li>
-            <li>Colaboración</li>
-            <li>Excelencia</li>
-        </ul>
-    </section>
+        <section class="principal-section">
+
+            <article class="principal-card">
+
+                <div class="principal-photo-area">
+                    <img
+                        src="images/administration-01.jpg"
+                        alt="Lucía Vidaurreta, Principal de Uruguayan American School de Mercedes"
+                        class="principal-photo"
+                    >
+                </div>
+
+                <div class="principal-content">
+
+                    <div class="principal-label">
+                        <i class="fa-solid fa-pen-nib"></i>
+                        Mensaje institucional
+                    </div>
+
+                    <h2>Mensaje de la Directora</h2>
+
+                    <div class="principal-letter">
+
+                        <p>
+                            En Uruguayan American School de Mercedes
+                            entendemos la educación como un proceso de
+                            crecimiento que se construye cada día,
+                            acompañando a cada niño en sus aprendizajes
+                            y en su desarrollo personal.
+                        </p>
+
+                        <p>
+                            Nuestra propuesta educativa bilingüe integra
+                            el español y el inglés de manera natural,
+                            progresiva y significativa. Aspiramos a que
+                            nuestros alumnos no solo incorporen una
+                            segunda lengua, sino que desarrollen la
+                            confianza y las herramientas necesarias para
+                            comunicarse, conocer otras culturas y
+                            desenvolverse en un mundo cada vez más
+                            conectado.
+                        </p>
+
+                        <p>
+                            Para mí, educar implica mucho más que
+                            transmitir conocimientos y alcanzar buenos
+                            resultados académicos. Significa despertar
+                            la curiosidad, promover la autonomía,
+                            estimular la creatividad y ayudar a cada niño
+                            a descubrir sus capacidades. También
+                            significa enseñarles que está bien preguntar,
+                            equivocarse y volver a intentarlo, porque todo
+                            ello forma parte del aprendizaje.
+                        </p>
+
+                        <p>
+                            Queremos que nuestra escuela sea un lugar en
+                            el que cada alumno se sienta valorado,
+                            escuchado y acompañado; un espacio seguro
+                            donde pueda expresarse, participar
+                            activamente y aprender junto a los demás.
+                            Trabajamos para formar personas responsables,
+                            respetuosas, con pensamiento crítico y
+                            preparadas para afrontar los desafíos del
+                            futuro.
+                        </p>
+
+                        <p>
+                            Contamos con un equipo docente comprometido,
+                            que trabaja con profesionalismo, dedicación y
+                            respeto por los tiempos y las necesidades de
+                            cada estudiante. Su labor diaria es
+                            fundamental para generar experiencias de
+                            aprendizaje significativas y acompañar la
+                            formación integral de nuestros niños.
+                        </p>
+
+                        <p>
+                            Sabemos, además, que la educación es una
+                            tarea compartida. Por eso, valoramos
+                            especialmente el vínculo cercano con las
+                            familias, basado en la comunicación, la
+                            escucha y la confianza. Cuando la escuela y
+                            el hogar trabajan juntos, los niños
+                            encuentran un entorno más sólido para crecer
+                            y aprender.
+                        </p>
+
+                        <p>
+                            Los invitamos a conocer nuestra propuesta
+                            educativa y a formar parte de una comunidad
+                            abierta, cercana y participativa, en la que
+                            cada niño pueda sentirse parte y desarrollar
+                            al máximo sus posibilidades.
+                        </p>
+
+                        <p>
+                            Bienvenidos a Uruguayan American School de
+                            Mercedes.
+                        </p>
+
+                    </div>
+
+                    <div class="principal-signature">
+                        <strong>Lucía Vidaurreta</strong>
+                        <span>Principal</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- INFORMACIÓN INSTITUCIONAL -->
+
+        <section>
+
+            <div class="section-heading">
+                <h2>Nuestra identidad educativa</h2>
+
+                <p>
+                    Una propuesta bilingüe, cercana y comprometida con
+                    el desarrollo académico y personal de cada
+                    estudiante.
+                </p>
+            </div>
+
+            <div class="information-grid">
+
+                <!-- QUIÉNES SOMOS -->
+
+                <article class="information-card">
+
+                    <div class="information-icon">
+                        <i class="fa-solid fa-school"></i>
+                    </div>
+
+                    <h3>Quiénes somos</h3>
+
+                    <p>
+                        Uruguayan American School de Mercedes está
+                        comprometida con brindar una educación bilingüe,
+                        multicultural y basada en valores, que promueva
+                        el crecimiento académico y personal de cada
+                        estudiante.
+                    </p>
+
+                </article>
+
+                <!-- MISIÓN -->
+
+                <article class="information-card">
+
+                    <div class="information-icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+
+                    <h3>Nuestra misión</h3>
+
+                    <p>
+                        Educar a los niños en un entorno bilingüe,
+                        promoviendo la creatividad, el pensamiento
+                        crítico y los valores éticos que los preparen
+                        para el futuro.
+                    </p>
+
+                </article>
+
+                <!-- VISIÓN -->
+
+                <article class="information-card">
+
+                    <div class="information-icon">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+
+                    <h3>Nuestra visión</h3>
+
+                    <p>
+                        Ser una institución educativa líder en la
+                        región, reconocida por su excelencia académica,
+                        su espíritu innovador y su contribución a la
+                        comunidad.
+                    </p>
+
+                </article>
+
+                <!-- VALORES -->
+
+                <article class="information-card">
+
+                    <div class="information-icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <h3>Nuestros valores</h3>
+
+                    <ul class="values-list">
+                        <li>Respeto</li>
+                        <li>Responsabilidad</li>
+                        <li>Integridad</li>
+                        <li>Colaboración</li>
+                        <li>Excelencia</li>
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
 
     <!-- FOOTER -->
+
     <footer class="footer">
         <div class="footer-container">
+
             <div class="footer-left">
-                <img src="logo.jpg" class="footer-logo" alt="School Logo">
-                <p class="footer-school-name">Uruguayan American School de Mercedes</p>
-                     <img src="logocam.jpg" class="footer-cambridge" alt="Cambridge International School">
+
+                <img
+                    src="logo.jpg"
+                    class="footer-logo"
+                    alt="Logo de Uruguayan American School"
+                >
+
+                <p class="footer-school-name">
+                    Uruguayan American School de Mercedes
+                </p>
+
+                <img
+                    src="logocam.jpg"
+                    class="footer-cambridge"
+                    alt="Cambridge International School"
+                >
+
             </div>
 
             <div class="footer-center">
-                <p><strong>Dirección:</strong> 18 De Julio 538, 75000 Mercedes, Soriano</p>
-                <p><strong>Email:</strong> uasdireccion@gmail.com</p>
-                <p><strong>Teléfono:</strong> 4532 3962</p>
-                        <p><strong>Celular:</strong> 092 323 962 – 097 385 182</p>
+
+                <p>
+                    <strong>Dirección:</strong>
+                    18 de Julio 538, 75000 Mercedes, Soriano
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    uasdireccion@gmail.com
+                </p>
+
+                <p>
+                    <strong>Teléfono:</strong>
+                    4532 3962
+                </p>
+
+                <p>
+                    <strong>Celular:</strong>
+                    092 323 962 – 097 385 182
+                </p>
+
             </div>
 
             <div class="footer-right">
+
                 <p><strong>Seguinos:</strong></p>
-               <div class="social-icons">
-    <a href="https://www.facebook.com/uasmercedes/" target="_blank" aria-label="Facebook">
-        <i class="fa-brands fa-facebook-f"></i>
-    </a>
-    <a href="https://www.instagram.com/uas_mercedes/" target="_blank" aria-label="Instagram">
-        <i class="fa-brands fa-instagram"></i>
-    </a>
-    <a href="https://www.youtube.com/@UASMercedesOficial" target="_blank" aria-label="YouTube">
-        <i class="fa-brands fa-youtube"></i>
-    </a>
-</div>
+
+                <div class="social-icons">
+
+                    <a
+                        href="https://www.facebook.com/uasmercedes/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/uas_mercedes/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="https://www.youtube.com/@UASMercedesOficial"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube"
+                    >
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                </div>
 
             </div>
+
         </div>
     </footer>
 
-     <!-- SCRIPT MENÚ HAMBURGUESA -->
-    <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
+    <!-- MENÚ HAMBURGUESA -->
 
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle =
+                document.querySelector(".menu-toggle");
+
+            const navLinks =
+                document.querySelector(".nav-links");
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener(
+                    "click",
+                    function () {
+                        const menuIsOpen =
+                            navLinks.classList.toggle("active");
+
+                        menuToggle.setAttribute(
+                            "aria-expanded",
+                            menuIsOpen.toString()
+                        );
+                    }
+                );
+            }
         });
     </script>
 
 </body>
 </html>
-
