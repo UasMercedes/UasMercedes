@@ -477,7 +477,7 @@
                     folder:
                         "images/galeria/proyecto-bilingue/Nursery-and-Kinder-3/",
                     filePrefix: "nursery-",
-                    totalPhotos: 12
+                    totalPhotos: 12,
                          extension: ".JPG"
                     
                 }
@@ -487,7 +487,7 @@
                 new URLSearchParams(window.location.search);
 
             const selectedClass =
-                params.get("clase") || "Toddlers";
+                params.get("clase") || "Nursery-and-Kinder-3";
 
             const album =
                 albumConfigurations[selectedClass];
@@ -542,13 +542,11 @@
                 const formattedNumber =
                     String(number).padStart(3, "0");
 
-                const photoPath =
-                    album.folder +
-                    album.filePrefix +
-                    formattedNumber +
-                    ".jpg";
-
-                photos.push(photoPath);
+             const photoPath =
+    album.folder +
+    album.filePrefix +
+    formattedNumber +
+    album.extension;
 
                 const button =
                     document.createElement("button");
