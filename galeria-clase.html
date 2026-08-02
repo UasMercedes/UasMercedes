@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Galería de clase | Uruguayan American School de Mercedes</title>
+
+    <!-- CSS general -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Montserrat", sans-serif;
+            background-color: #f5f7fb;
+            color: #333333;
+        }
+
+        /* HERO */
+
+        .class-hero {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #003366, #1d5d9b);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .class-hero h1 {
+            margin: 0 0 12px;
+            font-size: 2.8rem;
+        }
+
+        .class-hero p {
+            max-width: 720px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        /* CONTENIDO */
+
+        .gallery-container {
+            width: 100%;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 45px 24px 70px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            margin-bottom: 35px;
+            color: #003366;
+            font-weight: 600;
+            text-decoration: none;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .back-link:hover {
+            color: #c62828;
+        }
+
+        /* CUADRÍCULA */
+
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .photo-button {
+            display: block;
+            overflow: hidden;
+            height: 270px;
+            padding: 0;
+            border: none;
+            border-radius: 15px;
+            background: #ffffff;
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .photo-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 13px 30px rgba(0, 0, 0, 0.18);
+        }
+
+        .photo-button img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .photo-button:hover img {
+            transform: scale(1.06);
+        }
+
+        /* VISOR GRANDE */
+
+        .lightbox {
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            display: none;
+            padding: 30px 80px;
+            background: rgba(0, 0, 0, 0.94);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-image {
+            display: block;
+            max-width: 100%;
+            max-height: 88vh;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: absolute;
+            border: none;
+            background: rgba(0, 0, 0, 0.35);
+            color: #ffffff;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .lightbox-close {
+            top: 20px;
+            right: 25px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            font-size: 1.7rem;
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+            top: 50%;
+            width: 50px;
+            height: 60px;
+            border-radius: 8px;
+            font-size: 1.7rem;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            bottom: 18px;
+            left: 50%;
+            color: #ffffff;
+            font-size: 0.95rem;
+            transform: translateX(-50%);
+        }
+
+        /* MENÚ */
+
+        .menu-toggle {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        /* TABLETS */
+
+        @media screen and (max-width: 950px) {
+            .photos-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* CELULARES */
+
+        @media screen and (max-width: 650px) {
+            .class-hero {
+                padding: 45px 18px;
+            }
+
+            .class-hero h1 {
+                font-size: 2rem;
+            }
+
+            .class-hero p {
+                font-size: 1rem;
+            }
+
+            .gallery-container {
+                padding: 30px 14px 50px;
+            }
+
+            .photos-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .photo-button {
+                height: 250px;
+            }
+
+            .lightbox {
+                padding: 60px 12px;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                width: 42px;
+                height: 52px;
+            }
+
+            .lightbox-prev {
+                left: 6px;
+            }
+
+            .lightbox-next {
+                right: 6px;
+            }
+
+            .lightbox-close {
+                top: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <div class="logo-container">
+            <img
+                src="logo.jpg"
+                class="logo"
+                alt="Logo UAS Mercedes"
+            >
+
+            <span class="school-name">
+                Uruguayan American School de Mercedes
+            </span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html" class="btn">Inicio</a></li>
+            <li><a href="novedades.html" class="btn">Novedades</a></li>
+            <li><a href="calendario.html" class="btn">Calendario</a></li>
+            <li><a href="informacion.html" class="btn">Información</a></li>
+            <li><a href="contacto.html" class="btn">Contacto</a></li>
+        </ul>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="class-hero">
+        <h1 id="class-title">Toddlers</h1>
+
+        <p>
+            Fotografías de las actividades realizadas durante el
+            Proyecto Bilingüe.
+        </p>
+    </section>
+
+    <!-- GALERÍA -->
+
+    <main class="gallery-container">
+
+        <a
+            href="album-proyecto-bilingue.html"
+            class="back-link"
+        >
+            <i class="fa-solid fa-arrow-left"></i>
+            Volver a Proyecto Bilingüe
+        </a>
+
+        <div
+            id="photos-grid"
+            class="photos-grid"
+        ></div>
+
+    </main>
+
+    <!-- VISOR DE FOTOS -->
+
+    <div
+        id="lightbox"
+        class="lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Visor de fotografías"
+    >
+        <button
+            id="lightbox-close"
+            class="lightbox-close"
+            type="button"
+            aria-label="Cerrar imagen"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <button
+            id="lightbox-prev"
+            class="lightbox-prev"
+            type="button"
+            aria-label="Imagen anterior"
+        >
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <img
+            id="lightbox-image"
+            class="lightbox-image"
+            src=""
+            alt=""
+        >
+
+        <button
+            id="lightbox-next"
+            class="lightbox-next"
+            type="button"
+            aria-label="Imagen siguiente"
+        >
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div
+            id="lightbox-counter"
+            class="lightbox-counter"
+        ></div>
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-left">
+                <img
+                    src="logo.jpg"
+                    class="footer-logo"
+                    alt="Logo de la escuela"
+                >
+
+                <p class="footer-school-name">
+                    Uruguayan American School de Mercedes
+                </p>
+
+                <img
+                    src="logocam.jpg"
+                    class="footer-cambridge"
+                    alt="Cambridge International School"
+                >
+            </div>
+
+            <div class="footer-center">
+                <p>
+                    <strong>Dirección:</strong>
+                    18 de Julio 538, 75000 Mercedes, Soriano
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    direccion@uasmercedes.edu.uy
+                </p>
+
+                <p>
+                    <strong>Teléfono:</strong>
+                    4532 3962
+                </p>
+
+                <p>
+                    <strong>Celular:</strong>
+                    092 323 962 – 097 385 182
+                </p>
+            </div>
+
+            <div class="footer-right">
+                <p><strong>Seguinos:</strong></p>
+
+                <div class="social-icons">
+                    <a
+                        href="https://www.facebook.com/uasmercedes/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/uas_mercedes/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="https://www.youtube.com/@UASMercedesOficial"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube"
+                    >
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const albumConfigurations = {
+                "Toddlers": {
+                    title: "Toddlers",
+                    folder:
+                        "images/galeria/proyecto-bilingue/Toddlers/",
+                    filePrefix: "toddlers-",
+                    totalPhotos: 14
+                }
+            };
+
+            const params =
+                new URLSearchParams(window.location.search);
+
+            const selectedClass =
+                params.get("clase") || "Toddlers";
+
+            const album =
+                albumConfigurations[selectedClass];
+
+            const classTitle =
+                document.getElementById("class-title");
+
+            const photosGrid =
+                document.getElementById("photos-grid");
+
+            const lightbox =
+                document.getElementById("lightbox");
+
+            const lightboxImage =
+                document.getElementById("lightbox-image");
+
+            const lightboxCounter =
+                document.getElementById("lightbox-counter");
+
+            const closeButton =
+                document.getElementById("lightbox-close");
+
+            const previousButton =
+                document.getElementById("lightbox-prev");
+
+            const nextButton =
+                document.getElementById("lightbox-next");
+
+            let photos = [];
+            let currentPhotoIndex = 0;
+
+            if (!album) {
+                classTitle.textContent =
+                    "Galería no disponible";
+
+                photosGrid.innerHTML =
+                    "<p>Esta galería todavía no fue cargada.</p>";
+
+                return;
+            }
+
+            classTitle.textContent = album.title;
+            document.title =
+                album.title +
+                " | Proyecto Bilingüe | UAS Mercedes";
+
+            for (
+                let number = 1;
+                number <= album.totalPhotos;
+                number++
+            ) {
+                const formattedNumber =
+                    String(number).padStart(3, "0");
+
+                const photoPath =
+                    album.folder +
+                    album.filePrefix +
+                    formattedNumber +
+                    ".jpg";
+
+                photos.push(photoPath);
+
+                const button =
+                    document.createElement("button");
+
+                button.type = "button";
+                button.className = "photo-button";
+                button.setAttribute(
+                    "aria-label",
+                    "Abrir fotografía " + number
+                );
+
+                const image =
+                    document.createElement("img");
+
+                image.src = photoPath;
+                image.alt =
+                    album.title +
+                    " - Fotografía " +
+                    number;
+
+                image.loading = "lazy";
+
+                button.appendChild(image);
+
+                button.addEventListener(
+                    "click",
+                    function () {
+                        openLightbox(number - 1);
+                    }
+                );
+
+                photosGrid.appendChild(button);
+            }
+
+            function openLightbox(index) {
+                currentPhotoIndex = index;
+                updateLightbox();
+                lightbox.classList.add("active");
+                document.body.style.overflow = "hidden";
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove("active");
+                document.body.style.overflow = "";
+            }
+
+            function updateLightbox() {
+                lightboxImage.src =
+                    photos[currentPhotoIndex];
+
+                lightboxImage.alt =
+                    album.title +
+                    " - Fotografía " +
+                    (currentPhotoIndex + 1);
+
+                lightboxCounter.textContent =
+                    (currentPhotoIndex + 1) +
+                    " / " +
+                    photos.length;
+            }
+
+            function showPreviousPhoto() {
+                currentPhotoIndex =
+                    (
+                        currentPhotoIndex -
+                        1 +
+                        photos.length
+                    ) % photos.length;
+
+                updateLightbox();
+            }
+
+            function showNextPhoto() {
+                currentPhotoIndex =
+                    (
+                        currentPhotoIndex +
+                        1
+                    ) % photos.length;
+
+                updateLightbox();
+            }
+
+            closeButton.addEventListener(
+                "click",
+                closeLightbox
+            );
+
+            previousButton.addEventListener(
+                "click",
+                showPreviousPhoto
+            );
+
+            nextButton.addEventListener(
+                "click",
+                showNextPhoto
+            );
+
+            lightbox.addEventListener(
+                "click",
+                function (event) {
+                    if (event.target === lightbox) {
+                        closeLightbox();
+                    }
+                }
+            );
+
+            document.addEventListener(
+                "keydown",
+                function (event) {
+                    if (
+                        !lightbox.classList.contains("active")
+                    ) {
+                        return;
+                    }
+
+                    if (event.key === "Escape") {
+                        closeLightbox();
+                    }
+
+                    if (event.key === "ArrowLeft") {
+                        showPreviousPhoto();
+                    }
+
+                    if (event.key === "ArrowRight") {
+                        showNextPhoto();
+                    }
+                }
+            );
+
+            /* MENÚ HAMBURGUESA */
+
+            const menuToggle =
+                document.querySelector(".menu-toggle");
+
+            const navLinks =
+                document.querySelector(".nav-links");
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener(
+                    "click",
+                    function () {
+                        const menuIsOpen =
+                            navLinks.classList.toggle(
+                                "active"
+                            );
+
+                        menuToggle.setAttribute(
+                            "aria-expanded",
+                            menuIsOpen.toString()
+                        );
+                    }
+                );
+            }
+        });
+    </script>
+
+</body>
+</html>
