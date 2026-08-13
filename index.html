@@ -19,6 +19,146 @@
     body {
         overflow-x: hidden;
     }
+       /* =========================
+   PROPUESTA EDUCATIVA
+========================= */
+
+.educational-programmes {
+    padding: 70px 25px;
+    background-color: #f5f7fb;
+}
+
+.programmes-heading {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.programmes-heading h2 {
+    margin: 0 0 12px;
+    color: #003366;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.programmes-heading p {
+    margin: 0;
+    color: #666666;
+    font-size: 1.05rem;
+}
+
+/* CONTENEDOR DE LAS DOS TARJETAS */
+
+.programmes-grid {
+    display: grid;
+    max-width: 1100px;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* TARJETA */
+
+.programme-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: 360px;
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(0, 51, 102, 0.16);
+    text-decoration: none;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.programme-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 38px rgba(0, 51, 102, 0.24);
+}
+
+/* FOTO */
+
+.programme-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.programme-card:hover img {
+    transform: scale(1.06);
+}
+
+/* OSCURECIDO + TEXTO */
+
+.programme-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    padding: 32px;
+    background: linear-gradient(
+        to top,
+        rgba(0, 35, 75, 0.92) 0%,
+        rgba(0, 35, 75, 0.35) 55%,
+        rgba(0, 35, 75, 0.05) 100%
+    );
+    color: #ffffff;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.programme-overlay h3 {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.programme-overlay span {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.programme-overlay i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.programme-card:hover .programme-overlay i {
+    transform: translateX(5px);
+}
+
+/* CELULAR */
+
+@media screen and (max-width: 700px) {
+
+    .educational-programmes {
+        padding: 50px 15px;
+    }
+
+    .programmes-heading h2 {
+        font-size: 1.8rem;
+    }
+
+    .programmes-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .programme-card {
+        height: 300px;
+    }
+
+    .programme-overlay {
+        padding: 25px;
+    }
+
+    .programme-overlay h3 {
+        font-size: 1.6rem;
+    }
+}
 
     /* SOLICITUD DE INGRESO */
 
@@ -244,13 +384,57 @@
 
 
 
-    <!-- ABOUT -->
-    <section class="about">
-        <h2>Sobre nuestra escuela</h2>
+   <!-- PROPUESTA EDUCATIVA -->
+<section class="educational-programmes">
+
+    <div class="programmes-heading">
+        <h2>Nuestra propuesta educativa</h2>
         <p>
-           Uruguayan American School Mercedes está comprometida con brindar una educación bilingüe, multicultural y basada en valores, que promueva el crecimiento académico y personal de cada estudiante.
+            Conocé nuestra propuesta para cada etapa educativa.
         </p>
-    </section>
+    </div>
+
+    <div class="programmes-grid">
+
+        <!-- EARLY YEARS -->
+        <a href="early-years.html" class="programme-card">
+
+            <img
+                src="images/early-years-portada.jpg"
+                alt="Early Years"
+            >
+
+            <div class="programme-overlay">
+                <h3>EARLY YEARS</h3>
+                <span>
+                    Conocé nuestra propuesta
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </div>
+
+        </a>
+
+        <!-- PRIMARY -->
+        <a href="primary.html" class="programme-card">
+
+            <img
+                src="images/primary-portada.jpg"
+                alt="Primary"
+            >
+
+            <div class="programme-overlay">
+                <h3>PRIMARY</h3>
+                <span>
+                    Conocé nuestra propuesta
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
 
     <!-- NEWS -->
     <section class="news-preview">
