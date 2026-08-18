@@ -1,1 +1,1465 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Early Years | Uruguayan American School de Mercedes
+    </title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+    <!-- CSS GENERAL -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Montserrat", sans-serif;
+            background-color: #f5f7fb;
+            color: #333333;
+        }
+
+        /* =========================
+           HERO EARLY YEARS
+        ========================= */
+
+        .early-hero {
+            position: relative;
+            min-height: 520px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .early-hero img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .early-hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    to right,
+                    rgba(0, 35, 75, 0.88),
+                    rgba(0, 35, 75, 0.48),
+                    rgba(0, 35, 75, 0.18)
+                );
+        }
+
+        .early-hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+            padding: 70px 30px;
+            color: #ffffff;
+        }
+
+        .early-label {
+            display: inline-block;
+            margin-bottom: 18px;
+            padding: 9px 16px;
+            border-radius: 30px;
+            background-color: rgba(255,255,255,0.16);
+            backdrop-filter: blur(6px);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .early-hero h1 {
+            max-width: 780px;
+            margin: 0 0 20px;
+            font-size: 3.4rem;
+            line-height: 1.08;
+            font-weight: 700;
+        }
+
+        .early-hero p {
+            max-width: 720px;
+            margin: 0;
+            font-size: 1.18rem;
+            line-height: 1.75;
+            color: rgba(255,255,255,0.95);
+        }
+
+        /* =========================
+           INTRODUCCIÓN
+        ========================= */
+
+        .early-intro {
+            padding: 75px 25px;
+            background-color: #ffffff;
+        }
+
+        .early-intro-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .early-intro h2 {
+            margin: 0 0 22px;
+            color: #003366;
+            font-size: 2.25rem;
+            line-height: 1.2;
+        }
+
+        .early-intro p {
+            max-width: 900px;
+            margin: 0 auto 18px;
+            color: #555555;
+            font-size: 1.05rem;
+            line-height: 1.85;
+        }
+
+        .intro-highlight {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 20px;
+            border-radius: 30px;
+            background-color: #eaf1f8;
+            color: #003366;
+            font-weight: 600;
+        }
+        /* =========================
+           NIVELES
+        ========================= */
+
+        .levels-section {
+            padding: 75px 25px;
+            background-color: #f5f7fb;
+        }
+
+        .levels-container {
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            max-width: 780px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .section-label {
+            display: inline-block;
+            margin-bottom: 12px;
+            color: #b30000;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            margin: 0 0 15px;
+            color: #003366;
+            font-size: 2.2rem;
+        }
+
+        .section-heading p {
+            margin: 0;
+            color: #666666;
+            font-size: 1.03rem;
+            line-height: 1.75;
+        }
+
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+        }
+
+        .level-card {
+            padding: 30px 15px;
+            border-radius: 16px;
+            background-color: #ffffff;
+            box-shadow: 0 7px 20px rgba(0, 51, 102, 0.10);
+            text-align: center;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .level-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 13px 28px rgba(0, 51, 102, 0.17);
+        }
+
+        .level-icon {
+            display: flex;
+            width: 58px;
+            height: 58px;
+            margin: 0 auto 17px;
+            border-radius: 50%;
+            background-color: #eaf1f8;
+            color: #003366;
+            font-size: 1.35rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .level-card h3 {
+            margin: 0;
+            color: #003366;
+            font-size: 1.05rem;
+        }
+
+
+        /* =========================
+           PROPUESTA EDUCATIVA
+        ========================= */
+
+        .learning-section {
+            padding: 80px 25px;
+            background-color: #ffffff;
+        }
+
+        .learning-container {
+            display: grid;
+            max-width: 1150px;
+            margin: 0 auto;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .learning-image {
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 12px 32px rgba(0, 51, 102, 0.16);
+        }
+
+        .learning-image img {
+            display: block;
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .learning-content h2 {
+            margin: 0 0 22px;
+            color: #003366;
+            font-size: 2.15rem;
+            line-height: 1.25;
+        }
+
+        .learning-content p {
+            margin: 0 0 17px;
+            color: #555555;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+      /* =========================
+   ENGLISH
+========================= */
+
+.english-section {
+    padding: 85px 25px;
+    background: linear-gradient(
+        135deg,
+        #003366,
+        #174f86
+    );
+}
+
+.english-container {
+    display: grid;
+    max-width: 1150px;
+    margin: 0 auto;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.english-content {
+    color: #ffffff;
+}
+
+.english-label {
+    display: inline-flex;
+    margin-bottom: 17px;
+    padding: 9px 15px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.13);
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    align-items: center;
+    gap: 8px;
+}
+
+.english-content h2 {
+    margin: 0 0 22px;
+    color: #ffffff;
+    font-size: 2.4rem;
+}
+
+.english-content > p {
+    color: rgba(255, 255, 255, 0.91);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.english-intro {
+    font-size: 1.08rem !important;
+}
+
+.english-content strong {
+    color: #ffffff;
+}
+
+/* HORARIOS */
+
+.english-schedules {
+    display: grid;
+    margin: 30px 0;
+    gap: 15px;
+}
+
+.english-schedule-card {
+    display: flex;
+    padding: 19px;
+    border: 1px solid rgba(255,255,255,0.17);
+    border-radius: 14px;
+    background-color: rgba(255,255,255,0.10);
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.schedule-icon {
+    display: flex;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #003366;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.english-schedule-card h3 {
+    margin: 2px 0 7px;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.english-schedule-card p {
+    margin: 0;
+    color: rgba(255,255,255,0.87);
+    font-size: 0.91rem;
+    line-height: 1.6;
+}
+
+.english-final {
+    margin-top: 25px;
+}
+
+/* FOTO */
+
+.english-image {
+    position: relative;
+    overflow: hidden;
+    min-height: 540px;
+    border-radius: 22px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.24);
+}
+
+.english-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.english-image-message {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    padding: 17px 20px;
+    border-radius: 13px;
+    background-color: rgba(0, 51, 102, 0.90);
+    color: #ffffff;
+    font-weight: 600;
+    align-items: center;
+    gap: 11px;
+}
+
+.english-image-message i {
+    font-size: 1.3rem;
+}
+      /* =========================
+   ACTIVIDADES
+========================= */
+
+.activities-section {
+    padding: 80px 25px;
+    background-color: #f5f7fb;
+}
+
+.activities-container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.activity-card {
+    padding: 34px 28px;
+    border-radius: 18px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 51, 102, 0.10);
+    text-align: center;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.activity-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 51, 102, 0.16);
+}
+
+.activity-icon {
+    display: flex;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background-color: #eaf1f8;
+    color: #003366;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.activity-card h3 {
+    margin: 0 0 14px;
+    color: #003366;
+    font-size: 1.25rem;
+}
+
+.activity-card p {
+    margin: 0;
+    color: #5a5a5a;
+    font-size: 0.96rem;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   EQUIPO MULTIDISCIPLINARIO
+========================= */
+
+.multidisciplinary-section {
+    padding: 85px 25px;
+    background-color: #ffffff;
+}
+
+.multidisciplinary-container {
+    display: grid;
+    max-width: 1150px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.multidisciplinary-content h2 {
+    margin: 0 0 22px;
+    color: #003366;
+    font-size: 2.15rem;
+    line-height: 1.25;
+}
+
+.multidisciplinary-content p {
+    margin: 0 0 17px;
+    color: #555555;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.professional-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.professional-card {
+    display: flex;
+    min-height: 150px;
+    padding: 24px 18px;
+    border-radius: 17px;
+    background: linear-gradient(
+        145deg,
+        #003366,
+        #1d5d9b
+    );
+    box-shadow: 0 10px 25px rgba(0, 51, 102, 0.17);
+    color: #ffffff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.professional-card i {
+    font-size: 2rem;
+    color: #ffcccc;
+}
+
+.professional-card span {
+    font-size: 1rem;
+    font-weight: 600;
+}
+      /* =========================
+   LEISURE TIME
+========================= */
+
+.leisure-section {
+    padding: 85px 25px;
+    background-color: #f5f7fb;
+}
+
+.leisure-container {
+    display: grid;
+    max-width: 1150px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.leisure-image {
+    overflow: hidden;
+    border-radius: 22px;
+    box-shadow: 0 12px 32px rgba(0, 51, 102, 0.15);
+}
+
+.leisure-image img {
+    display: block;
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+}
+
+.leisure-content h2 {
+    margin: 0 0 22px;
+    color: #003366;
+    font-size: 2.2rem;
+}
+
+.leisure-content p {
+    margin: 0 0 17px;
+    color: #555555;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.leisure-content strong {
+    color: #003366;
+}
+
+
+/* =========================
+   CIERRE EARLY YEARS
+========================= */
+
+.early-closing {
+    padding: 80px 25px;
+    background: linear-gradient(
+        135deg,
+        #003366,
+        #1d5d9b
+    );
+    color: #ffffff;
+    text-align: center;
+}
+
+.early-closing-container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.early-closing i {
+    margin-bottom: 20px;
+    color: #ffcccc;
+    font-size: 2.4rem;
+}
+
+.early-closing h2 {
+    margin: 0 0 22px;
+    color: #ffffff;
+    font-size: 2.25rem;
+}
+
+.early-closing p {
+    margin: 0 auto 18px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.03rem;
+    line-height: 1.8;
+}
+
+.closing-highlight {
+    max-width: 760px;
+    padding-top: 10px;
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+    font-weight: 600;
+}
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media screen and (max-width: 750px) {
+
+            .early-hero {
+                min-height: 470px;
+            }
+
+            .early-hero-content {
+                padding: 55px 20px;
+            }
+
+            .early-hero h1 {
+                font-size: 2.45rem;
+            }
+
+            .early-hero p {
+                font-size: 1rem;
+                line-height: 1.65;
+            }
+
+            .early-intro {
+                padding: 55px 18px;
+            }
+
+            .early-intro h2 {
+                font-size: 1.85rem;
+            }
+
+            .early-intro p {
+                font-size: 1rem;
+            }
+                      .levels-section {
+                padding: 55px 18px;
+            }
+
+            .levels-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .level-card:last-child {
+                grid-column: 1 / -1;
+            }
+
+            .learning-section {
+                padding: 55px 18px;
+            }
+
+            .learning-container {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .learning-image img {
+                height: 350px;
+            }
+
+            .learning-content h2 {
+                font-size: 1.8rem;
+            }
+          .english-section {
+    padding: 60px 18px;
+}
+
+.english-container {
+    grid-template-columns: 1fr;
+    gap: 38px;
+}
+
+.english-content h2 {
+    font-size: 2rem;
+}
+
+.english-image {
+    min-height: 400px;
+}
+          .activities-section {
+    padding: 55px 18px;
+}
+
+.activities-grid {
+    grid-template-columns: 1fr;
+}
+
+.multidisciplinary-section {
+    padding: 60px 18px;
+}
+
+.multidisciplinary-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+}
+
+.multidisciplinary-content h2 {
+    font-size: 1.8rem;
+}
+
+.professional-grid {
+    grid-template-columns: 1fr 1fr;
+}
+          .leisure-section {
+    padding: 60px 18px;
+}
+
+.leisure-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+}
+
+.leisure-image img {
+    height: 350px;
+}
+
+.leisure-content h2 {
+    font-size: 1.85rem;
+}
+
+.early-closing {
+    padding: 60px 18px;
+}
+
+.early-closing h2 {
+    font-size: 1.85rem;
+}
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <span class="menu-toggle">☰</span>
+
+        <div class="logo-container">
+            <img
+                src="logo.jpg"
+                alt="Logo UAS Mercedes"
+                class="logo"
+            >
+
+            <span class="school-name">
+                Uruguayan American School de Mercedes
+            </span>
+        </div>
+
+        <ul class="nav-links">
+            <li>
+                <a href="index.html" class="btn">Inicio</a>
+            </li>
+
+            <li>
+                <a href="novedades.html" class="btn">Novedades</a>
+            </li>
+
+            <li>
+                <a href="calendario.html" class="btn">Calendario</a>
+            </li>
+
+            <li>
+                <a href="informacion.html" class="btn">Información</a>
+            </li>
+
+            <li>
+                <a href="contacto.html" class="btn">Contacto</a>
+            </li>
+        </ul>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="early-hero">
+
+        <img
+            src="images/early-years-hero.jpg"
+            alt="Early Years"
+        >
+
+        <div class="early-hero-content">
+
+            <span class="early-label">
+                Early Years
+            </span>
+
+            <h1>
+                Crecer, descubrir y aprender
+            </h1>
+
+            <p>
+                Los primeros años son una etapa fundamental.
+                Acompañamos a cada niño en un entorno seguro,
+                estimulante y cercano, promoviendo la curiosidad,
+                la autonomía, la creatividad y el placer por aprender.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- INTRODUCCIÓN -->
+
+    <section class="early-intro">
+
+        <div class="early-intro-container">
+
+            <h2>
+                Los primeros pasos de un gran recorrido
+            </h2>
+
+            <p>
+                En Uruguayan American School de Mercedes entendemos
+                que aprender en los primeros años significa explorar,
+                jugar, preguntar, experimentar y comenzar a descubrir
+                el mundo.
+            </p>
+
+            <p>
+                Nuestra propuesta de Early Years acompaña a cada niño
+                respetando sus tiempos, intereses y necesidades,
+                integrando el desarrollo académico, emocional,
+                social, lingüístico y corporal.
+            </p>
+
+            <span class="intro-highlight">
+                Aprender desde pequeños para crecer con confianza
+            </span>
+
+        </div>
+
+    </section>    <!-- =========================
+         NUESTROS NIVELES
+    ========================== -->
+
+    <section class="levels-section">
+
+        <div class="levels-container">
+
+            <div class="section-heading">
+                <span class="section-label">
+                    Nuestro recorrido
+                </span>
+
+                <h2>Niveles de Early Years</h2>
+
+                <p>
+                    Acompañamos cada etapa del desarrollo con propuestas
+                    pensadas especialmente para las necesidades, intereses
+                    y posibilidades de cada edad.
+                </p>
+            </div>
+
+            <div class="levels-grid">
+
+                <div class="level-card">
+                    <div class="level-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3>Toddlers</h3>
+                </div>
+
+                <div class="level-card">
+                    <div class="level-icon">
+                        <i class="fa-solid fa-shapes"></i>
+                    </div>
+                    <h3>Nursery</h3>
+                </div>
+
+                <div class="level-card">
+                    <div class="level-icon">
+                        <i class="fa-solid fa-puzzle-piece"></i>
+                    </div>
+                    <h3>Kinder 3</h3>
+                </div>
+
+                <div class="level-card">
+                    <div class="level-icon">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <h3>Kinder 4</h3>
+                </div>
+
+                <div class="level-card">
+                    <div class="level-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h3>Prep</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROPUESTA EDUCATIVA
+    ========================== -->
+
+    <section class="learning-section">
+
+        <div class="learning-container">
+
+            <div class="learning-image">
+
+                <img
+                    src="images/early-years-actividades.jpg"
+                    alt="Actividades educativas en Early Years"
+                >
+
+            </div>
+
+            <div class="learning-content">
+
+                <span class="section-label">
+                    Aprender haciendo
+                </span>
+
+                <h2>
+                    Una propuesta educativa integral
+                </h2>
+
+                <p>
+                    El aprendizaje durante los primeros años va mucho
+                    más allá de los contenidos académicos.
+                </p>
+
+                <p>
+                    Nuestra propuesta en español busca favorecer el
+                    desarrollo del lenguaje, el pensamiento, la
+                    curiosidad y la capacidad de expresarse y
+                    comunicarse.
+                </p>
+
+                <p>
+                    A través del juego, la literatura, la exploración,
+                    las experiencias científicas, el arte y diferentes
+                    situaciones de aprendizaje, los niños comienzan a
+                    construir conocimientos y a desarrollar herramientas
+                    fundamentales para su trayectoria escolar.
+                </p>
+
+                <p>
+                    Buscamos que cada niño tenga un rol activo en su
+                    aprendizaje: que pueda preguntar, descubrir, crear,
+                    resolver situaciones y aprender junto a otros.
+                </p>
+
+            </div>
+
+        </div>
+      <!-- =========================
+     ENGLISH FROM THE BEGINNING
+========================== -->
+
+<section class="english-section">
+
+    <div class="english-container">
+
+        <div class="english-content">
+
+            <span class="english-label">
+                <i class="fa-solid fa-language"></i>
+                Bilingual Education
+            </span>
+
+            <h2>English from the beginning</h2>
+
+            <p class="english-intro">
+                El inglés forma parte de la experiencia educativa
+                <strong>desde los primeros años y en todos los niveles
+                de Early Years.</strong>
+            </p>
+
+            <p>
+                Creemos que el contacto temprano y sostenido con una
+                segunda lengua permite que los niños se familiaricen
+                con ella de una manera espontánea, natural y
+                significativa.
+            </p>
+
+            <p>
+                El idioma se incorpora a través de canciones, juegos,
+                cuentos, rutinas, conversaciones y diferentes
+                experiencias especialmente pensadas para cada edad.
+            </p>
+
+            <div class="english-schedules">
+
+                <!-- TODDLERS A KINDER 3 -->
+
+                <div class="english-schedule-card">
+
+                    <span class="schedule-icon">
+                        <i class="fa-solid fa-sun"></i>
+                    </span>
+
+                    <div>
+                        <h3>Toddlers · Nursery · Kinder 3</h3>
+
+                        <p>
+                            Inglés integrado dentro del
+                            <strong>horario de la mañana</strong>,
+                            formando parte de la experiencia cotidiana
+                            de los niños.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- KINDER 4 Y PREP -->
+
+                <div class="english-schedule-card">
+
+                    <span class="schedule-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </span>
+
+                    <div>
+                        <h3>Kinder 4 · Prep</h3>
+
+                        <p>
+                            La propuesta se amplía con inglés
+                            <strong>a contraturno, durante la tarde</strong>,
+                            aumentando progresivamente la exposición
+                            al idioma.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="english-final">
+                Nuestro objetivo no es solamente que los niños aprendan
+                inglés, sino que desarrollen desde pequeños la confianza
+                necesaria para <strong>comprenderlo, utilizarlo y
+                comunicarse naturalmente en una segunda lengua.</strong>
+            </p>
+
+        </div>
+
+
+        <!-- FOTO -->
+
+        <div class="english-image">
+
+            <img
+                src="images/early-years-english.jpg"
+                alt="Aprendizaje de inglés en Early Years"
+            >
+
+            <div class="english-image-message">
+                <i class="fa-solid fa-comments"></i>
+
+                <span>
+                    Learning English naturally
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+      <!-- =========================
+     ACTIVIDADES COMPLEMENTARIAS
+========================== -->
+
+<section class="activities-section">
+
+    <div class="activities-container">
+
+        <div class="section-heading">
+            <span class="section-label">
+                Desarrollo integral
+            </span>
+
+            <h2>Aprender también es moverse, crear y expresarse</h2>
+
+            <p>
+                En todos los niveles de Early Years, la propuesta académica
+                se complementa con experiencias que favorecen distintas
+                formas de aprendizaje y expresión.
+            </p>
+        </div>
+
+        <div class="activities-grid">
+
+            <!-- MÚSICA -->
+            <article class="activity-card">
+                <div class="activity-icon">
+                    <i class="fa-solid fa-music"></i>
+                </div>
+
+                <h3>Música</h3>
+
+                <p>
+                    La música favorece la expresión, la sensibilidad,
+                    la escucha, la creatividad y el disfrute compartido
+                    desde edades tempranas.
+                </p>
+            </article>
+
+            <!-- EDUCACIÓN FÍSICA -->
+            <article class="activity-card">
+                <div class="activity-icon">
+                    <i class="fa-solid fa-person-running"></i>
+                </div>
+
+                <h3>Educación Física</h3>
+
+                <p>
+                    A través del movimiento, el juego y la actividad corporal,
+                    los niños desarrollan coordinación, confianza,
+                    autonomía y vínculos con los demás.
+                </p>
+            </article>
+
+            <!-- PSICOMOTRICIDAD -->
+            <article class="activity-card">
+                <div class="activity-icon">
+                    <i class="fa-solid fa-child-reaching"></i>
+                </div>
+
+                <h3>Psicomotricidad</h3>
+
+                <p>
+                    El trabajo psicomotriz acompaña el desarrollo corporal,
+                    emocional y cognitivo, fortaleciendo la relación del niño
+                    consigo mismo, con los otros y con su entorno.
+                </p>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EQUIPO MULTIDISCIPLINARIO
+========================== -->
+
+<section class="multidisciplinary-section">
+
+    <div class="multidisciplinary-container">
+
+        <div class="multidisciplinary-content">
+
+            <span class="section-label">
+                Acompañamiento profesional
+            </span>
+
+            <h2>Un equipo que acompaña cada etapa</h2>
+
+            <p>
+                El desarrollo infantil comprende múltiples dimensiones.
+                Por eso, en Early Years contamos con el acompañamiento
+                de un equipo multidisciplinario que trabaja junto a
+                docentes y familias.
+            </p>
+
+            <p>
+                Esta mirada integral nos permite acompañar los procesos
+                de aprendizaje y desarrollo respetando las particularidades
+                de cada niño y favoreciendo una intervención temprana
+                cuando resulta necesaria.
+            </p>
+
+            <p>
+                El trabajo conjunto entre docentes, especialistas y familias
+                constituye una parte esencial de nuestra manera de entender
+                la educación.
+            </p>
+
+        </div>
+
+        <div class="professional-grid">
+
+            <div class="professional-card">
+                <i class="fa-solid fa-person-walking"></i>
+                <span>Psicomotricista</span>
+            </div>
+
+            <div class="professional-card">
+                <i class="fa-solid fa-book-open-reader"></i>
+                <span>Psicopedagoga</span>
+            </div>
+
+            <div class="professional-card">
+                <i class="fa-solid fa-comments"></i>
+                <span>Fonoaudióloga</span>
+            </div>
+
+            <div class="professional-card">
+                <i class="fa-solid fa-brain"></i>
+                <span>Psicóloga</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+      <!-- =========================
+     LEISURE TIME
+========================== -->
+
+<section class="leisure-section">
+
+    <div class="leisure-container">
+
+        <div class="leisure-image">
+
+            <img
+                src="images/early-years-leisure.jpg"
+                alt="Leisure Time en Early Years"
+            >
+
+        </div>
+
+        <div class="leisure-content">
+
+            <span class="section-label">
+                Tardes para crear
+            </span>
+
+            <h2>Leisure Time</h2>
+
+            <p>
+                Para los niños de <strong>Toddlers, Nursery y Kinder 3</strong>,
+                ofrecemos además nuestra propuesta de Leisure Time durante
+                el horario de la tarde.
+            </p>
+
+            <p>
+                Es un espacio pensado para continuar disfrutando de la escuela
+                desde una dinámica diferente, con actividades de arte,
+                creatividad y expresión especialmente adaptadas a las edades
+                de los niños.
+            </p>
+
+            <p>
+                Un tiempo para crear, compartir, experimentar y disfrutar,
+                acompañando el desarrollo de nuevas formas de expresión
+                y fortaleciendo la confianza y la autonomía.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CIERRE
+========================== -->
+
+<section class="early-closing">
+
+    <div class="early-closing-container">
+
+        <i class="fa-solid fa-heart"></i>
+
+        <h2>
+            Los primeros pasos de un gran recorrido
+        </h2>
+
+        <p>
+            En Early Years buscamos que cada niño encuentre en la escuela
+            un lugar donde sentirse seguro, acompañado y valorado; donde
+            pueda desarrollar su curiosidad, descubrir sus capacidades
+            y disfrutar del aprendizaje.
+        </p>
+
+        <p class="closing-highlight">
+            Porque las experiencias de los primeros años construyen mucho
+            más que conocimientos: construyen las bases para aprender,
+            comunicarse, relacionarse y crecer.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-left">
+
+            <img
+                src="logo.jpg"
+                class="footer-logo"
+                alt="School Logo"
+            >
+
+            <p class="footer-school-name">
+                Uruguayan American School de Mercedes
+            </p>
+
+            <img
+                src="logocam.jpg"
+                class="footer-cambridge"
+                alt="Cambridge International School"
+            >
+
+        </div>
+
+        <div class="footer-center">
+
+            <p>
+                <strong>Dirección:</strong>
+                18 De Julio 538, 75000 Mercedes, Soriano
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                direccion@uasmercedes.edu.uy
+            </p>
+
+            <p>
+                <strong>Teléfono:</strong>
+                4532 3962
+            </p>
+
+            <p>
+                <strong>Celular:</strong>
+                092 323 962 – 097 385 182
+            </p>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p><strong>Seguinos:</strong></p>
+
+            <div class="social-icons">
+
+                <a
+                    href="https://www.facebook.com/uasmercedes/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                >
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a
+                    href="https://www.instagram.com/uas_mercedes/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a
+                    href="https://www.youtube.com/@UASMercedesOficial"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube"
+                >
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- MENÚ HAMBURGUESA -->
+
+<script>
+
+    const menuToggle =
+        document.querySelector(".menu-toggle");
+
+    const navLinks =
+        document.querySelector(".nav-links");
+
+    if (menuToggle && navLinks) {
+
+        menuToggle.addEventListener("click", () => {
+
+            navLinks.classList.toggle("active");
+
+        });
+
+    }
+
+</script>
+
+</body>
+</html>
+
+    </section>
 
