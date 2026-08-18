@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Primary | Uruguayan American School de Mercedes
+    </title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+    <!-- CSS GENERAL -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Montserrat", sans-serif;
+            background-color: #f5f7fb;
+            color: #333333;
+        }
+
+        /* =========================
+           HERO PRIMARY
+        ========================= */
+
+        .primary-hero {
+            position: relative;
+            min-height: 540px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .primary-hero img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .primary-hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background: linear-gradient(
+                to right,
+                rgba(0, 35, 75, 0.90),
+                rgba(0, 35, 75, 0.52),
+                rgba(0, 35, 75, 0.14)
+            );
+        }
+
+        .primary-hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+            padding: 75px 30px;
+            color: #ffffff;
+        }
+
+        .primary-label {
+            display: inline-block;
+            margin-bottom: 18px;
+            padding: 9px 16px;
+            border-radius: 30px;
+            background-color: rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(6px);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .primary-hero h1 {
+            max-width: 820px;
+            margin: 0 0 22px;
+            font-size: 3.5rem;
+            line-height: 1.08;
+            font-weight: 700;
+        }
+
+        .primary-hero p {
+            max-width: 760px;
+            margin: 0;
+            color: rgba(255,255,255,0.95);
+            font-size: 1.18rem;
+            line-height: 1.75;
+        }
+
+
+        /* =========================
+           INTRODUCCIÓN
+        ========================= */
+
+        .primary-intro {
+            padding: 78px 25px;
+            background-color: #ffffff;
+        }
+
+        .primary-intro-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .primary-intro h2 {
+            margin: 0 0 22px;
+            color: #003366;
+            font-size: 2.3rem;
+            line-height: 1.2;
+        }
+
+        .primary-intro p {
+            max-width: 920px;
+            margin: 0 auto 18px;
+            color: #555555;
+            font-size: 1.05rem;
+            line-height: 1.85;
+        }
+
+        .primary-intro-highlight {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 12px 21px;
+            border-radius: 30px;
+            background-color: #eaf1f8;
+            color: #003366;
+            font-weight: 600;
+        }
+        /* =========================
+           NIVELES DE PRIMARY
+        ========================= */
+
+        .primary-levels {
+            padding: 78px 25px;
+            background-color: #f5f7fb;
+        }
+
+        .primary-levels-container {
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+        .primary-section-heading {
+            max-width: 780px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .primary-section-label {
+            display: inline-block;
+            margin-bottom: 12px;
+            color: #b30000;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .primary-section-heading h2 {
+            margin: 0 0 15px;
+            color: #003366;
+            font-size: 2.2rem;
+        }
+
+        .primary-section-heading p {
+            margin: 0;
+            color: #666666;
+            font-size: 1.03rem;
+            line-height: 1.75;
+        }
+
+        .primary-levels-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+        }
+
+        .primary-level-card {
+            display: flex;
+            min-height: 110px;
+            border-radius: 16px;
+            background: linear-gradient(
+                145deg,
+                #003366,
+                #1d5d9b
+            );
+            box-shadow: 0 8px 22px rgba(0, 51, 102, 0.14);
+            color: #ffffff;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .primary-level-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(0, 51, 102, 0.20);
+        }
+
+        .primary-level-card span {
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           FORMACIÓN EN ESPAÑOL
+        ========================= */
+
+        .spanish-section {
+            padding: 85px 25px;
+            background-color: #ffffff;
+        }
+
+        .spanish-container {
+            display: grid;
+            max-width: 1150px;
+            margin: 0 auto;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .spanish-image {
+            overflow: hidden;
+            border-radius: 22px;
+            box-shadow: 0 12px 32px rgba(0, 51, 102, 0.15);
+        }
+
+        .spanish-image img {
+            display: block;
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .spanish-content h2 {
+            margin: 0 0 22px;
+            color: #003366;
+            font-size: 2.15rem;
+            line-height: 1.25;
+        }
+
+        .spanish-content p {
+            margin: 0 0 17px;
+            color: #555555;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+      /* =========================
+   BILINGUAL EDUCATION
+========================= */
+
+.primary-english-section {
+    padding: 85px 25px;
+    background: linear-gradient(
+        135deg,
+        #003366,
+        #174f86
+    );
+}
+
+.primary-english-container {
+    display: grid;
+    max-width: 1150px;
+    margin: 0 auto;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.primary-english-content {
+    color: #ffffff;
+}
+
+.primary-english-label {
+    display: inline-flex;
+    margin-bottom: 17px;
+    padding: 9px 15px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.13);
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    align-items: center;
+    gap: 8px;
+}
+
+.primary-english-content h2 {
+    margin: 0 0 22px;
+    color: #ffffff;
+    font-size: 2.4rem;
+}
+
+.primary-english-content p {
+    margin: 0 0 17px;
+    color: rgba(255, 255, 255, 0.91);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.primary-english-intro {
+    font-size: 1.08rem !important;
+}
+
+.primary-english-content strong {
+    color: #ffffff;
+}
+
+.primary-english-final {
+    margin-top: 25px !important;
+}
+
+/* FOTO */
+
+.primary-english-image {
+    position: relative;
+    overflow: hidden;
+    min-height: 540px;
+    border-radius: 22px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.24);
+}
+
+.primary-english-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.primary-english-image-message {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    padding: 17px 20px;
+    border-radius: 13px;
+    background-color: rgba(0, 51, 102, 0.90);
+    color: #ffffff;
+    font-weight: 600;
+    align-items: center;
+    gap: 11px;
+}
+
+.primary-english-image-message i {
+    font-size: 1.3rem;
+}
+
+
+/* =========================
+   ÁREAS EN INGLÉS
+========================= */
+
+.english-subjects-section {
+    padding: 80px 25px;
+    background-color: #f5f7fb;
+}
+
+.english-subjects-container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.english-subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.english-subject-card {
+    padding: 34px 28px;
+    border-radius: 18px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 51, 102, 0.10);
+    text-align: center;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.english-subject-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 51, 102, 0.16);
+}
+
+.english-subject-icon {
+    display: flex;
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background-color: #eaf1f8;
+    color: #003366;
+    font-size: 1.55rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.english-subject-card h3 {
+    margin: 0 0 14px;
+    color: #003366;
+    font-size: 1.3rem;
+}
+
+.english-subject-card p {
+    margin: 0 0 12px;
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+      /* =========================
+   APRENDER CONECTANDO SABERES
+========================= */
+
+.connected-learning-section {
+    padding: 85px 25px;
+    background-color: #ffffff;
+}
+
+.connected-learning-container {
+    display: grid;
+    max-width: 1150px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.connected-learning-image {
+    overflow: hidden;
+    border-radius: 22px;
+    box-shadow: 0 12px 32px rgba(0, 51, 102, 0.15);
+}
+
+.connected-learning-image img {
+    display: block;
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+}
+
+.connected-learning-content h2 {
+    margin: 0 0 22px;
+    color: #003366;
+    font-size: 2.15rem;
+    line-height: 1.25;
+}
+
+.connected-learning-content p {
+    margin: 0 0 17px;
+    color: #555555;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   CAMBRIDGE
+========================= */
+
+.cambridge-section {
+    padding: 85px 25px;
+    background: linear-gradient(
+        135deg,
+        #003366,
+        #174f86
+    );
+}
+
+.cambridge-container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.cambridge-heading {
+    max-width: 850px;
+    margin: 0 auto 45px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.cambridge-label {
+    display: inline-flex;
+    margin-bottom: 17px;
+    padding: 9px 15px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.13);
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    align-items: center;
+    gap: 8px;
+}
+
+.cambridge-heading h2 {
+    margin: 0 0 20px;
+    color: #ffffff;
+    font-size: 2.35rem;
+}
+
+.cambridge-heading p {
+    margin: 0 auto 15px;
+    color: rgba(255, 255, 255, 0.90);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.cambridge-certificates {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.certificate-card {
+    overflow: hidden;
+    border-radius: 18px;
+    background-color: #ffffff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.20);
+}
+
+.certificate-card img {
+    display: block;
+    width: 100%;
+    height: 340px;
+    padding: 18px;
+    background-color: #ffffff;
+    object-fit: contain;
+}
+
+.certificate-info {
+    padding: 20px 22px;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.certificate-info h3 {
+    margin: 0 0 7px;
+    color: #003366;
+    font-size: 1.15rem;
+}
+
+.certificate-info p {
+    margin: 0;
+    color: #666666;
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+      /* =========================
+   CIERRE PRIMARY
+========================= */
+
+.primary-closing {
+    padding: 85px 25px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.primary-closing-container {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.primary-closing i {
+    margin-bottom: 20px;
+    color: #b30000;
+    font-size: 2.4rem;
+}
+
+.primary-closing h2 {
+    margin: 0 0 22px;
+    color: #003366;
+    font-size: 2.3rem;
+}
+
+.primary-closing p {
+    margin: 0 auto 18px;
+    color: #555555;
+    font-size: 1.03rem;
+    line-height: 1.8;
+}
+
+.primary-closing-highlight {
+    max-width: 780px;
+    margin-top: 28px !important;
+    padding: 22px 25px;
+    border-radius: 14px;
+    background-color: #eaf1f8;
+    color: #003366 !important;
+    font-size: 1.08rem !important;
+    font-weight: 600;
+}
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media screen and (max-width: 750px) {
+
+            .primary-hero {
+                min-height: 480px;
+            }
+
+            .primary-hero-content {
+                padding: 55px 20px;
+            }
+
+            .primary-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .primary-hero p {
+                font-size: 1rem;
+                line-height: 1.65;
+            }
+
+            .primary-intro {
+                padding: 55px 18px;
+            }
+
+            .primary-intro h2 {
+                font-size: 1.9rem;
+            }
+
+            .primary-intro p {
+                font-size: 1rem;
+            }
+                      .primary-levels {
+                padding: 55px 18px;
+            }
+
+            .primary-levels-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .spanish-section {
+                padding: 60px 18px;
+            }
+
+            .spanish-container {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .spanish-image img {
+                height: 350px;
+            }
+
+            .spanish-content h2 {
+                font-size: 1.85rem;
+            }
+
+          .primary-english-section {
+    padding: 60px 18px;
+}
+
+.primary-english-container {
+    grid-template-columns: 1fr;
+    gap: 38px;
+}
+
+.primary-english-content h2 {
+    font-size: 2rem;
+}
+
+.primary-english-image {
+    min-height: 400px;
+}
+
+.english-subjects-section {
+    padding: 55px 18px;
+}
+
+.english-subjects-grid {
+    grid-template-columns: 1fr;
+}
+
+          .connected-learning-section {
+    padding: 60px 18px;
+}
+
+.connected-learning-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+}
+
+.connected-learning-image img {
+    height: 350px;
+}
+
+.connected-learning-content h2 {
+    font-size: 1.85rem;
+}
+
+.cambridge-section {
+    padding: 60px 18px;
+}
+
+.cambridge-heading h2 {
+    font-size: 1.95rem;
+}
+
+.cambridge-certificates {
+    grid-template-columns: 1fr;
+}
+
+.certificate-card img {
+    height: auto;
+}
+          .primary-closing {
+    padding: 60px 18px;
+}
+
+.primary-closing h2 {
+    font-size: 1.9rem;
+}
+
+.primary-closing-highlight {
+    padding: 20px;
+}
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <span class="menu-toggle">☰</span>
+
+        <div class="logo-container">
+
+            <img
+                src="logo.jpg"
+                alt="Logo UAS Mercedes"
+                class="logo"
+            >
+
+            <span class="school-name">
+                Uruguayan American School de Mercedes
+            </span>
+
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html" class="btn">Inicio</a>
+            </li>
+
+            <li>
+                <a href="novedades.html" class="btn">Novedades</a>
+            </li>
+
+            <li>
+                <a href="calendario.html" class="btn">Calendario</a>
+            </li>
+
+            <li>
+                <a href="informacion.html" class="btn">Información</a>
+            </li>
+
+            <li>
+                <a href="contacto.html" class="btn">Contacto</a>
+            </li>
+
+        </ul>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="primary-hero">
+
+        <img
+            src="images/primary-hero.jpg"
+            alt="Primary en Uruguayan American School de Mercedes"
+        >
+
+        <div class="primary-hero-content">
+
+            <span class="primary-label">
+                Primary
+            </span>
+
+            <h1>
+                Aprender en dos idiomas.
+                Pensar para el mundo.
+            </h1>
+
+            <p>
+                Una propuesta bilingüe que acompaña a nuestros alumnos
+                desde Form 1 hasta Form 6, integrando una sólida formación
+                académica en español con experiencias de aprendizaje
+                significativas en inglés.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         INTRODUCCIÓN
+    ========================== -->
+
+    <section class="primary-intro">
+
+        <div class="primary-intro-container">
+
+            <h2>
+                Una formación que crece con cada estudiante
+            </h2>
+
+            <p>
+                En Uruguayan American School de Mercedes, Primary es una
+                etapa de consolidación de aprendizajes y de desarrollo
+                progresivo de herramientas académicas, lingüísticas,
+                sociales y personales.
+            </p>
+
+            <p>
+                Nuestra propuesta integra dos experiencias educativas
+                complementarias a lo largo de la jornada: durante la mañana,
+                los alumnos trabajan las áreas curriculares de Educación
+                Primaria en español; por la tarde, continúan su formación
+                en inglés, ampliando no solo el dominio del idioma sino
+                también su capacidad para aprender, investigar, analizar
+                y comunicar ideas en una segunda lengua.
+            </p>
+
+            <span class="primary-intro-highlight">
+                Formar estudiantes curiosos, autónomos y preparados
+                para un mundo cada vez más conectado
+            </span>
+
+        </div>
+          <!-- =========================
+         NIVELES DE PRIMARY
+    ========================== -->
+
+    <section class="primary-levels">
+
+        <div class="primary-levels-container">
+
+            <div class="primary-section-heading">
+
+                <span class="primary-section-label">
+                    Nuestro recorrido
+                </span>
+
+                <h2>De Form 1 a Form 6</h2>
+
+                <p>
+                    Cada nivel propone nuevos desafíos y acompaña el
+                    crecimiento académico y personal de los alumnos,
+                    fortaleciendo progresivamente sus conocimientos,
+                    hábitos de trabajo, autonomía y confianza.
+                </p>
+
+            </div>
+
+            <div class="primary-levels-grid">
+
+                <div class="primary-level-card">
+                    <span>Form 1</span>
+                </div>
+
+                <div class="primary-level-card">
+                    <span>Form 2</span>
+                </div>
+
+                <div class="primary-level-card">
+                    <span>Form 3</span>
+                </div>
+
+                <div class="primary-level-card">
+                    <span>Form 4</span>
+                </div>
+
+                <div class="primary-level-card">
+                    <span>Form 5</span>
+                </div>
+
+                <div class="primary-level-card">
+                    <span>Form 6</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FORMACIÓN EN ESPAÑOL
+    ========================== -->
+
+    <section class="spanish-section">
+
+        <div class="spanish-container">
+
+            <div class="spanish-image">
+
+                <img
+                    src="images/primary-espanol.jpg"
+                    alt="Aprendizaje en español en Primary"
+                >
+
+            </div>
+
+            <div class="spanish-content">
+
+                <span class="primary-section-label">
+                    Durante la mañana
+                </span>
+
+                <h2>
+                    Una sólida formación en español
+                </h2>
+
+                <p>
+                    Durante el horario de la mañana, nuestros alumnos
+                    desarrollan las áreas curriculares correspondientes
+                    a Educación Primaria.
+                </p>
+
+                <p>
+                    La propuesta busca construir bases académicas sólidas,
+                    promoviendo la comprensión, la expresión oral y escrita,
+                    el razonamiento lógico, la resolución de problemas,
+                    la investigación y el pensamiento crítico.
+                </p>
+
+                <p>
+                    Entendemos el aprendizaje como un proceso activo.
+                    Los estudiantes observan, preguntan, investigan,
+                    producen, argumentan y construyen conocimientos a
+                    partir de experiencias significativas.
+                </p>
+
+                <p>
+                    A medida que avanzan por los distintos niveles,
+                    desarrollan una autonomía creciente, aprendiendo
+                    a organizar su trabajo, asumir responsabilidades
+                    y participar activamente de su propio proceso
+                    de aprendizaje.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+      <!-- =========================
+     BILINGUAL EDUCATION
+========================== -->
+
+<section class="primary-english-section">
+
+    <div class="primary-english-container">
+
+        <div class="primary-english-content">
+
+            <span class="primary-english-label">
+                <i class="fa-solid fa-language"></i>
+                Bilingual Education
+            </span>
+
+            <h2>English every afternoon</h2>
+
+            <p class="primary-english-intro">
+                El inglés ocupa un lugar central en nuestra propuesta
+                de Primary.
+            </p>
+
+            <p>
+                Durante el horario de la tarde, nuestros alumnos participan
+                de una experiencia de aprendizaje en inglés que va mucho más
+                allá del estudio tradicional del idioma.
+            </p>
+
+            <p>
+                Buscamos que desarrollen un <strong>inglés global</strong>,
+                que les permita comprender, expresarse, comunicarse y
+                desenvolverse con confianza en diferentes contextos.
+            </p>
+
+            <p>
+                El idioma se convierte también en una herramienta para
+                aprender contenidos, investigar, intercambiar ideas y
+                comprender distintas realidades.
+            </p>
+
+            <p class="primary-english-final">
+                Por eso, además del trabajo específico de English, nuestros
+                alumnos desarrollan tres áreas académicas en inglés:
+                <strong>Science, Humanities y Global Perspectives.</strong>
+            </p>
+
+        </div>
+
+
+        <!-- FOTO -->
+
+        <div class="primary-english-image">
+
+            <img
+                src="images/primary-english.jpg"
+                alt="Bilingual Education en Primary"
+            >
+
+            <div class="primary-english-image-message">
+                <i class="fa-solid fa-comments"></i>
+
+                <span>
+                    Learning, thinking and communicating in English
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ÁREAS EN INGLÉS
+========================== -->
+
+<section class="english-subjects-section">
+
+    <div class="english-subjects-container">
+
+        <div class="primary-section-heading">
+
+            <span class="primary-section-label">
+                Learning through English
+            </span>
+
+            <h2>Aprender contenidos en una segunda lengua</h2>
+
+            <p>
+                El inglés no se aprende únicamente como idioma: también
+                se utiliza para explorar contenidos, desarrollar habilidades
+                de pensamiento y comprender el mundo desde nuevas perspectivas.
+            </p>
+
+        </div>
+
+
+        <div class="english-subjects-grid">
+
+            <!-- SCIENCE -->
+
+            <article class="english-subject-card">
+
+                <div class="english-subject-icon">
+                    <i class="fa-solid fa-flask"></i>
+                </div>
+
+                <h3>Science</h3>
+
+                <p>
+                    Los estudiantes exploran fenómenos del mundo natural
+                    a través de la observación, la formulación de preguntas,
+                    la investigación y la experimentación.
+                </p>
+
+                <p>
+                    La propuesta favorece la curiosidad científica y el
+                    desarrollo progresivo del vocabulario académico en inglés.
+                </p>
+
+            </article>
+
+
+            <!-- HUMANITIES -->
+
+            <article class="english-subject-card">
+
+                <div class="english-subject-icon">
+                    <i class="fa-solid fa-earth-americas"></i>
+                </div>
+
+                <h3>Humanities</h3>
+
+                <p>
+                    Humanities acerca a nuestros alumnos a las sociedades,
+                    los territorios, la historia y las diferentes formas
+                    en que las personas viven y se relacionan con su entorno.
+                </p>
+
+                <p>
+                    A través de investigaciones, lecturas y proyectos,
+                    desarrollan una mirada más amplia sobre distintas
+                    culturas y contextos.
+                </p>
+
+            </article>
+
+
+            <!-- GLOBAL PERSPECTIVES -->
+
+            <article class="english-subject-card">
+
+                <div class="english-subject-icon">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+
+                <h3>Global Perspectives</h3>
+
+                <p>
+                    Global Perspectives invita a observar temas relevantes
+                    desde diferentes puntos de vista y a comprender que una
+                    misma situación puede ser analizada desde múltiples
+                    perspectivas.
+                </p>
+
+                <p>
+                    Los estudiantes desarrollan pensamiento crítico,
+                    investigación, comunicación, reflexión y trabajo
+                    colaborativo.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+      <!-- =========================
+     APRENDER CONECTANDO SABERES
+========================== -->
+
+<section class="connected-learning-section">
+
+    <div class="connected-learning-container">
+
+        <div class="connected-learning-image">
+
+            <img
+                src="images/primary-actividades.jpg"
+                alt="Actividades y proyectos en Primary"
+            >
+
+        </div>
+
+        <div class="connected-learning-content">
+
+            <span class="primary-section-label">
+                Aprendizaje activo
+            </span>
+
+            <h2>Aprender conectando saberes</h2>
+
+            <p>
+                En Primary buscamos que los aprendizajes no se desarrollen
+                de manera aislada, sino que puedan conectarse entre sí y
+                adquirir sentido a través de experiencias reales.
+            </p>
+
+            <p>
+                Los proyectos, investigaciones, producciones, presentaciones
+                y actividades colaborativas permiten que los estudiantes
+                integren conocimientos de diferentes áreas y utilicen tanto
+                el español como el inglés como herramientas para aprender,
+                comunicar ideas y resolver situaciones.
+            </p>
+
+            <p>
+                Esta forma de trabajo favorece la autonomía, la creatividad,
+                la capacidad de organización, la comunicación y el pensamiento
+                crítico.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CAMBRIDGE
+========================== -->
+
+<section class="cambridge-section">
+
+    <div class="cambridge-container">
+
+        <div class="cambridge-heading">
+
+            <span class="cambridge-label">
+                <i class="fa-solid fa-graduation-cap"></i>
+                Cambridge International Education
+            </span>
+
+            <h2>Una propuesta con mirada internacional</h2>
+
+            <p>
+                Uruguayan American School de Mercedes forma parte de
+                Cambridge International Education y se encuentra registrada
+                como Cambridge Primary School y Cambridge International School.
+            </p>
+
+            <p>
+                Ser parte de Cambridge fortalece nuestra propuesta bilingüe
+                y nos permite trabajar dentro de un marco educativo reconocido
+                internacionalmente, promoviendo estudiantes curiosos,
+                reflexivos, comunicativos y preparados para desenvolverse
+                en un mundo global.
+            </p>
+
+        </div>
+
+        <div class="cambridge-certificates">
+
+            <!-- CERTIFICADO CAMBRIDGE PRIMARY -->
+
+            <div class="certificate-card">
+
+                <img
+                    src="images/cambridge-primary-certificate.jpg"
+                    alt="Certificado Cambridge Primary School"
+                >
+
+                <div class="certificate-info">
+                    <h3>Cambridge Primary School</h3>
+
+                    <p>
+                        Registered School UY114
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- CERTIFICADO CAMBRIDGE INTERNATIONAL -->
+
+            <div class="certificate-card">
+
+                <img
+                    src="images/cambridge-international-certificate.jpg"
+                    alt="Certificado Cambridge International School"
+                >
+
+                <div class="certificate-info">
+                    <h3>Cambridge International School</h3>
+
+                    <p>
+                        Registered School UY114
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+      <!-- =========================
+     CIERRE PRIMARY
+========================== -->
+
+<section class="primary-closing">
+
+    <div class="primary-closing-container">
+
+        <i class="fa-solid fa-compass"></i>
+
+        <h2>
+            Preparados para seguir creciendo
+        </h2>
+
+        <p>
+            Primary es una etapa en la que nuestros alumnos consolidan
+            conocimientos, construyen hábitos de trabajo y desarrollan
+            una mirada cada vez más autónoma sobre su aprendizaje.
+        </p>
+
+        <p>
+            Buscamos que cada estudiante termine este recorrido con
+            herramientas académicas sólidas, confianza para enfrentar
+            nuevos desafíos y la capacidad de pensar, preguntar,
+            crear y aprender junto a otros.
+        </p>
+
+        <p class="primary-closing-highlight">
+            Porque educar en dos idiomas no significa solamente enseñar
+            dos lenguas: significa ampliar las formas de comprender
+            el mundo y las posibilidades de participar en él.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-left">
+
+            <img
+                src="logo.jpg"
+                class="footer-logo"
+                alt="School Logo"
+            >
+
+            <p class="footer-school-name">
+                Uruguayan American School de Mercedes
+            </p>
+
+            <img
+                src="logocam.jpg"
+                class="footer-cambridge"
+                alt="Cambridge International School"
+            >
+
+        </div>
+
+        <div class="footer-center">
+
+            <p>
+                <strong>Dirección:</strong>
+                18 De Julio 538, 75000 Mercedes, Soriano
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                direccion@uasmercedes.edu.uy
+            </p>
+
+            <p>
+                <strong>Teléfono:</strong>
+                4532 3962
+            </p>
+
+            <p>
+                <strong>Celular:</strong>
+                092 323 962 – 097 385 182
+            </p>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p><strong>Seguinos:</strong></p>
+
+            <div class="social-icons">
+
+                <a
+                    href="https://www.facebook.com/uasmercedes/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                >
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a
+                    href="https://www.instagram.com/uas_mercedes/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a
+                    href="https://www.youtube.com/@UASMercedesOficial"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube"
+                >
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     MENÚ HAMBURGUESA
+========================== -->
+
+<script>
+
+    const menuToggle =
+        document.querySelector(".menu-toggle");
+
+    const navLinks =
+        document.querySelector(".nav-links");
+
+    if (menuToggle && navLinks) {
+
+        menuToggle.addEventListener("click", () => {
+
+            navLinks.classList.toggle("active");
+
+        });
+
+    }
+
+</script>
+
+</body>
+</html>
+
+    </section>
